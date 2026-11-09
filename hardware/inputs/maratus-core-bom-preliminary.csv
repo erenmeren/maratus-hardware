@@ -1,0 +1,26 @@
+Ref,Function,Manufacturer,MPN,Package,Qty,Status,Notes
+U1,Application processor,Espressif,ESP32-P4NRW32X,QFN104 10x10 mm,1,Verified,"Chip revision v3.x, 32 MB PSRAM in package. Needs ESP-IDF v5.5.3+ or v6.0+. Footprint: Espressif KiCad library ESP32-P4."
+U2,Wi-Fi 6 dual-band coprocessor,Espressif,ESP32-C5-WROOM-1-N4,18.0 x 27.5 x 3.3 mm module,1,Verified,"PCB antenna, 4 MB flash. Runs ESP-Hosted slave firmware over SDIO. Supply must deliver 0.6 A."
+U3,Boot flash 16 MB,Winbond,W25Q128JVSIQ,SOIC-8 208 mil,1,Candidate,"3.3 V quad SPI NOR powered from VDDO_FLASH. Confirm against Espressif's supported-flash guidance."
+U4,VDD_HP core DCDC,Texas Instruments,TLV62569DBVR,SOT-23-5,1,Verified,"On Espressif's list of verified DCDC parts for the P4. EN and FB driven by the P4."
+U5,3.3 V system buck,Texas Instruments,TLV62569DBVR,SOT-23-5,1,Candidate,"Same part as U4 to keep unique parts low. 5 V in, 3.3 V out, 2 A class. Confirm ratings at capture."
+U6,Input power mux,Texas Instruments,TPS2121RUXR,VQFN-HR 12 (2.5 x 2 mm),1,Verified,"2.8-22 V, 4.5 A, priority + seamless switchover, OVP, current limit, reverse blocking. IN1 = rear pads, IN2 = USB-C."
+U7,10/100 Ethernet PHY,IC Plus,IP101GRI,QFN-32,1,Verified,"-40 to 85 C. RMII, 25 MHz crystal, built-in 49.9 ohm terminations. Same PHY as Espressif and Waveshare P4 boards."
+U8,Backlight boost LED driver,Texas Instruments,TPS61169DCKR,SC-70,1,Candidate,"Final choice depends on the panel's LED string voltage and current (panel datasheet needed)."
+U9,V_ACC accessory power switch,Texas Instruments,TPS2553DBVR,SOT-23-6,1,Candidate,"Current-limited 5 V output to accessories, about 0.5 A, fault flag to GPIO14."
+U10,Reset supervisor,Texas Instruments,TPS3839G33DBZR,SOT-23-3,1,Candidate,"Holds CHIP_PU low on brownout. Confirm threshold near 3.0 V."
+D1,USB-C data ESD,STMicroelectronics,USBLC6-2SC6,SOT-23-6,1,Candidate,On USBC_DP / USBC_DN.
+D2-D4,Rear pad ESD arrays,Texas Instruments,TPD4E05U06DQAR,USON-10,3,Candidate,"Low-capacitance arrays on Ethernet pairs, accessory USB pair and accessory IO."
+D5-D6,5 V rail TVS,any,SMF5.0A class,SOD-123FL,2,Candidate,One per power input (USB-C VBUS and rear pad VIN).
+J1,USB-C receptacle (USB 2.0),GCT,USB4105-GF-A,16-pin SMT,1,Candidate,"Service port and standalone power. CC1/CC2 5.1k to GND. Outdoor variant needs a sealed part."
+J2,LCD + touch FPC connector,Hirose,FH12-30S-0.5SH(55),"30-pin, 0.5 mm",1,Candidate,Pin count and contact side must match the chosen panel's FPC drawing.
+J3,Camera FPC footprint (DNP),-,-,"22-pin, 0.5 mm",0,Reserved,Footprint only. Not populated in V1.
+Y1,P4 crystal,any,40 MHz +/-10 ppm,3225,1,Candidate,Load capacitors tuned on the prototype.
+Y2,PHY crystal,any,25 MHz,3225,1,Candidate,Per IP101GRI datasheet crystal specification.
+L1-L2,Buck inductors,any,per TLV62569 datasheet,-,2,Candidate,
+L3,Backlight boost inductor,any,per LED driver datasheet,-,1,Candidate,
+BZ1,Buzzer,any,"SMD electromagnetic transducer, about 9 mm",SMD,1,Candidate,"Driven by N-MOSFET + flyback diode from LEDC PWM. Pick for >= 85 dB at 10 cm."
+Q1,Buzzer driver,any,small-signal N-MOSFET,SOT-23,1,Candidate,
+SW1,Service switch,any,low-profile tact switch,SMD,1,Candidate,"Behind the rear housing, reached with a pin tool only."
+P1,Rear accessory contact field,PCB feature,18 gold pads,2 x 9 at 2.54 mm,1,Defined,"No component: pads are part of the main PCB. ENIG for prototypes, hard gold for production."
+-,"Passives (R, C, ferrites)",any,-,0402 / 0603,about 120,Estimate,Count firms up at schematic capture.
