@@ -1,0 +1,63 @@
+# Maratus Core — prototype bring-up checklist
+
+Status of every line today: **untested**. No hardware exists yet. Work top to bottom; do not move on while a line fails.
+
+## 0. Before power
+- [ ] Visual inspection: P4 QFN and C5 module orientation, no bridges on the P4 exposed-pad vias, FPC connectors latched.
+- [ ] Resistance to ground on 5V_SYS, 3V3, VDD_HP, VDD_FLASH, VDD_PSRAM, VDD_MIPI: no shorts.
+- [ ] Display, touch FPC and buzzer disconnected for first power.
+
+## 1. Power-up (bench supply, 5.0 V, 300 mA limit)
+- [ ] USB-C only: 5V_SYS present, 3V3 = 3.3 V +/-3 %, VDD_HP inside 0.99–1.3 V once the P4 leaves reset.
+- [ ] Rear-pad VIN only: same rails, PWR_SRC_ST reports the pad input.
+- [ ] CHIP_PU rises after 3V3 is stable (scope: more than 50 µs margin).
+- [ ] Idle current recorded; raise the limit to 2 A only after rails look right.
+
+## 2. Boot and programming
+- [ ] USB-C enumerates as USB-Serial-JTAG; `esptool` reads chip revision v3.x and the eFuse MAC.
+- [ ] Flash a hello-world built for chip revision v3.x; 32 MB PSRAM and 16 MB flash detected.
+- [ ] BOOT test pad low + reset enters download mode; UART0 test pads show the ROM log.
+- [ ] C5: P4 holds C5_BOOT low, pulses C5_EN, and flashes the ESP-Hosted slave image over UART.
+
+## 3. Wi-Fi (ESP-Hosted over SDIO)
+- [ ] SDIO link up at 5 MHz, then 20 MHz, then 40 MHz without CRC errors.
+- [ ] Join a 2.4 GHz AP and a 5 GHz AP; record RSSI next to the current dev board at the same spot.
+- [ ] iperf TCP for 30 minutes on each band; no SDIO resets in the log.
+- [ ] 3V3 droop during 5 GHz transmit bursts under 100 mV (scope at the module pin).
+
+## 4. Display, touch, buzzer
+- [ ] Backlight PWM dims 5–100 % with no visible flicker; LED current matches the panel datasheet.
+- [ ] MIPI DSI: colour bars, then the LVGL UI at the target frame rate; no tearing or sparkle.
+- [ ] Touch reports all four corners and the centre; interrupt line toggles.
+- [ ] A dense QR code (version 10 or higher) scans from 30 cm and 60 cm at 30 % and 100 % brightness.
+- [ ] Buzzer audible at 1 m over shop noise; sound level measured at 10 cm.
+
+## 5. Ethernet (needs a dock or LAN-module test coupon)
+- [ ] PHY answers on MDIO; 50 MHz reference clock clean at GPIO50.
+- [ ] Link at 100 Mbit/s full duplex through the pogo contacts; DHCP lease obtained.
+- [ ] iperf for 24 hours: zero link drops, packet loss recorded.
+- [ ] Pull the cable, then the accessory, while running: firmware fails over to Wi-Fi and back, no reset.
+
+## 6. Cloud path (existing protocol, unchanged)
+- [ ] Claim, identity and MQTT over TLS connect on Wi-Fi and on Ethernet.
+- [ ] `trigger` → QR on screen → ack, measured end to end.
+- [ ] `config-changed` with branding images renders; heartbeat arrives every period.
+- [ ] `firmware-update`: OTA to a second v3.x build, reboot, rollback on a deliberately bad image.
+
+## 7. Accessory interface and power switching
+- [ ] ACC_ID reads the expected voltage for each ID resistor; an open contact reads "none".
+- [ ] V_ACC stays off with no accessory, switches on after ID, and current-limits into a short.
+- [ ] Hot-plug dock power with USB-C attached and the reverse: 3V3 never dips below 3.1 V, no reboot.
+- [ ] 1,000 attach/detach cycles on one unit: contact resistance and Ethernet link checked every 100.
+- [ ] Wrong-way attach attempt is blocked mechanically; shorting adjacent pads with a probe causes no damage.
+
+## 8. Security (on sacrificial units only — eFuses are permanent)
+- [ ] Secure Boot v2 and flash encryption enabled in release mode; unsigned image refused.
+- [ ] NVS encryption on; device key unreadable from a flash dump.
+- [ ] USB download path restricted as intended after provisioning.
+
+## 9. Pre-compliance sanity
+- [ ] ESD gun (if available): ±4 kV contact on rear pads, USB-C shell and screen edge, unit powered.
+- [ ] Thermal: 2 hours at full brightness in the closed enclosure; hottest surface and LCD temperature recorded.
+- [ ] Near-field probe scan around the RMII clock, SDIO and DSI lines for obvious emitters.
+- [ ] Cold start at 0 °C and warm soak at 45 °C (kitchen-grade test is fine at this stage).

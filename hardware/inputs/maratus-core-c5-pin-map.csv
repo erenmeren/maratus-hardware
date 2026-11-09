@@ -1,0 +1,30 @@
+C5 module pin,Pin name,Net,Notes
+1,GND,GND,
+2,3V3,3V3,10 uF + 0.1 uF at pin. Supply must deliver >= 0.6 A.
+3,EN/CHIP_PU,C5_EN,"10k pull-up, 1 uF to GND."
+4,GPIO2,C5_TP_GPIO2,Test pad (MTMS).
+5,GPIO3,C5_STRAP_MTDI,MTDI strap (SDIO edge). DNP pull-up/pull-down footprints.
+6,GPIO0,NC,
+7,GPIO1,NC,
+8,GPIO6,NC,
+9,GPIO7,SDIO_D1,
+10,GPIO8,SDIO_D0,
+11,GPIO9,SDIO_CLK,
+12,GPIO10,SDIO_CMD,
+13,GPIO13/USB_D-,SDIO_D3,
+14,GPIO14/USB_D+,SDIO_D2,
+15,GPIO28,C5_BOOT,"Boot strap, module default pull-up. Also on a test pad."
+16,GPIO5,NC,
+17,GPIO4,NC,
+18,GPIO27,C5_STRAP_GPIO27,"Boot strap, default pull-up. Test pad."
+19,GPIO15,NC,
+20,NC,NC,
+21,GPIO23,NC,
+22,NC,NC,
+23,GPIO24,NC,
+24,U0RXD/GPIO12,C5_U0RXD,Also on a test pad for factory flashing.
+25,U0TXD/GPIO11,C5_U0TXD,Also on a test pad.
+26,GPIO25,C5_STRAP_GPIO25,SDIO edge strap. DNP pull-up/pull-down footprints.
+27,GPIO26,C5_STRAP_GPIO26,Boot strap. Test pad.
+28,GND,GND,
+29,GND,GND,Exposed pad.

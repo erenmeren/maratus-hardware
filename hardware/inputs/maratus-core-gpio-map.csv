@@ -1,0 +1,106 @@
+P4 pin,P4 pin name,Net,Group,Notes
+1,GPIO1,TP_GPIO1,spare,Test pad. 32 kHz crystal not fitted (time comes from SNTP).
+2,GPIO2,LCD_BL_PWM,display,LEDC PWM to backlight boost driver CTRL/EN. 100k pull-down so backlight is off in reset.
+3,GPIO3,LCD_RST_N,display,"Panel reset, active low. 10k pull-up to LCD_3V3."
+4,GPIO4,TP_RST_N,touch,Touch controller reset.
+5,GPIO5,TP_INT,touch,Touch interrupt.
+6,GPIO6,BUZZER_PWM,audio,LEDC PWM to buzzer low-side driver gate. 100k pull-down.
+7,GPIO7,I2C0_SDA,touch,"Touch I2C, 2.2k pull-up to 3V3. Same pins as the Waveshare P4 boards."
+8,GPIO8,I2C0_SCL,touch,"Touch I2C, 2.2k pull-up to 3V3."
+9,VDD_LP,3V3,power,0.1 uF.
+10,GPIO9,SERVICE_BTN_N,service,"Recessed service switch behind rear housing, active low, 10k pull-up."
+11,GPIO10,ACC_IO1,expansion,"Accessory IO 1. UART1 TXD on IO MUX, or I2C SDA via GPIO matrix. 100R series + ESD."
+12,GPIO11,ACC_IO2,expansion,"Accessory IO 2. UART1 RXD on IO MUX, or I2C SCL via GPIO matrix. 100R series + ESD."
+13,GPIO12,ACC_INT_N,expansion,Accessory interrupt / general IO. 100R series + ESD.
+14,GPIO13,ACC_PWR_EN,expansion,Enables the current-limited V_ACC output switch. 100k pull-down (off by default).
+15,GPIO14,ACC_PWR_FLT_N,expansion,"Fault flag from V_ACC switch (open drain, 10k pull-up)."
+16,GPIO15,PWR_SRC_ST,power,Power-mux status: which input is feeding the system.
+17,GPIO16/ADC1_CHANNEL0,ACC_ID_ADC,expansion,"Accessory ID: resistor to GND in accessory, 10k pull-up to 3V3 on Core. 0.1 uF at pin."
+18,GPIO17/ADC1_CHANNEL1,VSYS_SENSE,power,5V_SYS through divider. Brownout / supply diagnostics.
+19,GPIO18/ADC1_CHANNEL2,USBC_CC1_SENSE,power,CC1 through divider: lets firmware read the source current advertisement.
+20,GPIO19/ADC1_CHANNEL3,USBC_CC2_SENSE,power,CC2 through divider.
+21,VDD_IO_0,3V3,power,0.1 uF.
+22,GPIO20/ADC1_CHANNEL4,TP_GPIO20,spare,Test pad (ADC capable). Candidate for ambient light sensor on outdoor variant.
+23,GPIO21/ADC1_CHANNEL5,TP_GPIO21,spare,Test pad.
+24,GPIO22/ADC1_CHANNEL6,TP_GPIO22,spare,Test pad.
+25,GPIO23/ADC1_CHANNEL7,ETH_REFCLK_ALT,ethernet,DNP 0R link to PHY clock input. REF_50M_CLK output option if the PHY crystal is removed later.
+26,VDD_HP_0,VDD_HP,power,0.1 uF. From external DCDC.
+27,FLASH_CS,FLASH_CS,flash,10k pull-up to VDD_FLASH. 0R series footprint.
+28,FLASH_Q,FLASH_Q,flash,0R series footprint.
+29,FLASH_WP,FLASH_WP,flash,0R series footprint.
+30,VDD_FLASH_IO,VDD_FLASH,power,Fed from VDDO_FLASH. 0.1 uF + 1 uF.
+31,FLASH_HOLD,FLASH_HOLD,flash,0R series footprint.
+32,FLASH_CK,FLASH_CK,flash,0R series footprint.
+33,FLASH_D,FLASH_D,flash,0R series footprint.
+34,DSI_REXT,DSI_REXT,display,4.02k 1% to GND.
+35,DSI_DATAP1,DSI_D1_P,display,100R differential pair to LCD FPC.
+36,DSI_DATAN1,DSI_D1_N,display,
+37,DSI_CLKN,DSI_CLK_N,display,
+38,DSI_CLKP,DSI_CLK_P,display,
+39,DSI_DATAP0,DSI_D0_P,display,
+40,DSI_DATAN0,DSI_D0_N,display,
+41,VDD_MIPI_DPHY,VDD_MIPI,power,Fed from VDDO_3 (LDO channel 3 set to 2.5 V in firmware). 10 nF + 0.1 uF + 1 uF.
+42,CSI_DATAN0,CSI_D0_N,reserved,To DNP camera FPC footprint. Not populated in V1.
+43,CSI_DATAP0,CSI_D0_P,reserved,
+44,CSI_CLKP,CSI_CLK_P,reserved,
+45,CSI_CLKN,CSI_CLK_N,reserved,
+46,CSI_DATAN1,CSI_D1_N,reserved,
+47,CSI_DATAP1,CSI_D1_P,reserved,
+48,CSI_REXT,CSI_REXT,reserved,"4.02k to GND, DNP in V1."
+49,USB-DM,ACC_USB_DN,expansion,"High-speed OTG PHY, host role. To rear pads through ESD array (<= 1 pF)."
+50,USB-DP,ACC_USB_DP,expansion,1M pull-down footprint kept (optional on v3.x).
+51,VDD_USBPHY,3V3,power,"10 nF + 0.1 uF + 4.7 uF, 0R series link."
+52,GPIO24/USB1P1_N0,USBC_DN,usb-c,"USB-Serial-JTAG D-. Flashing, console and JTAG on the service port. 22R series."
+53,GPIO25/USB1P1_P0,USBC_DP,usb-c,USB-Serial-JTAG D+. 22R series.
+54,VDD_HP_1,VDD_HP,power,Chip revision v3.x: pin 54 is a core supply pin. 0.1 uF.
+55,GPIO26/USB1P1_N1,TP_GPIO26,spare,Second full-speed PHY (FS OTG D-). Test pad.
+56,GPIO27/USB1P1_P1,TP_GPIO27,spare,Second full-speed PHY (FS OTG D+). Test pad.
+57,GPIO28,RMII_CRS_DV,ethernet,IO MUX function 3.
+58,GPIO29,RMII_RXD0,ethernet,IO MUX function 3.
+59,VDD_PSRAM_0,VDD_PSRAM,power,Fed from VDDO_PSRAM. 0.1 uF + 1 uF.
+60,GPIO30,RMII_RXD1,ethernet,IO MUX function 3.
+61,GPIO31,ETH_MDC,ethernet,SMI clock (GPIO matrix).
+62,VDD_IO_4,3V3,power,0.1 uF.
+63,GPIO32,TP_GPIO32,spare,Test pad.
+64,GPIO33,TP_GPIO33,spare,Test pad.
+65,GPIO34,RMII_TXD0,ethernet,"IO MUX function 3. Strapping pin: PHY input only, no pull fitted."
+66,GPIO35,RMII_TXD1,ethernet,"IO MUX function 3. Strapping pin BOOT: 10k pull-up, no capacitor, BOOT test pad."
+67,VDD_PSRAM_1,VDD_PSRAM,power,0.1 uF.
+68,GPIO36,TP_GPIO36,strap,Strapping pin. Test pad only.
+69,GPIO37,UART0_TXD,debug,Strapping pin. Factory log test pad.
+70,GPIO38,UART0_RXD,debug,Strapping pin. Factory test pad.
+71,VDDO_FLASH,VDD_FLASH,power,"Internal LDO 1 output, 3.3 V default. 1 uF."
+72,VDDO_PSRAM,VDD_PSRAM,power,"Internal LDO 2 output, 1.8 V class. 1 uF."
+73,VDDO_3,VDD_MIPI,power,Internal LDO 3 output -> MIPI D-PHY. 1 uF.
+74,VDDO_4,VDDO_4,power,"Internal LDO 4 output, unused. 1 uF and test pad."
+75,VDD_LDO,3V3,power,10 uF on trace + 0.1 uF.
+76,VDD_HP_2,VDD_HP,power,0.1 uF.
+77,VDD_DCDCC,3V3,power,10 uF on trace + 0.1 uF.
+78,FB_DCDC,FB_DCDC,power,To VDD_HP DCDC feedback node. v3.x: populate feedback resistors and capacitor per Espressif reference.
+79,EN_DCDC,EN_DCDC,power,To VDD_HP DCDC enable.
+80,GPIO39,SDIO_D0,wifi,"SDMMC slot 0 IO MUX. 51k pull-up, series R footprint. -> C5 GPIO8."
+81,GPIO40,SDIO_D1,wifi,51k pull-up. -> C5 GPIO7.
+82,GPIO41,SDIO_D2,wifi,51k pull-up. -> C5 GPIO14.
+83,GPIO42,SDIO_D3,wifi,51k pull-up. -> C5 GPIO13.
+84,GPIO43,SDIO_CLK,wifi,Series R + DNP capacitor footprint for tuning. -> C5 GPIO9.
+85,VDD_IO_5,3V3,power,SDIO domain tied to 3.3 V (no SD-card voltage switching). 0.1 uF.
+86,GPIO44,SDIO_CMD,wifi,51k pull-up. -> C5 GPIO10.
+87,GPIO45,C5_EN,wifi,Resets the C5 (module EN). 10k pull-up + 1 uF at module.
+88,GPIO46,C5_BOOT,wifi,"To C5 GPIO28 boot strap, so the P4 can put the C5 in ROM download mode."
+89,GPIO47,C5_U0RXD,wifi,P4 TX -> C5 U0RXD. Lets the P4 flash and recover the C5 over UART.
+90,GPIO48,C5_U0TXD,wifi,P4 RX <- C5 U0TXD.
+91,VDD_HP_3,VDD_HP,power,0.1 uF.
+92,GPIO49/ADC2_CHANNEL0,RMII_TX_EN,ethernet,IO MUX function 3.
+93,GPIO50/ADC2_CHANNEL1,RMII_REF_CLK,ethernet,"50 MHz in from PHY, IO MUX function 3. Series R at source."
+94,GPIO51/ADC2_CHANNEL2,ETH_PHY_RST_N,ethernet,PHY reset. Held low when no Ethernet accessory is attached.
+95,GPIO52/ADC2_CHANNEL3,ETH_MDIO,ethernet,"SMI data, 1.5k pull-up."
+96,VDD_IO_6,3V3,power,0.1 uF.
+97,GPIO53/ADC2_CHANNEL4,TP_GPIO53,spare,Test pad.
+98,GPIO54/ADC2_CHANNEL5,TP_GPIO54,spare,Test pad.
+99,XTAL_N,XTAL_N,clock,"40 MHz, +/-10 ppm crystal. Load caps tuned on prototype."
+100,XTAL_P,XTAL_P,clock,
+101,VDD_ANA,3V3,power,0.1 uF.
+102,VDD_BAT,3V3,power,Must not float. 0.1 uF + 10 uF.
+103,CHIP_PU,P4_EN,reset,"10k pull-up + 1 uF, plus a 3.0 V-class supervisor. RESET test pad."
+104,GPIO0,TP_GPIO0,spare,Test pad.
+105,GND,GND,power,Exposed pad.
