@@ -6,6 +6,8 @@ Status of every line today: **untested**. No hardware exists yet. Work top to bo
 - [ ] Visual inspection: P4 QFN and C5 module orientation, no bridges on the P4 exposed-pad vias, FPC connectors latched.
 - [ ] Resistance to ground on 5V_SYS, 3V3, VDD_HP, VDD_FLASH, VDD_PSRAM, VDD_MIPI: no shorts.
 - [ ] Display, touch FPC and buzzer disconnected for first power.
+- [ ] On a panel sample: both FFC tails reach J2 and J4 when folded around the bottom edge, and pin 1 of each
+      tail lands on the pad the schematic expects (J2 pad 24, J4 pad 6).
 
 ## 1. Power-up (bench supply, 5.0 V, 300 mA limit)
 - [ ] USB-C only: 5V_SYS present, 3V3 = 3.3 V +/-3 %, VDD_HP inside 0.99–1.3 V once the P4 leaves reset.
@@ -26,6 +28,9 @@ Status of every line today: **untested**. No hardware exists yet. Work top to bo
 - [ ] 3V3 droop during 5 GHz transmit bursts under 100 mV (scope at the module pin).
 
 ## 4. Display, touch, buzzer
+- [ ] Panel FFCs plugged and unplugged only with power off. With no panel the backlight output
+      reaches 36–39 V; LED_A is back below 7 V before the panel is connected.
+- [ ] Backlight is fully dark with LCD_BL_PWM low.
 - [ ] Backlight PWM dims 5–100 % with no visible flicker; LED current matches the panel datasheet.
 - [ ] MIPI DSI: colour bars, then the LVGL UI at the target frame rate; no tearing or sparkle.
 - [ ] Touch reports all four corners and the centre; interrupt line toggles.

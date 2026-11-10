@@ -1,12 +1,12 @@
 P4 pin,P4 pin name,Net,Group,Notes
 1,GPIO1,TP_GPIO1,spare,Test pad. 32 kHz crystal not fitted (time comes from SNTP).
 2,GPIO2,LCD_BL_PWM,display,LEDC PWM to backlight boost driver CTRL/EN. 100k pull-down so backlight is off in reset.
-3,GPIO3,LCD_RST_N,display,"Panel reset, active low. 10k pull-up to LCD_3V3."
+3,GPIO3,LCD_RST_N,display,"Panel reset, active low. 10k pull-up to 3V3."
 4,GPIO4,TP_RST_N,touch,Touch controller reset.
 5,GPIO5,TP_INT,touch,Touch interrupt.
 6,GPIO6,BUZZER_PWM,audio,LEDC PWM to buzzer low-side driver gate. 100k pull-down.
-7,GPIO7,I2C0_SDA,touch,"Touch I2C, 2.2k pull-up to 3V3. Same pins as the Waveshare P4 boards."
-8,GPIO8,I2C0_SCL,touch,"Touch I2C, 2.2k pull-up to 3V3."
+7,GPIO7,I2C0_SDA,touch,"Touch I2C, 4.7k pull-up to 3V3 (panel datasheet p.5). Same pins as the Waveshare P4 boards."
+8,GPIO8,I2C0_SCL,touch,"Touch I2C, 4.7k pull-up to 3V3 (panel datasheet p.5)."
 9,VDD_LP,3V3,power,0.1 uF.
 10,GPIO9,SERVICE_BTN_N,service,"Recessed service switch behind rear housing, active low, 10k pull-up."
 11,GPIO10,ACC_IO1,expansion,"Accessory IO 1. UART1 TXD on IO MUX, or I2C SDA via GPIO matrix. 100R series + ESD."
