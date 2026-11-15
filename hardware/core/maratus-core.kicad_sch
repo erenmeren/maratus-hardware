@@ -15,7 +15,7 @@
 	(lib_symbols)
 	(wire
 		(pts
-			(xy 96.52 139.7) (xy 101.6 139.7)
+			(xy 96.52 142.24) (xy 101.6 142.24)
 		)
 		(stroke
 			(width 0)
@@ -185,7 +185,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 165.1) (xy 101.6 165.1)
+			(xy 96.52 167.64) (xy 101.6 167.64)
 		)
 		(stroke
 			(width 0)
@@ -205,7 +205,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 160.02) (xy 101.6 160.02)
+			(xy 96.52 162.56) (xy 101.6 162.56)
 		)
 		(stroke
 			(width 0)
@@ -235,7 +235,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 162.56) (xy 101.6 162.56)
+			(xy 96.52 165.1) (xy 101.6 165.1)
 		)
 		(stroke
 			(width 0)
@@ -265,7 +265,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 134.62) (xy 101.6 134.62)
+			(xy 96.52 137.16) (xy 101.6 137.16)
 		)
 		(stroke
 			(width 0)
@@ -275,7 +275,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 127) (xy 101.6 127)
+			(xy 96.52 129.54) (xy 101.6 129.54)
 		)
 		(stroke
 			(width 0)
@@ -325,7 +325,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 106.68) (xy 160.02 106.68)
+			(xy 165.1 109.22) (xy 160.02 109.22)
 		)
 		(stroke
 			(width 0)
@@ -355,7 +355,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 144.78) (xy 101.6 144.78)
+			(xy 96.52 147.32) (xy 101.6 147.32)
 		)
 		(stroke
 			(width 0)
@@ -395,7 +395,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 109.22) (xy 160.02 109.22)
+			(xy 165.1 111.76) (xy 160.02 111.76)
 		)
 		(stroke
 			(width 0)
@@ -485,7 +485,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 99.06) (xy 160.02 99.06)
+			(xy 165.1 101.6) (xy 160.02 101.6)
 		)
 		(stroke
 			(width 0)
@@ -495,13 +495,23 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 137.16) (xy 101.6 137.16)
+			(xy 96.52 139.7) (xy 101.6 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5125d261-0f1d-52dd-bc96-a9bc8e177a3a")
+	)
+	(wire
+		(pts
+			(xy 165.1 86.36) (xy 160.02 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54405616-11b4-56d3-bdc8-f8691a8d09f0")
 	)
 	(wire
 		(pts
@@ -565,7 +575,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 93.98) (xy 160.02 93.98)
+			(xy 165.1 96.52) (xy 160.02 96.52)
 		)
 		(stroke
 			(width 0)
@@ -625,7 +635,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 157.48) (xy 101.6 157.48)
+			(xy 96.52 160.02) (xy 101.6 160.02)
 		)
 		(stroke
 			(width 0)
@@ -755,6 +765,16 @@
 	)
 	(wire
 		(pts
+			(xy 96.52 109.22) (xy 101.6 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93c73ae6-d92d-51d5-a865-bff50c4d5c80")
+	)
+	(wire
+		(pts
 			(xy 215.9 73.66) (xy 220.98 73.66)
 		)
 		(stroke
@@ -805,7 +825,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 96.52) (xy 160.02 96.52)
+			(xy 165.1 99.06) (xy 160.02 99.06)
 		)
 		(stroke
 			(width 0)
@@ -835,7 +855,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 142.24) (xy 101.6 142.24)
+			(xy 96.52 144.78) (xy 101.6 144.78)
 		)
 		(stroke
 			(width 0)
@@ -895,7 +915,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 147.32) (xy 101.6 147.32)
+			(xy 96.52 149.86) (xy 101.6 149.86)
 		)
 		(stroke
 			(width 0)
@@ -925,7 +945,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 152.4) (xy 101.6 152.4)
+			(xy 96.52 154.94) (xy 101.6 154.94)
 		)
 		(stroke
 			(width 0)
@@ -945,7 +965,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 149.86) (xy 101.6 149.86)
+			(xy 96.52 152.4) (xy 101.6 152.4)
 		)
 		(stroke
 			(width 0)
@@ -955,7 +975,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 88.9) (xy 160.02 88.9)
+			(xy 165.1 91.44) (xy 160.02 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1025,7 +1045,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 104.14) (xy 160.02 104.14)
+			(xy 165.1 106.68) (xy 160.02 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1055,7 +1075,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 111.76) (xy 160.02 111.76)
+			(xy 165.1 114.3) (xy 160.02 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1075,7 +1095,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 91.44) (xy 160.02 91.44)
+			(xy 165.1 93.98) (xy 160.02 93.98)
 		)
 		(stroke
 			(width 0)
@@ -1135,7 +1155,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 114.3) (xy 160.02 114.3)
+			(xy 165.1 116.84) (xy 160.02 116.84)
 		)
 		(stroke
 			(width 0)
@@ -1145,7 +1165,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 101.6) (xy 160.02 101.6)
+			(xy 165.1 104.14) (xy 160.02 104.14)
 		)
 		(stroke
 			(width 0)
@@ -1155,7 +1175,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 132.08) (xy 101.6 132.08)
+			(xy 96.52 134.62) (xy 101.6 134.62)
 		)
 		(stroke
 			(width 0)
@@ -1195,7 +1215,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 129.54) (xy 101.6 129.54)
+			(xy 96.52 132.08) (xy 101.6 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1353,6 +1373,16 @@
 		)
 		(uuid "122166be-d72a-57a2-8809-fbaaec2bb0ef")
 	)
+	(label "C5_WAKE"
+		(at 101.6 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1360b147-b663-5954-a5b9-ce5e44b4ad46")
+	)
 	(label "USBC_DP"
 		(at 220.98 73.66 0)
 		(effects
@@ -1364,7 +1394,7 @@
 		(uuid "161e14a4-4d77-5363-a9e9-48b788084d3b")
 	)
 	(label "RMII_CRS_DV"
-		(at 160.02 99.06 180)
+		(at 160.02 101.6 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1384,7 +1414,7 @@
 		(uuid "17981c29-f8af-5c21-8051-cb99fb026a91")
 	)
 	(label "RMII_TXD0"
-		(at 101.6 132.08 0)
+		(at 101.6 134.62 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1434,7 +1464,7 @@
 		(uuid "259e1b0c-7755-533e-b263-c6c2ead77a8f")
 	)
 	(label "ETH_REFCLK_ALT"
-		(at 101.6 152.4 0)
+		(at 101.6 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1444,7 +1474,7 @@
 		(uuid "25e64c31-cb77-5442-8989-f72d4eb44d55")
 	)
 	(label "RMII_RXD1"
-		(at 160.02 104.14 180)
+		(at 160.02 106.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1464,7 +1494,7 @@
 		(uuid "2af570a9-9905-5037-a638-3e5b24be4ec1")
 	)
 	(label "ETH_MDC"
-		(at 160.02 106.68 180)
+		(at 160.02 109.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1484,7 +1514,7 @@
 		(uuid "2fb626ae-a788-5298-b59b-43e3ea603b8a")
 	)
 	(label "RMII_RXD0"
-		(at 101.6 139.7 0)
+		(at 101.6 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1504,7 +1534,7 @@
 		(uuid "3450b2a9-f392-55bf-a28c-f71bf7faf72a")
 	)
 	(label "RMII_REF_CLK"
-		(at 101.6 127 0)
+		(at 101.6 129.54 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1572,6 +1602,16 @@
 			(justify left bottom)
 		)
 		(uuid "4741ab04-77d9-5ad1-8d55-fb9351d19a74")
+	)
+	(label "C5_WAKE"
+		(at 160.02 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "489deb62-b4c0-53a7-9439-eb311496a9f2")
 	)
 	(label "I2C0_SDA"
 		(at 314.96 66.04 180)
@@ -1694,7 +1734,7 @@
 		(uuid "6e1c982a-2aa8-5c38-bb40-d3060eb40581")
 	)
 	(label "ETH_TX_P"
-		(at 101.6 157.48 0)
+		(at 101.6 160.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1704,7 +1744,7 @@
 		(uuid "72c679c6-a93c-5628-9422-358c34e5e5df")
 	)
 	(label "RMII_TXD0"
-		(at 160.02 93.98 180)
+		(at 160.02 96.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1734,7 +1774,7 @@
 		(uuid "7592c14c-9779-5b18-94f0-baac0a2a9863")
 	)
 	(label "RMII_TXD1"
-		(at 101.6 134.62 0)
+		(at 101.6 137.16 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1814,7 +1854,7 @@
 		(uuid "809a4be1-9e80-51f5-a62b-8261cccda3ac")
 	)
 	(label "ETH_RX_N"
-		(at 101.6 165.1 0)
+		(at 101.6 167.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1834,7 +1874,7 @@
 		(uuid "8319b410-0fb2-551e-8a2b-33e307fd8b39")
 	)
 	(label "RMII_TX_EN"
-		(at 160.02 91.44 180)
+		(at 160.02 93.98 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1914,7 +1954,7 @@
 		(uuid "8dc84346-1ee6-53dc-bf26-007fed0f2b50")
 	)
 	(label "RMII_TX_EN"
-		(at 101.6 129.54 0)
+		(at 101.6 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1954,7 +1994,7 @@
 		(uuid "91c80237-6fd6-56fb-9e8f-6079a9073d6a")
 	)
 	(label "ETH_MDIO"
-		(at 101.6 147.32 0)
+		(at 101.6 149.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1964,7 +2004,7 @@
 		(uuid "92140dad-c203-5d9f-8f09-442e28dfcdd7")
 	)
 	(label "RMII_RXD0"
-		(at 160.02 101.6 180)
+		(at 160.02 104.14 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1974,7 +2014,7 @@
 		(uuid "92e17d46-3a07-5752-98be-d307147fb139")
 	)
 	(label "ETH_REFCLK_ALT"
-		(at 160.02 114.3 180)
+		(at 160.02 116.84 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1994,7 +2034,7 @@
 		(uuid "9fba1b92-d3df-515b-b855-1528f5b3daae")
 	)
 	(label "ETH_PHY_RST_N"
-		(at 160.02 111.76 180)
+		(at 160.02 114.3 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2094,7 +2134,7 @@
 		(uuid "b3fbea15-e77a-5ad9-9597-5b6f17d28d10")
 	)
 	(label "RMII_CRS_DV"
-		(at 101.6 137.16 0)
+		(at 101.6 139.7 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2194,7 +2234,7 @@
 		(uuid "cdb91974-2139-5e61-8a08-ee62d7646217")
 	)
 	(label "ETH_RX_P"
-		(at 101.6 162.56 0)
+		(at 101.6 165.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2244,7 +2284,7 @@
 		(uuid "d683594b-91a6-59ae-bfd3-4317ca3aef1d")
 	)
 	(label "ETH_MDIO"
-		(at 160.02 109.22 180)
+		(at 160.02 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2254,7 +2294,7 @@
 		(uuid "d8235761-85cf-5c46-a954-03f97f68e58c")
 	)
 	(label "ETH_MDC"
-		(at 101.6 144.78 0)
+		(at 101.6 147.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2284,7 +2324,7 @@
 		(uuid "e08a46c9-6919-5430-b1d3-5af426f1d4fc")
 	)
 	(label "ETH_PHY_RST_N"
-		(at 101.6 149.86 0)
+		(at 101.6 152.4 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2304,7 +2344,7 @@
 		(uuid "eb7716e7-312d-5d8f-9bab-3d154013f22f")
 	)
 	(label "ETH_TX_N"
-		(at 101.6 160.02 0)
+		(at 101.6 162.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2334,7 +2374,7 @@
 		(uuid "ed63495d-d5a2-5bd0-8bfb-ac299d2a9055")
 	)
 	(label "RMII_TXD1"
-		(at 160.02 96.52 180)
+		(at 160.02 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2444,7 +2484,7 @@
 		(uuid "f40307f0-043c-5ceb-ae3d-912f60b6203f")
 	)
 	(label "RMII_RXD1"
-		(at 101.6 142.24 0)
+		(at 101.6 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2454,7 +2494,7 @@
 		(uuid "f44ab7b5-7c66-567f-b88e-d911b0ebe7bd")
 	)
 	(label "RMII_REF_CLK"
-		(at 160.02 88.9 180)
+		(at 160.02 91.44 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2495,7 +2535,7 @@
 	)
 	(sheet
 		(at 50.8 81.28)
-		(size 45.72 27.94)
+		(size 45.72 30.48)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -2521,7 +2561,7 @@
 			)
 		)
 		(property "Sheetfile" "wifi.kicad_sch"
-			(at 50.8 109.8046 0)
+			(at 50.8 112.3446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2631,6 +2671,16 @@
 				(justify right)
 			)
 		)
+		(pin "C5_WAKE" output
+			(at 96.52 109.22 0)
+			(uuid "a4a8ee0c-d81d-5eb3-b9cc-80ddeb4260c2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7"
@@ -2640,7 +2690,7 @@
 		)
 	)
 	(sheet
-		(at 50.8 124.46)
+		(at 50.8 127)
 		(size 45.72 43.18)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2656,7 +2706,7 @@
 		)
 		(uuid "32fb11ae-f193-511d-bd6e-9b69de96cb4c")
 		(property "Sheetname" "ethernet"
-			(at 50.8 123.7484 0)
+			(at 50.8 126.2884 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2667,7 +2717,7 @@
 			)
 		)
 		(property "Sheetfile" "ethernet.kicad_sch"
-			(at 50.8 168.2246 0)
+			(at 50.8 170.7646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2678,7 +2728,7 @@
 			)
 		)
 		(pin "RMII_REF_CLK" output
-			(at 96.52 127 0)
+			(at 96.52 129.54 0)
 			(uuid "40f124e4-ae01-5e0b-8c34-669a417889ea")
 			(effects
 				(font
@@ -2688,7 +2738,7 @@
 			)
 		)
 		(pin "RMII_TX_EN" input
-			(at 96.52 129.54 0)
+			(at 96.52 132.08 0)
 			(uuid "c81c8431-30aa-52e9-88cc-3e2eb4168ba4")
 			(effects
 				(font
@@ -2698,7 +2748,7 @@
 			)
 		)
 		(pin "RMII_TXD0" input
-			(at 96.52 132.08 0)
+			(at 96.52 134.62 0)
 			(uuid "ff232c3c-faf0-54ec-b6c5-dda72dc8896d")
 			(effects
 				(font
@@ -2708,7 +2758,7 @@
 			)
 		)
 		(pin "RMII_TXD1" input
-			(at 96.52 134.62 0)
+			(at 96.52 137.16 0)
 			(uuid "0769496c-0fea-57a2-a6d3-83f11de09333")
 			(effects
 				(font
@@ -2718,7 +2768,7 @@
 			)
 		)
 		(pin "RMII_CRS_DV" output
-			(at 96.52 137.16 0)
+			(at 96.52 139.7 0)
 			(uuid "72d94e8e-6ac2-5b7e-a29c-c62ec0994fa2")
 			(effects
 				(font
@@ -2728,7 +2778,7 @@
 			)
 		)
 		(pin "RMII_RXD0" output
-			(at 96.52 139.7 0)
+			(at 96.52 142.24 0)
 			(uuid "c92a5892-99a0-532e-908a-e2fae22123bc")
 			(effects
 				(font
@@ -2738,7 +2788,7 @@
 			)
 		)
 		(pin "RMII_RXD1" output
-			(at 96.52 142.24 0)
+			(at 96.52 144.78 0)
 			(uuid "14ce27ff-3209-52ad-8ce1-57b39bac21ad")
 			(effects
 				(font
@@ -2748,7 +2798,7 @@
 			)
 		)
 		(pin "ETH_MDC" input
-			(at 96.52 144.78 0)
+			(at 96.52 147.32 0)
 			(uuid "fa258fa0-faa3-56fe-86d1-3acc857bf904")
 			(effects
 				(font
@@ -2758,7 +2808,7 @@
 			)
 		)
 		(pin "ETH_MDIO" bidirectional
-			(at 96.52 147.32 0)
+			(at 96.52 149.86 0)
 			(uuid "3a2456fe-7ac9-52e8-afd3-95894e99ba41")
 			(effects
 				(font
@@ -2768,7 +2818,7 @@
 			)
 		)
 		(pin "ETH_PHY_RST_N" input
-			(at 96.52 149.86 0)
+			(at 96.52 152.4 0)
 			(uuid "cd72d3a2-a56e-5e15-bc0b-4a71e014939f")
 			(effects
 				(font
@@ -2778,7 +2828,7 @@
 			)
 		)
 		(pin "ETH_REFCLK_ALT" input
-			(at 96.52 152.4 0)
+			(at 96.52 154.94 0)
 			(uuid "874242eb-023a-5293-a3d4-e3b442f3b12c")
 			(effects
 				(font
@@ -2788,7 +2838,7 @@
 			)
 		)
 		(pin "ETH_TX_P" bidirectional
-			(at 96.52 157.48 0)
+			(at 96.52 160.02 0)
 			(uuid "4a4d7339-1561-542d-98ae-16413e39f2da")
 			(effects
 				(font
@@ -2798,7 +2848,7 @@
 			)
 		)
 		(pin "ETH_TX_N" bidirectional
-			(at 96.52 160.02 0)
+			(at 96.52 162.56 0)
 			(uuid "4a667105-d0d8-5fe3-ba71-52a1671a2e80")
 			(effects
 				(font
@@ -2808,7 +2858,7 @@
 			)
 		)
 		(pin "ETH_RX_P" bidirectional
-			(at 96.52 162.56 0)
+			(at 96.52 165.1 0)
 			(uuid "3a1eff55-2904-5dfd-ab3f-a377d662e347")
 			(effects
 				(font
@@ -2818,7 +2868,7 @@
 			)
 		)
 		(pin "ETH_RX_N" bidirectional
-			(at 96.52 165.1 0)
+			(at 96.52 167.64 0)
 			(uuid "95ded6e9-e2f1-59f6-b4d7-179536188db7")
 			(effects
 				(font
@@ -3003,7 +3053,7 @@
 	)
 	(sheet
 		(at 165.1 38.1)
-		(size 50.8 78.74)
+		(size 50.8 81.28)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -3029,7 +3079,7 @@
 			)
 		)
 		(property "Sheetfile" "p4-core.kicad_sch"
-			(at 165.1 117.4246 0)
+			(at 165.1 119.9646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3209,8 +3259,18 @@
 				(justify left)
 			)
 		)
+		(pin "C5_WAKE" input
+			(at 165.1 86.36 180)
+			(uuid "7bd6019a-8c67-5b3e-ad81-c7af98f4eb33")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
 		(pin "RMII_REF_CLK" input
-			(at 165.1 88.9 180)
+			(at 165.1 91.44 180)
 			(uuid "2299c191-a9a1-53eb-b37b-07c29a3dd0b4")
 			(effects
 				(font
@@ -3220,7 +3280,7 @@
 			)
 		)
 		(pin "RMII_TX_EN" output
-			(at 165.1 91.44 180)
+			(at 165.1 93.98 180)
 			(uuid "faf2b161-44ea-593c-b031-4593d0e3dfc4")
 			(effects
 				(font
@@ -3230,7 +3290,7 @@
 			)
 		)
 		(pin "RMII_TXD0" output
-			(at 165.1 93.98 180)
+			(at 165.1 96.52 180)
 			(uuid "337e50d2-7438-5729-be5c-3fd147993310")
 			(effects
 				(font
@@ -3240,7 +3300,7 @@
 			)
 		)
 		(pin "RMII_TXD1" output
-			(at 165.1 96.52 180)
+			(at 165.1 99.06 180)
 			(uuid "b6877b2b-b7d0-5953-b4ff-ad28cec76fa3")
 			(effects
 				(font
@@ -3250,7 +3310,7 @@
 			)
 		)
 		(pin "RMII_CRS_DV" input
-			(at 165.1 99.06 180)
+			(at 165.1 101.6 180)
 			(uuid "16d7bde2-9005-5579-be2b-5d0167e54f78")
 			(effects
 				(font
@@ -3260,7 +3320,7 @@
 			)
 		)
 		(pin "RMII_RXD0" input
-			(at 165.1 101.6 180)
+			(at 165.1 104.14 180)
 			(uuid "5f9bd613-b3ea-5722-bbf8-2e921702ca8e")
 			(effects
 				(font
@@ -3270,7 +3330,7 @@
 			)
 		)
 		(pin "RMII_RXD1" input
-			(at 165.1 104.14 180)
+			(at 165.1 106.68 180)
 			(uuid "c8780a18-aff3-5dc0-bef8-7f1067b439dc")
 			(effects
 				(font
@@ -3280,7 +3340,7 @@
 			)
 		)
 		(pin "ETH_MDC" output
-			(at 165.1 106.68 180)
+			(at 165.1 109.22 180)
 			(uuid "b79e1085-4db6-50c2-b3a8-5e7b41a41d21")
 			(effects
 				(font
@@ -3290,7 +3350,7 @@
 			)
 		)
 		(pin "ETH_MDIO" bidirectional
-			(at 165.1 109.22 180)
+			(at 165.1 111.76 180)
 			(uuid "60abbe77-d5e1-596d-851a-2602c0946292")
 			(effects
 				(font
@@ -3300,7 +3360,7 @@
 			)
 		)
 		(pin "ETH_PHY_RST_N" output
-			(at 165.1 111.76 180)
+			(at 165.1 114.3 180)
 			(uuid "221a9a61-46e8-56b5-aefa-57ac26e102e4")
 			(effects
 				(font
@@ -3310,7 +3370,7 @@
 			)
 		)
 		(pin "ETH_REFCLK_ALT" output
-			(at 165.1 114.3 180)
+			(at 165.1 116.84 180)
 			(uuid "8af19fc9-7a27-5f2d-945a-fef6a869c61c")
 			(effects
 				(font

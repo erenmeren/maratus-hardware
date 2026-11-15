@@ -94,6 +94,7 @@ def build(s):
     s.C("10uF 10V", "V_ACC", fp=C0805, src="assumption; tps2553.pdf p.1 ESD rating needs external capacitance")
     s.C("100nF", "V_ACC")
     s.tp("V_ACC")
+    s.tp("GND")     # ground for a probe or a programming jig (design-spec section 11 item 8)
 
     s.group("Reset supervisor U10 - holds P4_EN low until 3V3 is above 2.93 V, then 200 ms")
     s.part("U10", "Power_Supervisor:TPS3839DBZ", "TPS3839K33DBZ", {

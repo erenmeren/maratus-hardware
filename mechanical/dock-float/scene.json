@@ -1,0 +1,42 @@
+{
+ "parts": {
+  "pod": "body",
+  "cap": "body",
+  "plate": "accent",
+  "saddle": "body",
+  "drawer": "body",
+  "core-body": "body",
+  "core-panel": "glass",
+  "core-magnets": "steel",
+  "dock-magnets": "steel",
+  "contact-board": "dark",
+  "base-board": "dark"
+ },
+ "screen": [
+  [
+   -35.93,
+   8.807678959534954,
+   26.07542778411016
+  ],
+  [
+   35.93,
+   8.807678959534954,
+   26.07542778411016
+  ],
+  [
+   35.93,
+   26.971599544829864,
+   93.86410227307698
+  ],
+  [
+   -35.93,
+   26.971599544829864,
+   93.86410227307698
+  ]
+ ],
+ "size": [
+  81.4,
+  66.0,
+  98.3
+ ]
+}

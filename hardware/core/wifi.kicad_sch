@@ -431,7 +431,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PCM_Espressif:ESP32-C5-WROOM-1"
+		(symbol "PCM_Espressif:ESP32-C5-WROOM-1U"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -448,7 +448,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "ESP32-C5-WROOM-1"
+			(property "Value" "ESP32-C5-WROOM-1U"
 				(at -28.194 24.384 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -459,7 +459,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "PCM_Espressif:ESP32-C5-WROOM-1"
+			(property "Footprint" "PCM_Espressif:ESP32-C5-WROOM-1U"
 				(at 19.558 -21.971 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -481,8 +481,8 @@
 					)
 				)
 			)
-			(property "Description" "ESP32-C5-WROOM-1"
-				(at 0.254 -5.334 0)
+			(property "Description" "ESP32-C5-WROOM-1U"
+				(at 0 -5.334 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -492,7 +492,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "esp32-c5 esp32-c5-wroom-1"
+			(property "ki_keywords" "esp32-c5 esp32-c5-wroom-1u"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -514,7 +514,7 @@
 					)
 				)
 			)
-			(symbol "ESP32-C5-WROOM-1_0_1"
+			(symbol "ESP32-C5-WROOM-1U_0_1"
 				(rectangle
 					(start -27.94 22.86)
 					(end 27.94 -20.32)
@@ -527,7 +527,65 @@
 					)
 				)
 			)
-			(symbol "ESP32-C5-WROOM-1_1_1"
+			(symbol "ESP32-C5-WROOM-1U_1_0"
+				(pin passive line
+					(at 0 -22.86 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -30.48 17.78 0)
+					(length 2.54)
+					(name "ANT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "31"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -22.86 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "32"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "ESP32-C5-WROOM-1U_1_1"
 				(text "ESP32-C5-WROOM-1"
 					(at 0.254 0 0)
 					(effects
@@ -1244,7 +1302,7 @@
 		)
 		(uuid "16d8979d-ebd8-5c24-bc33-cda13c6186d4")
 	)
-	(text "U2 ESP32-C5-WROOM-1-N4"
+	(text "U2 ESP32-C5-WROOM-1U-N4"
 		(exclude_from_sim no)
 		(at 20.32 24.13 0)
 		(effects
@@ -1254,7 +1312,30 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a3c432b6-7061-5717-aafd-d8df63a9375f")
+		(uuid "25f4311d-0be2-58e7-99a1-bb2ac3313f97")
+	)
+	(text "C5 GPIO2 wakes the sleeping P4 on GPIO0 (an LP pin), active high"
+		(exclude_from_sim no)
+		(at 231.02 117.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5204b275-92fc-5378-a64b-b189f4c13dbd")
+	)
+	(text "Host wake-up"
+		(exclude_from_sim no)
+		(at 231.02 114.93 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a8fc3dc-ed9b-5d81-96c3-0ce855b29f90")
 	)
 	(text "Strap footprints (all DNP: GPIO25 and MTDI float, as on the Espressif board) and test pads"
 		(exclude_from_sim no)
@@ -1268,6 +1349,17 @@
 		)
 		(uuid "c51da956-aa5f-50b8-852a-15b5baf896e3")
 	)
+	(text "pad nets from maratus-core-c5-pin-map.csv"
+		(exclude_from_sim no)
+		(at 20.32 26.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cb99944b-6bec-5722-b926-90f2202c24fd")
+	)
 	(text "series footprints (0R, tune on the prototype), 51k pull-ups at the module, DNP cap on CLK"
 		(exclude_from_sim no)
 		(at 203.9 26.67 0)
@@ -1278,17 +1370,6 @@
 			(justify left bottom)
 		)
 		(uuid "e93030d8-4aba-5c74-96c4-98dc8aaf68c3")
-	)
-	(text "pad nets from maratus-core-c5-pin-map.csv"
-		(exclude_from_sim no)
-		(at 20.32 26.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ed554273-614e-50cb-95d4-cf0cee2c19bb")
 	)
 	(no_connect
 		(at 104.14 71.12)
@@ -1317,6 +1398,10 @@
 	(no_connect
 		(at 43.18 60.96)
 		(uuid "a5ee5b39-834b-598a-8de4-5891b21d0a29")
+	)
+	(no_connect
+		(at 43.18 48.26)
+		(uuid "a9b8d210-fb34-5d9d-99e9-a0f350738e6b")
 	)
 	(no_connect
 		(at 104.14 78.74)
@@ -1542,6 +1627,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 135.89) (xy 233.68 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "575793e1-b66c-5425-80c6-28bb283434cd")
+	)
+	(wire
+		(pts
 			(xy 360.68 49.53) (xy 360.68 52.07)
 		)
 		(stroke
@@ -1739,6 +1834,16 @@
 			(type default)
 		)
 		(uuid "afe2f7c4-4654-51d2-a7e1-bdad0b458020")
+	)
+	(wire
+		(pts
+			(xy 233.68 143.51) (xy 233.68 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd6fffa6-67ae-5ffe-bb3c-659791af0fda")
 	)
 	(wire
 		(pts
@@ -2070,7 +2175,7 @@
 		)
 		(uuid "41a09873-fab3-52fa-816e-134c3da3a3a8")
 	)
-	(label "C5_TP_GPIO2"
+	(label "C5_WAKE_C5"
 		(at 175.26 127 270)
 		(effects
 			(font
@@ -2100,7 +2205,7 @@
 		)
 		(uuid "6080cb3c-27e0-5c2e-b632-df04a3139516")
 	)
-	(label "C5_TP_GPIO2"
+	(label "C5_WAKE_C5"
 		(at 40.64 53.34 180)
 		(effects
 			(font
@@ -2109,6 +2214,16 @@
 			(justify right)
 		)
 		(uuid "725a00de-ebe0-5e70-b6a5-055e923d24fe")
+	)
+	(label "C5_WAKE_C5"
+		(at 233.68 146.05 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "73c2b740-95d6-535b-bbc9-bca715aa4ef5")
 	)
 	(label "SDIO_CLK_C5"
 		(at 375.92 46.99 90)
@@ -2611,6 +2726,17 @@
 		)
 		(uuid "4e8d7387-9a7d-5ec3-921e-24615663420c")
 	)
+	(hierarchical_label "C5_WAKE"
+		(shape output)
+		(at 233.68 133.35 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5c54b6e9-eee6-5244-8c22-7eb53eeec34e")
+	)
 	(hierarchical_label "C5_BOOT"
 		(shape input)
 		(at 99.06 127 270)
@@ -2764,10 +2890,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4408b873-833b-4341-956e-4674560ff9eb")
+			(uuid "f016f115-c5b4-4a7e-a185-407ebacf65bc")
 		)
 		(pin "2"
-			(uuid "ca4ba879-1730-4aa6-bdd9-02d0b295eac3")
+			(uuid "158405f9-fbbb-43d1-8356-7cf357848f75")
 		)
 		(instances
 			(project "maratus-core"
@@ -2843,10 +2969,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4bbad694-a24b-4b9e-85c9-ed1c3e3c51dc")
+			(uuid "f2a1929a-714a-484f-8313-673e52c8bc44")
 		)
 		(pin "2"
-			(uuid "30b2bf14-1243-4d29-8085-f46d47361998")
+			(uuid "afe134a9-6747-4b0a-bb71-7fb2a23fe47b")
 		)
 		(instances
 			(project "maratus-core"
@@ -2933,10 +3059,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "462ee4b8-9f00-422f-948f-97a971f3dbfd")
+			(uuid "b7f33e00-48aa-4b71-a60a-a2851c3b8ab6")
 		)
 		(pin "2"
-			(uuid "07ecbaba-73f2-4965-8bb5-d6d5c8d2fd37")
+			(uuid "f9f57c3a-f25d-428b-aeb7-cfd86c21dba4")
 		)
 		(instances
 			(project "maratus-core"
@@ -3023,10 +3149,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4f16a1b2-fab4-4a1d-9135-ce000326854d")
+			(uuid "adb60126-1169-496f-a339-5c4968ec17c2")
 		)
 		(pin "2"
-			(uuid "4ee9b283-b5a3-46d7-b6b1-0a7e36abf3a4")
+			(uuid "54328de5-325a-4399-bf91-8b5994a5e100")
 		)
 		(instances
 			(project "maratus-core"
@@ -3113,10 +3239,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "be44587d-7f00-442d-acc2-af82d0c61f39")
+			(uuid "f0082976-179c-4109-a1c8-3bab985a8615")
 		)
 		(pin "2"
-			(uuid "ec1257aa-b00d-42e4-9ba2-e46e4ee00224")
+			(uuid "f05fde11-df72-451a-8858-a740fb7a31dd")
 		)
 		(instances
 			(project "maratus-core"
@@ -3203,10 +3329,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f546a34-000a-44b6-b4bf-e41b9731d904")
+			(uuid "00edca7f-202e-4a42-8d8a-90cbf4c60f2a")
 		)
 		(pin "2"
-			(uuid "7b55cbf2-628b-45dd-b2d6-00a45c366ec3")
+			(uuid "a9687ec1-1b5d-4042-8974-a93219eb7f8c")
 		)
 		(instances
 			(project "maratus-core"
@@ -3283,7 +3409,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "06d9351f-c8b8-45e2-a592-a2304f3bd1c3")
+			(uuid "d123588c-42b5-4771-8468-a90927817ff0")
 		)
 		(instances
 			(project "maratus-core"
@@ -3359,15 +3485,105 @@
 			)
 		)
 		(pin "1"
-			(uuid "90e516ad-aacd-4f39-ae52-0fa338c56689")
+			(uuid "a64a4ab3-4ba1-44c7-8281-77f1abd3e57b")
 		)
 		(pin "2"
-			(uuid "af92dc9d-2c4a-4129-8b60-b489d0e6e971")
+			(uuid "16447101-f211-4d88-9b6a-bb8889bde95a")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/2add9e00-5f08-52c2-8390-91d0fa06100d"
 					(reference "R314")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 233.68 139.7 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "32b2b51d-fa74-5652-b79a-0d888d6afe80")
+		(property "Reference" "R317"
+			(at 235.712 139.7 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0R"
+			(at 233.68 139.7 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 231.902 139.7 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 233.68 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Source" "ESP-Hosted docs/features/power-save.md: coprocessor output to an RTC-capable host input, default level high; its Kconfig default for the P4X-C5 board on SDIO is C5 GPIO2. Same link on the P4X-C5 EV board p.5 (C5_IO2, P4_WAKEUP_C5) and on ESP32-P4-NANO-WIFI6-DB.pdf p.3 (R18, 0R). No pull fitted, as on both: MTMS is listed as a strapping pin (C5 datasheet p.16 Table 4-1)"
+			(at 233.68 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "65fae4cb-7b46-4fb4-a309-b50661b0f5dc")
+		)
+		(pin "2"
+			(uuid "a7e1f4bc-4e5f-4d5c-bb59-b55ce01792c7")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/2add9e00-5f08-52c2-8390-91d0fa06100d"
+					(reference "R317")
 					(unit 1)
 				)
 			)
@@ -3449,10 +3665,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "87d02af4-1e40-41a3-962d-f12e4969a9c8")
+			(uuid "3cd3a5fa-64fa-40ee-a0a2-036f817f944d")
 		)
 		(pin "2"
-			(uuid "8c99c732-3285-407d-9faa-cf89cb18d6e8")
+			(uuid "f6526809-7ce3-4ecd-9fc9-20b90d35e24f")
 		)
 		(instances
 			(project "maratus-core"
@@ -3539,10 +3755,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "69f53758-f84e-4091-9bc5-5ad96c37f909")
+			(uuid "a82588bc-ed60-4a89-b150-b981852b6273")
 		)
 		(pin "2"
-			(uuid "d2529e51-9065-4ad4-9385-7a67e7b407bc")
+			(uuid "1eeb875f-5a85-4807-aa9e-b85ded12e825")
 		)
 		(instances
 			(project "maratus-core"
@@ -3629,10 +3845,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "58903e30-8a1e-4a89-b0fe-83453f5876ce")
+			(uuid "da4e4149-b967-41f5-a418-ba27f33fa331")
 		)
 		(pin "2"
-			(uuid "4cf999d7-7ed0-4182-8bb5-e931371658c1")
+			(uuid "4949cfb3-5558-4b90-bfae-31f624aa3ade")
 		)
 		(instances
 			(project "maratus-core"
@@ -3709,7 +3925,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "db0a9b6c-bac3-469b-be6f-d620683eeee4")
+			(uuid "074ee87a-4a81-4508-80fc-98d35b65715a")
 		)
 		(instances
 			(project "maratus-core"
@@ -3785,7 +4001,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3465edb7-e16c-4edc-97f0-ed248ad9564b")
+			(uuid "2ee69628-f3fb-4aa5-81f3-006282154829")
 		)
 		(instances
 			(project "maratus-core"
@@ -3862,7 +4078,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "de1c8afd-6b7d-4771-aadb-0ddc9a650a8f")
+			(uuid "05a53a19-2759-44cf-9862-1c19a535c5d8")
 		)
 		(instances
 			(project "maratus-core"
@@ -3894,7 +4110,7 @@
 				)
 			)
 		)
-		(property "Value" "C5_TP_GPIO2"
+		(property "Value" "C5_WAKE_C5"
 			(at 175.26 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3938,7 +4154,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "7347a5c3-b83d-4a58-87f3-8ae2cb421cdf")
+			(uuid "43950b3d-6c27-402b-9a5c-8bb8c85af864")
 		)
 		(instances
 			(project "maratus-core"
@@ -4025,10 +4241,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "fc7a26be-f406-464e-bc81-60cde4911ff1")
+			(uuid "4aa20b6c-7fe0-4332-913b-39df29cdcf77")
 		)
 		(pin "2"
-			(uuid "da4e8dfe-3607-4fab-8d6b-ca6c9accab06")
+			(uuid "096736bf-79e1-438b-b6c8-b07c81adbc5e")
 		)
 		(instances
 			(project "maratus-core"
@@ -4105,7 +4321,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e186a40e-9f48-4662-a458-66286bd65922")
+			(uuid "02907fd3-a803-48e4-b582-47c6bf9cd3c8")
 		)
 		(instances
 			(project "maratus-core"
@@ -4192,10 +4408,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "0f5a9f0a-58c7-4bc1-a922-7a127b846813")
+			(uuid "dc4a247e-b735-442f-855d-f17627a77562")
 		)
 		(pin "2"
-			(uuid "e364437e-bfeb-4f82-bca3-9072d3872064")
+			(uuid "ef140fac-6eca-43e1-ada4-6876d187b2f5")
 		)
 		(instances
 			(project "maratus-core"
@@ -4272,7 +4488,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f1263ecd-a732-43ef-a0ea-07ec9d7fe682")
+			(uuid "6516f95b-2ba9-4bd4-8b88-8611fab0b650")
 		)
 		(instances
 			(project "maratus-core"
@@ -4359,10 +4575,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "df65e9e4-c8fa-4457-aa2b-a00d912c249a")
+			(uuid "88d6c74f-99cd-4a47-9a71-b2f5eb12280a")
 		)
 		(pin "2"
-			(uuid "c0188cc2-caed-472e-8109-df388a4154fc")
+			(uuid "bf45102f-2728-4555-8246-d7385d96a06b")
 		)
 		(instances
 			(project "maratus-core"
@@ -4438,7 +4654,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "adb0b4b3-575b-4e49-9d9f-6884f9ba581d")
+			(uuid "5dfa6c7c-35b4-477e-bffb-7cf9e6d8777e")
 		)
 		(instances
 			(project "maratus-core"
@@ -4450,7 +4666,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PCM_Espressif:ESP32-C5-WROOM-1")
+		(lib_id "PCM_Espressif:ESP32-C5-WROOM-1U")
 		(at 73.66 66.04 0)
 		(unit 1)
 		(body_style 1)
@@ -4470,7 +4686,7 @@
 				)
 			)
 		)
-		(property "Value" "ESP32-C5-WROOM-1-N4"
+		(property "Value" "ESP32-C5-WROOM-1U-N4"
 			(at 45.466 41.656 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4480,7 +4696,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PCM_Espressif:ESP32-C5-WROOM-1"
+		(property "Footprint" "PCM_Espressif:ESP32-C5-WROOM-1U"
 			(at 93.218 88.011 0)
 			(hide yes)
 			(show_name no)
@@ -4502,8 +4718,8 @@
 				)
 			)
 		)
-		(property "Description" "ESP32-C5-WROOM-1"
-			(at 73.914 71.374 0)
+		(property "Description" "ESP32-C5-WROOM-1U"
+			(at 73.66 71.374 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4524,92 +4740,101 @@
 				)
 			)
 		)
+		(pin "30"
+			(uuid "491a9d67-320b-4ce7-9452-5f6f9ef31356")
+		)
+		(pin "31"
+			(uuid "0483af99-7eb3-4d79-b63c-55e28b2ea877")
+		)
+		(pin "32"
+			(uuid "13646546-3cfb-4062-b1ea-7c010596ca3c")
+		)
 		(pin "1"
-			(uuid "2f628be3-544d-4586-b0f5-2e68a2cee244")
+			(uuid "74d80aea-0f2a-4b86-8bc2-29b5cf1b7e8e")
 		)
 		(pin "2"
-			(uuid "a5dd4e58-9955-43b9-bf1b-dc838491a34f")
+			(uuid "0a16c90c-92eb-4d0d-a65f-801a5c84745a")
 		)
 		(pin "3"
-			(uuid "696c2762-e0b4-49c2-9da0-fabb42280aee")
+			(uuid "18a78c58-7a1c-41c8-8525-6cd4d746b565")
 		)
 		(pin "4"
-			(uuid "ed83f6a9-54a0-48e9-9ac3-73c01fa0b08b")
+			(uuid "089c2e7e-f4e6-4503-a507-28fd3860fbb6")
 		)
 		(pin "5"
-			(uuid "42f483f4-b269-4090-abfb-4a2291184c93")
+			(uuid "be81a351-a109-4a79-8dcd-8169ea5f2f79")
 		)
 		(pin "6"
-			(uuid "b37c0250-d1b3-4320-bb79-7a69e566017c")
+			(uuid "ab722a4d-194b-4e4c-a72e-abf4af1730c1")
 		)
 		(pin "7"
-			(uuid "a9bcfc20-c3f3-466c-a782-77544e104383")
+			(uuid "98e5f78e-ae2d-4cda-a4b9-240921c84e5b")
 		)
 		(pin "8"
-			(uuid "9fdf538f-4e9c-4930-9038-aab02f05309b")
+			(uuid "8fbf1e19-0ec6-4da1-a958-b78f5bea5125")
 		)
 		(pin "9"
-			(uuid "19ade4c6-6867-4b23-bec2-95aeef1a32e9")
+			(uuid "76e61bd2-a144-48da-8634-41a8a1583e48")
 		)
 		(pin "10"
-			(uuid "b451da24-d28d-47fb-a0f5-48f8c9bf6616")
+			(uuid "c70413b2-aabf-41ee-af63-53f622074a70")
 		)
 		(pin "11"
-			(uuid "7455f3d0-c455-4999-8c74-9bd208f758b0")
+			(uuid "07b783f2-3bf5-4b06-af24-f0c64fbf9ad7")
 		)
 		(pin "12"
-			(uuid "279ac054-05dc-43b0-8a42-22f2fa4142eb")
+			(uuid "8a750088-e805-4947-bcf6-df6cd25321b4")
 		)
 		(pin "13"
-			(uuid "44fcce60-ec43-4286-871b-9e6c4cfac9f2")
+			(uuid "9940c244-7226-414e-b210-796b714c309f")
 		)
 		(pin "14"
-			(uuid "b2040757-08f7-4bf5-b7b6-c191f4b63921")
+			(uuid "2846ac49-bf19-4b6e-a2c5-5046312d5979")
 		)
 		(pin "15"
-			(uuid "fe1ca685-bae1-4891-bdf7-ad19251e230d")
+			(uuid "c1b568bc-0224-482b-925c-73a4cf372012")
 		)
 		(pin "16"
-			(uuid "10f825e7-a2fd-4c09-a37f-62178e4fa436")
+			(uuid "b2c089e2-99c7-4d2f-8613-35785294a49b")
 		)
 		(pin "17"
-			(uuid "74088e4c-f868-4d76-b979-ce1ef30bb54e")
+			(uuid "121814c0-1d86-43ba-89dc-fdaa87c1c092")
 		)
 		(pin "18"
-			(uuid "e23abc62-ac4f-4db9-af5e-57d1c0c20926")
+			(uuid "69ecdf9a-acae-4d00-a539-415df19e1dbd")
 		)
 		(pin "19"
-			(uuid "36d482d8-4bf9-491d-9637-3d5cd8916b95")
+			(uuid "90902305-17a9-44c5-9105-19ada8ccd434")
 		)
 		(pin "20"
-			(uuid "8ba3050d-f7f4-4362-93f4-64a750c06640")
+			(uuid "e1b0fda5-5c12-4885-9bd6-2886926d373d")
 		)
 		(pin "21"
-			(uuid "c9f49c0c-2f78-4684-8f74-17ec2aae5646")
+			(uuid "9ec14b43-270c-4997-94d9-371c8dbfbb99")
 		)
 		(pin "22"
-			(uuid "7bce1323-a5e6-48d6-b4f8-8d0c451b77ee")
+			(uuid "e17fb7c8-3cfb-4f6e-8459-7f06c3440ce4")
 		)
 		(pin "23"
-			(uuid "f6129498-7c9f-4b12-a9c8-7135cac20ddc")
+			(uuid "2449d8d0-455a-4cb1-914c-8fa45dbce8ef")
 		)
 		(pin "24"
-			(uuid "ab6f0e67-a075-44eb-a244-a7b06538cbe0")
+			(uuid "d0b5133f-69b7-491b-9fda-a21f5ea20e48")
 		)
 		(pin "25"
-			(uuid "d8aaab9e-6ba2-4de3-b176-0b02bff72f0e")
+			(uuid "197708ac-8b76-4cde-9853-6d413b83f4f1")
 		)
 		(pin "26"
-			(uuid "5c3bb3d1-2e27-4f7a-bd2f-fe82720cf29a")
+			(uuid "c6a68ee2-dd05-4a34-a509-16327e28cdcf")
 		)
 		(pin "27"
-			(uuid "5dae485b-403f-41b4-b319-aa1385541281")
+			(uuid "e75f1329-0b0f-4b59-96fd-fc71b4f253ad")
 		)
 		(pin "28"
-			(uuid "cf0dd025-176c-4f23-a9b2-dfccb56089b0")
+			(uuid "b3e494ae-225e-430c-a464-5c787373c082")
 		)
 		(pin "29"
-			(uuid "c1ab4959-f5fa-4e8d-b47c-7b0244c2360f")
+			(uuid "8be976d9-5f1d-4cd5-8675-2f645dca0052")
 		)
 		(instances
 			(project "maratus-core"
@@ -4696,10 +4921,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "18fe10d9-6950-4448-b13f-0d9395dffd12")
+			(uuid "338b5f6b-ac93-4d03-b6dd-63f93c7ac2b1")
 		)
 		(pin "2"
-			(uuid "8678b951-2120-4fdb-9815-3d49253eadeb")
+			(uuid "68dd2675-c760-4b8e-a9c9-10beb336908f")
 		)
 		(instances
 			(project "maratus-core"
@@ -4775,7 +5000,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "787a409a-ee6d-43b7-bd6c-f5c11f74493b")
+			(uuid "3d1184fc-1d6e-46c6-ba33-e11c752f2a4a")
 		)
 		(instances
 			(project "maratus-core"
@@ -4862,10 +5087,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "b95a514a-c8da-4e81-a15b-b40ae67200fe")
+			(uuid "3051a64d-e8d5-4138-9624-1caf53de739f")
 		)
 		(pin "2"
-			(uuid "3778bdc3-c907-4381-b840-1cfb67554b22")
+			(uuid "70d42628-d8cb-4c02-af7a-7c8addc945a2")
 		)
 		(instances
 			(project "maratus-core"
@@ -4941,7 +5166,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c1756030-7f80-4b70-a4ae-8c11c25ce033")
+			(uuid "c7446f43-b687-4635-8ed5-bb257cdc582d")
 		)
 		(instances
 			(project "maratus-core"
@@ -5028,10 +5253,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "bccc1e1e-31ed-430a-b69b-124939fb51c2")
+			(uuid "cf1b80f7-cb8f-4cba-99e9-4c767d02fbe9")
 		)
 		(pin "2"
-			(uuid "02024d8c-0bbb-432f-b6f9-9854ae76dd3b")
+			(uuid "2db99533-9f7d-4261-8f2d-d1ca7e627e8e")
 		)
 		(instances
 			(project "maratus-core"
@@ -5118,10 +5343,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "8eed87a8-11c4-4b8e-912d-511da0795ed0")
+			(uuid "cb9a4c2b-50bc-4e03-b40c-222400b375f5")
 		)
 		(pin "2"
-			(uuid "f36af15d-f943-4897-844f-2b472a997304")
+			(uuid "5c6dfff8-ce3d-46f5-86e2-024000648aa4")
 		)
 		(instances
 			(project "maratus-core"
@@ -5197,7 +5422,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5d65b2eb-0d0f-43c6-b601-5aab98bf500f")
+			(uuid "aa36e1d6-efe3-4d76-9c8a-e912f456bf03")
 		)
 		(instances
 			(project "maratus-core"
@@ -5284,10 +5509,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c761d0c9-d36e-4cc1-a361-c6aeb111b556")
+			(uuid "3b2a7041-e2e7-4794-9a9b-ef31514d95a0")
 		)
 		(pin "2"
-			(uuid "44d201d8-9c6a-4d5f-8ad7-a2566d3aa1df")
+			(uuid "125972a6-c3b5-4d48-8056-ce5145b716eb")
 		)
 		(instances
 			(project "maratus-core"
@@ -5363,7 +5588,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "75e4d327-c3ac-463d-84c6-561e61150f9b")
+			(uuid "aa9a0388-9b9c-4daa-b507-6d1aef0b4c77")
 		)
 		(instances
 			(project "maratus-core"
@@ -5440,7 +5665,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "52101633-4daa-4340-bbfe-951021d81ad8")
+			(uuid "9154a26f-c802-4c14-82d0-6ad34423df73")
 		)
 		(instances
 			(project "maratus-core"
@@ -5527,10 +5752,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7bdd45ec-5c0d-485f-9714-6199dc4d3fdb")
+			(uuid "54ceddf1-e49d-4976-bad3-e4205082e1a8")
 		)
 		(pin "2"
-			(uuid "c918c690-abfe-49f0-a5e1-24aa0b5716b9")
+			(uuid "15888dae-da23-4147-b942-844ccf5364e1")
 		)
 		(instances
 			(project "maratus-core"
@@ -5607,7 +5832,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b0c00203-6d0e-49fc-b765-da64073a24ac")
+			(uuid "f26ad232-6df9-4bd6-a641-ef559f85bab3")
 		)
 		(instances
 			(project "maratus-core"
@@ -5694,10 +5919,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2e9c91dc-009a-46d9-97d7-4b62887025ad")
+			(uuid "1bae1548-040b-45fd-9291-807d104f9125")
 		)
 		(pin "2"
-			(uuid "5e6f6054-7b65-4549-a035-6de94baf24f9")
+			(uuid "c1bfa7a6-718c-4dec-aaff-1f8fc0e6acfe")
 		)
 		(instances
 			(project "maratus-core"

@@ -7,9 +7,9 @@ Sources (page numbers are PDF page indexes):
 - docs/reference/ST7701S_SPEC_V1.4.pdf: p.37 IM pins, p.37-38 unused SPI pins, p.39 LANSEL.
 - docs/reference/tps61169.pdf.
 - docs/reference/mbr0540.pdf.
-Contact side: the LCD tail has its contacts on the display-front side, the touch tail on the back (p.4), so with
-both tails folded onto the rear face J2 is top-contact and J4 bottom-contact. Both connectors sit with the
-opening towards the bottom edge, which reverses the pin order (see the src notes). Confirm on a sample.
+Contact side: the LCD tail has its contacts on the display-front side, the touch tail on the back (p.4). The
+board's part side faces the display and both tails fold back behind the panel, so J2 is bottom-contact and
+J4 top-contact, both with the opening towards the bottom edge, pins in panel order. Confirm on a sample.
 """
 from sch import NC, C0603, C0805
 
@@ -17,20 +17,20 @@ R0603 = "Resistor_SMD:R_0603_1608Metric"
 
 
 def build(s):
-    s.group("LCD FFC J2 - 24-pin 0.5 mm, MIPI DSI mode, 2 data lanes; connector pad n carries panel pin 25 - n")
-    panel = {1: "LED_K", 2: "LED_A", 3: NC, 4: "3V3", 5: "GND", 6: "DSI_D0_N", 7: "DSI_D0_P", 8: "GND",
-             9: "DSI_CLK_N", 10: "DSI_CLK_P", 11: "GND", 12: "DSI_D1_N", 13: "DSI_D1_P", 14: "GND", 15: "LCD_RST_N",
-             16: "LCD_CSX", 17: "GND", 18: "GND", 19: NC, 20: "LCD_TE", 21: "LCD_IM0", 22: "GND", 23: "GND",
-             24: "LCD_LANSEL"}
-    s.part("J2", "Connector_Generic_MountingPin:Conn_01x24_MountingPin", "F32Q-1A7H1-11024",
-           {**{str(25 - pin): net for pin, net in panel.items()}, "MP": "GND"},
-           "Connector_FFC-FPC:Amphenol_F32Q-1A7x1-11024_1x24-1MP_P0.5mm_Horizontal",
-           src="NHD-4.0-480480AF-MSXP-CTP.pdf p.5 panel pins: 1 LED_K, 2 LED_A, 3 NC, 4 VDD, 5 GND, 6 DN0, 7 DP0, 8 GND, "
-               "9 CN, 10 CP, 11 GND, 12 DN1, 13 DP1, 14 GND, 15 RESETX, 16 CSX, 17 SCL, 18 SDA, 19 SDO, 20 TE_L, "
-               "21 IM0, 22 IM1, 23 IM3, 24 LANSEL. Reversed onto the connector: with the tail folded onto the rear "
-               "face panel pin 1 is on the right (p.4 back view) and the footprint's pad 1 is on the left when the "
-               "opening faces the bottom edge. Amphenol F32Q-1A7H1-11024 (top contact, DigiKey listing read "
-               "2026-11-10) because KiCad has its footprint; its drawing is not in docs/reference")
+    s.group("LCD FFC J2 - 24-pin 0.5 mm, MIPI DSI mode, 2 data lanes")
+    s.part("J2", "Connector_Generic_MountingPin:Conn_01x24_MountingPin", "FH12-24S-0.5SH(55)", {
+        "1": "LED_K", "2": "LED_A", "3": NC, "4": "3V3", "5": "GND",
+        "6": "DSI_D0_N", "7": "DSI_D0_P", "8": "GND", "9": "DSI_CLK_N", "10": "DSI_CLK_P", "11": "GND",
+        "12": "DSI_D1_N", "13": "DSI_D1_P", "14": "GND", "15": "LCD_RST_N",
+        "16": "LCD_CSX", "17": "GND", "18": "GND", "19": NC, "20": "LCD_TE",
+        "21": "LCD_IM0", "22": "GND", "23": "GND", "24": "LCD_LANSEL", "MP": "GND",
+    }, "Connector_FFC-FPC:Hirose_FH12-24S-0.5SH_1x24-1MP_P0.50mm_Horizontal",
+        src="NHD-4.0-480480AF-MSXP-CTP.pdf p.5: 1 LED_K, 2 LED_A, 3 NC, 4 VDD, 5 GND, 6 DN0, 7 DP0, 8 GND, 9 CN, "
+            "10 CP, 11 GND, 12 DN1, 13 DP1, 14 GND, 15 RESETX, 16 CSX, 17 SCL, 18 SDA, 19 SDO, 20 TE_L, 21 IM0, "
+            "22 IM1, 23 IM3, 24 LANSEL. Pad n = panel pin n: the parts face the display, the tail folds back "
+            "behind the panel, and seen from the front both pin 1 and the footprint's pad 1 are on the left. "
+            "Hirose FH12-24S-0.5SH(55): bottom contact, 0.30 mm FFC, active (DigiKey listing read 2026-11-10; "
+            "Hirose's datasheet is not in docs/reference)")
     s.R("10k", "3V3", "LCD_IM0", src="NHD p.5 interface table: MIPI DSI is IM0 = 1, IM1 = 0, IM3 = 0 or 1")
     s.R("10k", "3V3", "LCD_LANSEL", src="ST7701S_SPEC_V1.4.pdf p.39: LANSEL high = 2 data lanes, low = 1")
     s.R("10k", "3V3", "LCD_CSX", src="ST7701S_SPEC_V1.4.pdf p.37-38: unused CSX and SCL to VDDI or DGND, SDA to "
@@ -40,16 +40,13 @@ def build(s):
     s.C("100nF", "3V3")
     s.tp("LCD_TE")
 
-    s.group("Touch FFC J4 - 6-pin 1.0 mm, FT5426G, I2C address 0x38; connector pad n carries touch pin 7 - n")
-    touch = {1: "3V3", 2: "GND", 3: "I2C0_SCL", 4: "I2C0_SDA", 5: "TP_INT", 6: "TP_RST_N"}
-    s.part("J4", "Connector_Generic_MountingPin:Conn_01x06_MountingPin", "TE 84952-6",
-           {**{str(7 - pin): net for pin, net in touch.items()}, "MP": "GND"},
-           "Connector_FFC-FPC:TE_84952-6_1x06-1MP_P1.0mm_Horizontal",
-           src="NHD-4.0-480480AF-MSXP-CTP.pdf p.5 touch pins: 1 VDD, 2 GND, 3 SCL, 4 SDA, 5 INT, 6 RST. Reversed onto "
-               "the connector (pad n = touch pin 7 - n) for the same reason as J2; p.4 back view shows pin 1 on the "
-               "right. TE 84952-6 instead of the Molex 52271-0679 named on p.5, because KiCad has its footprint: "
-               "6 positions, 1 mm, bottom contact, 0.3 mm FFC, active (te.com product page read 2026-11-10; TE "
-               "drawing not in docs/reference)")
+    s.group("Touch FFC J4 - 6-pin 1.0 mm, FT5426G, I2C address 0x38")
+    s.part("J4", "Connector_Generic_MountingPin:Conn_01x06_MountingPin", "TE 84953-6", {
+        "1": "3V3", "2": "GND", "3": "I2C0_SCL", "4": "I2C0_SDA", "5": "TP_INT", "6": "TP_RST_N", "MP": "GND",
+    }, "Connector_FFC-FPC:TE_84953-6_1x06-1MP_P1.0mm_Horizontal",
+        src="NHD-4.0-480480AF-MSXP-CTP.pdf p.5: 1 VDD, 2 GND, 3 SCL, 4 SDA, 5 INT, 6 RST; pad n = touch pin n, as "
+            "for J2. TE 84953-6: 6 positions, 1 mm, top contact, 0.3 mm FFC (te.com product page read 2026-11-10; "
+            "that page also says it is not currently available, so stock is unconfirmed)")
     s.R("4.7k", "3V3", "I2C0_SCL", src="NHD p.5: SCL and SDA require 4.7k pull-ups")
     s.R("4.7k", "3V3", "I2C0_SDA")
     s.R("10k", "3V3", "TP_RST_N", src="assumption: touch out of reset while the P4 pin floats")

@@ -107,6 +107,7 @@ def write():
     os.replace(tmp, OUT)  # atomic: a parallel reader never sees a half-written library
     PRETTY.mkdir(exist_ok=True)
     (PRETTY / f"{REAR_PADS}.kicad_mod").write_text(rear_pads())
+    (PRETTY / f"{SPRING_PIN}.kicad_mod").write_text(spring_pin())
     subprocess.run(["kicad-cli", "fp", "upgrade", "--force", str(PRETTY)], check=True, stdout=subprocess.DEVNULL)
 
 
@@ -131,3 +132,22 @@ def rear_pads():
             + '\t(attr smd exclude_from_pos_files exclude_from_bom)\n'
             '\t(fp_rect (start -11.41 -3) (end 11.41 3) (stroke (width 0.05) (type solid)) (fill no) '
             '(layer "F.CrtYd"))\n' + pads + ")\n")
+
+
+SPRING_PIN = "SpringPin_Harwin_P70-2300045R"
+
+
+def spring_pin():
+    """Harwin P70-2300045R, docs/reference/harwin_P70-2300045R.pdf (recommended PCB pad layout): 0.85 mm through
+    hole for the 0.7 mm peg, 1.8 mm solder pad. Body 1.5 mm, 6.2 mm free height."""
+    text = lambda prop, value, y, layer: (
+        f'\t(property "{prop}" "{value}" (at 0 {y:g} 0) (layer "{layer}") '
+        f'(effects (font (size 0.6 0.6) (thickness 0.1))))\n')
+    return (f'(footprint "{SPRING_PIN}" (version 20241229) (generator "maratus_tools") (layer "F.Cu")\n'
+            '\t(descr "Harwin P70-2300045R spring-loaded contact with peg, 6.2 mm free height, 4.9 mm working height. '
+            'Pad layout from the customer information sheet")\n'
+            + text("Reference", "REF**", -1.8, "F.Fab") + text("Value", SPRING_PIN, 1.8, "F.Fab")
+            + '\t(attr through_hole)\n'
+            '\t(fp_circle (center 0 0) (end 1.15 0) (stroke (width 0.05) (type solid)) (fill no) (layer "F.CrtYd"))\n'
+            '\t(fp_circle (center 0 0) (end 0.75 0) (stroke (width 0.1) (type solid)) (fill no) (layer "F.Fab"))\n'
+            '\t(pad "1" thru_hole circle (at 0 0) (size 1.8 1.8) (drill 0.85) (layers "*.Cu" "*.Mask"))\n)\n')

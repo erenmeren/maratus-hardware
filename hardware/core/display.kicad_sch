@@ -2218,7 +2218,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "24-pin 0.5 mm, MIPI DSI mode, 2 data lanes; connector pad n carries panel pin 25 - n"
+	(text "24-pin 0.5 mm, MIPI DSI mode, 2 data lanes"
 		(exclude_from_sim no)
 		(at 20.32 26.67 0)
 		(effects
@@ -2240,7 +2240,7 @@
 		)
 		(uuid "39aa7b0a-372c-5656-84e2-7ce82d3a49a6")
 	)
-	(text "6-pin 1.0 mm, FT5426G, I2C address 0x38; connector pad n carries touch pin 7 - n"
+	(text "6-pin 1.0 mm, FT5426G, I2C address 0x38"
 		(exclude_from_sim no)
 		(at 175.02 26.67 0)
 		(effects
@@ -2288,12 +2288,12 @@
 		(uuid "f3147552-88e4-5bb2-9ae8-faddc4fca2ef")
 	)
 	(no_connect
-		(at 38.1 50.8)
-		(uuid "52011f65-3385-5db0-8b39-224d72bdb950")
+		(at 38.1 43.18)
+		(uuid "aefce72c-f87f-531b-b2ae-6258a3f2bcea")
 	)
 	(no_connect
-		(at 38.1 91.44)
-		(uuid "9aabd4cd-e5f2-51e8-82f4-3946ce0f93f8")
+		(at 38.1 83.82)
+		(uuid "facdd60a-8aac-5a17-863b-d9c410454272")
 	)
 	(wire
 		(pts
@@ -2417,16 +2417,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 43.18) (xy 35.56 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f0a9fa4-f2a0-5dff-abfd-3d32cb9555a6")
-	)
-	(wire
-		(pts
 			(xy 190.5 43.18) (xy 187.96 43.18)
 		)
 		(stroke
@@ -2454,6 +2444,16 @@
 			(type default)
 		)
 		(uuid "2cbee41f-db5c-5f46-8fa7-e387d8bef6d9")
+	)
+	(wire
+		(pts
+			(xy 38.1 91.44) (xy 35.56 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f4cd692-cd78-502a-b054-c229bb6b9131")
 	)
 	(wire
 		(pts
@@ -2634,6 +2634,16 @@
 			(type default)
 		)
 		(uuid "7a891e48-4be3-55d6-82c1-79d03c5f7f34")
+	)
+	(wire
+		(pts
+			(xy 38.1 50.8) (xy 35.56 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b69a637-987a-5863-b168-6bf073a21953")
 	)
 	(wire
 		(pts
@@ -2947,16 +2957,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 83.82) (xy 35.56 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df306e55-892e-5b94-8aa7-989e9282927d")
-	)
-	(wire
-		(pts
 			(xy 132.08 156.21) (xy 132.08 158.75)
 		)
 		(stroke
@@ -3085,15 +3085,35 @@
 		)
 		(uuid "1ef6bced-f201-5a1a-a263-488f1f3cf666")
 	)
-	(label "LCD_IM0"
-		(at 35.56 45.72 180)
+	(label "LED_A"
+		(at 35.56 40.64 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "353812e9-2095-5ddb-9afe-a95e7b274945")
+		(uuid "38238d40-dbc2-538e-8c63-c3809bcd4ec6")
+	)
+	(label "LCD_CSX"
+		(at 35.56 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "41017bd2-4d8e-5d46-aa9a-afadef54cb6b")
+	)
+	(label "LCD_IM0"
+		(at 35.56 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "52a5e6c5-dfc4-55c2-beda-aeab40fd6ef8")
 	)
 	(label "LED_K"
 		(at 162.56 146.05 90)
@@ -3105,15 +3125,15 @@
 		)
 		(uuid "6244a358-6e2c-59ea-870c-c2587be1d7f5")
 	)
-	(label "LED_A"
-		(at 35.56 93.98 180)
+	(label "LCD_TE"
+		(at 35.56 86.36 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "633031d7-c684-5f22-9726-d8be72364b37")
+		(uuid "6843312a-ac7e-5af7-9dc1-896d8dd5cb75")
 	)
 	(label "BL_SW"
 		(at 78.74 156.21 270)
@@ -3125,16 +3145,6 @@
 		)
 		(uuid "6cb68cc8-e8fa-541d-a1bc-0364ec52ccd8")
 	)
-	(label "LCD_TE"
-		(at 35.56 48.26 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7aa854bd-3a3f-5505-8736-497c29d64964")
-	)
 	(label "LED_A"
 		(at 100.33 137.16 180)
 		(effects
@@ -3145,7 +3155,7 @@
 		)
 		(uuid "7c62989a-02ef-5855-86ef-31781f71f1a8")
 	)
-	(label "LCD_LANSEL"
+	(label "LED_K"
 		(at 35.56 38.1 180)
 		(effects
 			(font
@@ -3205,7 +3215,7 @@
 		)
 		(uuid "dc1b92eb-ff83-5e07-be9b-6dcdfff80149")
 	)
-	(label "LED_K"
+	(label "LCD_LANSEL"
 		(at 35.56 96.52 180)
 		(effects
 			(font
@@ -3224,16 +3234,6 @@
 			(justify left)
 		)
 		(uuid "e86cb32f-639a-5594-ae62-4f487b712add")
-	)
-	(label "LCD_CSX"
-		(at 35.56 58.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f19be203-3c16-556e-b42a-ff8392d3e920")
 	)
 	(global_label "3V3"
 		(shape passive)
@@ -3369,6 +3369,28 @@
 	)
 	(global_label "3V3"
 		(shape passive)
+		(at 35.56 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "353812e9-2095-5ddb-9afe-a95e7b274945")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 35.56 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape passive)
 		(at 35.56 142.24 180)
 		(effects
 			(font
@@ -3391,28 +3413,6 @@
 	)
 	(global_label "3V3"
 		(shape passive)
-		(at 187.96 50.8 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "45805e61-8c3c-5c1d-859f-2f78beb60b97")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 187.96 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "3V3"
-		(shape passive)
 		(at 210.82 39.37 90)
 		(effects
 			(font
@@ -3423,28 +3423,6 @@
 		(uuid "4b91063a-24de-5691-8670-d3b9d3083e92")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 210.82 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "3V3"
-		(shape passive)
-		(at 35.56 88.9 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "52a5e6c5-dfc4-55c2-beda-aeab40fd6ef8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 35.56 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3567,6 +3545,28 @@
 	)
 	(global_label "3V3"
 		(shape passive)
+		(at 187.96 38.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d445a5c1-1175-5799-b095-5c089d2fc385")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 187.96 38.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "3V3"
+		(shape passive)
 		(at 241.3 39.37 90)
 		(effects
 			(font
@@ -3589,27 +3589,27 @@
 	)
 	(hierarchical_label "TP_INT"
 		(shape output)
-		(at 187.96 40.64 180)
+		(at 187.96 48.26 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "1a977538-809b-56f2-bb0b-d8521b4ea065")
+		(uuid "10311c16-3617-5607-9e96-a5d66d11bcb1")
 	)
-	(hierarchical_label "DSI_CLK_N"
+	(hierarchical_label "TP_RST_N"
 		(shape input)
-		(at 35.56 76.2 180)
+		(at 187.96 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "41017bd2-4d8e-5d46-aa9a-afadef54cb6b")
+		(uuid "45805e61-8c3c-5c1d-859f-2f78beb60b97")
 	)
-	(hierarchical_label "DSI_D1_N"
+	(hierarchical_label "DSI_D1_P"
 		(shape input)
 		(at 35.56 68.58 180)
 		(effects
@@ -3653,7 +3653,7 @@
 		)
 		(uuid "5bf386bb-afb0-5421-8d1b-e2462619561a")
 	)
-	(hierarchical_label "LCD_RST_N"
+	(hierarchical_label "DSI_CLK_P"
 		(shape input)
 		(at 35.56 60.96 180)
 		(effects
@@ -3663,17 +3663,6 @@
 			(justify right)
 		)
 		(uuid "5d3cfd5a-950e-5858-92d8-60dbaf635962")
-	)
-	(hierarchical_label "DSI_D0_N"
-		(shape bidirectional)
-		(at 35.56 83.82 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6210d36e-e8cd-5faf-b72c-6d36652d389b")
 	)
 	(hierarchical_label "TP_INT"
 		(shape output)
@@ -3686,16 +3675,16 @@
 		)
 		(uuid "6c83af1a-5e47-526b-9b43-3c361de6a244")
 	)
-	(hierarchical_label "DSI_D0_P"
+	(hierarchical_label "DSI_D0_N"
 		(shape bidirectional)
-		(at 35.56 81.28 180)
+		(at 35.56 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "8674a0ee-b9b0-5375-9d08-55e6dc6fad69")
+		(uuid "72a78da4-2d92-53eb-8dcf-85c9d1055747")
 	)
 	(hierarchical_label "I2C0_SDA"
 		(shape bidirectional)
@@ -3707,6 +3696,17 @@
 			(justify right)
 		)
 		(uuid "a0f0e853-b2e9-5327-8505-4b526f56b4c1")
+	)
+	(hierarchical_label "DSI_D0_P"
+		(shape bidirectional)
+		(at 35.56 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a5fa7643-2ae3-5516-9431-4b6a406a11b0")
 	)
 	(hierarchical_label "LCD_BL_PWM"
 		(shape input)
@@ -3730,7 +3730,7 @@
 		)
 		(uuid "ad81c38d-1a0a-51f1-8b6e-0c6514a01638")
 	)
-	(hierarchical_label "DSI_D1_P"
+	(hierarchical_label "DSI_D1_N"
 		(shape input)
 		(at 35.56 66.04 180)
 		(effects
@@ -3741,7 +3741,7 @@
 		)
 		(uuid "bfe73ef7-77fc-5dcd-87e5-ec7d97f0444b")
 	)
-	(hierarchical_label "DSI_CLK_P"
+	(hierarchical_label "LCD_RST_N"
 		(shape input)
 		(at 35.56 73.66 180)
 		(effects
@@ -3752,18 +3752,7 @@
 		)
 		(uuid "c872b16f-ccee-56e1-87bc-2e419863a4c6")
 	)
-	(hierarchical_label "TP_RST_N"
-		(shape input)
-		(at 187.96 38.1 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d445a5c1-1175-5799-b095-5c089d2fc385")
-	)
-	(hierarchical_label "I2C0_SCL"
+	(hierarchical_label "I2C0_SDA"
 		(shape bidirectional)
 		(at 187.96 45.72 180)
 		(effects
@@ -3774,7 +3763,18 @@
 		)
 		(uuid "f01dbc7d-2923-57ed-a7c0-2012db399cd6")
 	)
-	(hierarchical_label "I2C0_SDA"
+	(hierarchical_label "DSI_CLK_N"
+		(shape input)
+		(at 35.56 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f19be203-3c16-556e-b42a-ff8392d3e920")
+	)
+	(hierarchical_label "I2C0_SCL"
 		(shape bidirectional)
 		(at 187.96 43.18 180)
 		(effects
@@ -3850,10 +3850,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "125bc066-207f-46c0-9202-8198344b9cd4")
+			(uuid "57a332be-1321-4109-8c8a-c71495765cf1")
 		)
 		(pin "2"
-			(uuid "5dece9d9-371d-4004-9759-0720b6844f5b")
+			(uuid "9377218d-c0ae-4f99-89ce-1eb54a58e428")
 		)
 		(instances
 			(project "maratus-core"
@@ -3940,10 +3940,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c906039-6c17-48dc-8d4b-0b67cf16b351")
+			(uuid "2ff907e1-b7ac-4f7b-bbf8-f05d35a7a338")
 		)
 		(pin "2"
-			(uuid "509904a0-a41c-4fb4-ace3-9d9535f2d470")
+			(uuid "040ddb9e-222b-4540-a029-94893c632a8c")
 		)
 		(instances
 			(project "maratus-core"
@@ -4030,10 +4030,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "6c80990c-35d0-4803-9a23-cef610e1d4e9")
+			(uuid "ed400300-d31a-4d32-b7e3-d60accfc1e84")
 		)
 		(pin "2"
-			(uuid "f7523f65-5f99-43e7-8a65-2adadd4aefa7")
+			(uuid "d51fd378-fa54-4945-b25f-9a2688c57344")
 		)
 		(instances
 			(project "maratus-core"
@@ -4120,10 +4120,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "196b8ea4-3c98-407e-95c8-53ea845a531b")
+			(uuid "7493999d-c5c0-48da-9bef-47765f5a9c6f")
 		)
 		(pin "2"
-			(uuid "4edb81a8-8439-4afb-b53d-4a47de8d7666")
+			(uuid "f30d98bb-6f5f-487d-a8f7-effc3cd84db0")
 		)
 		(instances
 			(project "maratus-core"
@@ -4200,7 +4200,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "9b1bead1-ab82-4be2-a835-3900dbd1970e")
+			(uuid "ea44f248-d4d3-40c0-845a-666815566fe7")
 		)
 		(instances
 			(project "maratus-core"
@@ -4277,7 +4277,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "230b2b21-64e2-4625-af83-c27ee7c7bb0c")
+			(uuid "02d8a0a2-8147-417a-8284-32e7ab8434a0")
 		)
 		(instances
 			(project "maratus-core"
@@ -4354,7 +4354,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c22380b2-81aa-45b6-bf68-64244eeba8ff")
+			(uuid "b8fc4ad4-235e-4c71-81ea-8169a3ecd18c")
 		)
 		(instances
 			(project "maratus-core"
@@ -4441,19 +4441,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "f8137ae7-d340-49c8-b33a-88a6e9e52cba")
+			(uuid "085a5b7c-67fd-4e7b-bb03-8185cfa710f1")
 		)
 		(pin "2"
-			(uuid "cd1b215e-ac3a-499e-bd4b-68ecc6b7f1f8")
+			(uuid "c50103b4-3269-4d4d-a0c8-6fab24ac2a82")
 		)
 		(pin "3"
-			(uuid "5312ec36-a1b7-47c0-adf0-04cf5cd426cb")
+			(uuid "4abfd30d-f661-4004-aeb7-b877d7c95699")
 		)
 		(pin "4"
-			(uuid "4441114b-024d-4f5f-9452-f8281f504e42")
+			(uuid "d41d260a-2447-4831-a3d9-dd9e7348ec6c")
 		)
 		(pin "5"
-			(uuid "adeaa8aa-229b-49b7-ae0f-8a99ab2b5133")
+			(uuid "4164cf9b-a1af-4ebe-9474-c0ee41eaf6a7")
 		)
 		(instances
 			(project "maratus-core"
@@ -4530,7 +4530,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c144572-0d17-445e-af65-8220adfcb002")
+			(uuid "249a4c5d-b3cf-4b7d-932d-7e315b43a11e")
 		)
 		(instances
 			(project "maratus-core"
@@ -4617,10 +4617,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "80121081-6a2c-486e-84a2-2922b7f81a26")
+			(uuid "a320d21b-e062-4d03-9757-67337d86ab87")
 		)
 		(pin "2"
-			(uuid "7b465833-e7b9-42c3-be0c-16534db4626d")
+			(uuid "0ba8c7b6-85b3-403b-ad84-5ba6e0f30afa")
 		)
 		(instances
 			(project "maratus-core"
@@ -4697,7 +4697,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "dde14582-78da-4872-9d9d-fcd5a701216b")
+			(uuid "96611c11-1124-43ea-b547-8245b37a64cb")
 		)
 		(instances
 			(project "maratus-core"
@@ -4774,7 +4774,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5f93be2e-de43-446a-8842-7746909eaef1")
+			(uuid "6f678fdf-79ae-4113-b985-90d6291b7f91")
 		)
 		(instances
 			(project "maratus-core"
@@ -4850,7 +4850,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "86c8f834-3ec8-466e-8400-fb4a917f1ff8")
+			(uuid "f9d9c856-e97e-4d60-a582-177b44c27273")
 		)
 		(instances
 			(project "maratus-core"
@@ -4937,10 +4937,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "8cb4bd68-64ef-4fcc-87df-135565122005")
+			(uuid "7e2e238c-81cb-4ef2-bfce-db252381da9f")
 		)
 		(pin "2"
-			(uuid "8ded47b4-04a0-4b66-985a-bb4ff564236f")
+			(uuid "6f4aa0e1-4b31-4c70-b628-82147c37df47")
 		)
 		(instances
 			(project "maratus-core"
@@ -5027,15 +5027,92 @@
 			)
 		)
 		(pin "1"
-			(uuid "7b0c7342-ce97-41bb-b080-ab2642fc6538")
+			(uuid "2e4f17fa-2178-466d-8081-a4677cd3a650")
 		)
 		(pin "2"
-			(uuid "5d8722e7-e819-405a-bbb5-c690cf871a67")
+			(uuid "900498c2-df67-4293-a749-6cc1dcee8639")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
 					(reference "R407")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 35.56 71.12 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4f5596b2-08a3-508e-a137-44d66c0a3467")
+		(property "Reference" "#PWR04005"
+			(at 35.56 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9caac691-0331-45aa-bf36-e9f7ebc60f38")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
+					(reference "#PWR04005")
 					(unit 1)
 				)
 			)
@@ -5062,7 +5139,7 @@
 				)
 			)
 		)
-		(property "Value" "F32Q-1A7H1-11024"
+		(property "Value" "FH12-24S-0.5SH(55)"
 			(at 44.45 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5072,7 +5149,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_FFC-FPC:Amphenol_F32Q-1A7x1-11024_1x24-1MP_P0.5mm_Horizontal"
+		(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-24S-0.5SH_1x24-1MP_P0.50mm_Horizontal"
 			(at 43.18 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -5105,7 +5182,7 @@
 				)
 			)
 		)
-		(property "Source" "NHD-4.0-480480AF-MSXP-CTP.pdf p.5 panel pins: 1 LED_K, 2 LED_A, 3 NC, 4 VDD, 5 GND, 6 DN0, 7 DP0, 8 GND, 9 CN, 10 CP, 11 GND, 12 DN1, 13 DP1, 14 GND, 15 RESETX, 16 CSX, 17 SCL, 18 SDA, 19 SDO, 20 TE_L, 21 IM0, 22 IM1, 23 IM3, 24 LANSEL. Reversed onto the connector: with the tail folded onto the rear face panel pin 1 is on the right (p.4 back view) and the footprint's pad 1 is on the left when the opening faces the bottom edge. Amphenol F32Q-1A7H1-11024 (top contact, DigiKey listing read 2026-11-10) because KiCad has its footprint; its drawing is not in docs/reference"
+		(property "Source" "NHD-4.0-480480AF-MSXP-CTP.pdf p.5: 1 LED_K, 2 LED_A, 3 NC, 4 VDD, 5 GND, 6 DN0, 7 DP0, 8 GND, 9 CN, 10 CP, 11 GND, 12 DN1, 13 DP1, 14 GND, 15 RESETX, 16 CSX, 17 SCL, 18 SDA, 19 SDO, 20 TE_L, 21 IM0, 22 IM1, 23 IM3, 24 LANSEL. Pad n = panel pin n: the parts face the display, the tail folds back behind the panel, and seen from the front both pin 1 and the footprint's pad 1 are on the left. Hirose FH12-24S-0.5SH(55): bottom contact, 0.30 mm FFC, active (DigiKey listing read 2026-11-10; Hirose's datasheet is not in docs/reference)"
 			(at 43.18 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -5117,79 +5194,79 @@
 			)
 		)
 		(pin "1"
-			(uuid "d5373a8f-6e28-4d44-9433-0a0121860d52")
+			(uuid "a71ebc80-ee81-47cc-bc8c-26b46c238cfb")
 		)
 		(pin "2"
-			(uuid "23bec8fd-0d44-4985-a408-243eec2f7b8e")
+			(uuid "c569a648-c92c-4a1c-ba35-1c2287686373")
 		)
 		(pin "3"
-			(uuid "20d4522b-249f-4083-8d9c-cdbbe8ad80f4")
+			(uuid "a039638e-e78d-4a65-b65b-b76d597e9868")
 		)
 		(pin "4"
-			(uuid "e37846c7-21aa-4d5a-9809-7d4481242a37")
+			(uuid "0a2892ed-9e82-45a7-b887-a0c2fd2ec1ba")
 		)
 		(pin "5"
-			(uuid "bfce2ee5-ccb0-4a01-bced-d8952a7f14a8")
+			(uuid "f7dda822-d5ed-43ea-917a-77391004ddcf")
 		)
 		(pin "6"
-			(uuid "58868618-80b3-4778-9e16-be268e764f7b")
+			(uuid "0f034cff-31d6-47b1-8c21-094800f2c553")
 		)
 		(pin "7"
-			(uuid "c50771c0-fc68-45ed-8944-dd87e2d3540e")
+			(uuid "b20485fa-2d51-4dfc-a1bb-f7e1ade4790e")
 		)
 		(pin "8"
-			(uuid "d6802ed7-5440-40f7-a119-bba4fb756092")
+			(uuid "72cf434c-c63e-4ab1-be3f-aa932486fb4c")
 		)
 		(pin "9"
-			(uuid "33e29719-8593-4e56-a534-0787a880c7d6")
+			(uuid "36e024a7-f3d6-415f-97c2-247ac65ff7f3")
 		)
 		(pin "10"
-			(uuid "6c5112a3-c5de-4147-bce4-45fcb278dc6c")
+			(uuid "f2e0a5b7-1a04-4ed7-b868-35759d2fa513")
 		)
 		(pin "11"
-			(uuid "94bc6b66-4df7-4568-98f0-8b25c64dbe02")
+			(uuid "02b9f7fd-9f81-43cc-8208-5d6df12efc9b")
 		)
 		(pin "12"
-			(uuid "b4b6d022-c850-4b3a-b863-7d3484d2a059")
+			(uuid "fb59cc61-f7f3-4aae-b574-db977e21eb2e")
 		)
 		(pin "13"
-			(uuid "b148939e-f141-4d80-b69c-90f230f00552")
+			(uuid "a390e408-ce9c-4c56-9a84-9beae9aad2be")
 		)
 		(pin "14"
-			(uuid "94bb8520-b504-48ed-a084-fa47a016cd0b")
+			(uuid "44e18dcd-fc9d-4b14-ab47-4fe358ca26ca")
 		)
 		(pin "15"
-			(uuid "cba1b0a8-36f7-4b80-981e-f7a827def3b6")
+			(uuid "d7478fe1-9ede-4873-b83f-30eb3fb91539")
 		)
 		(pin "16"
-			(uuid "465889df-1e55-41a7-af1b-df21fdeb4cae")
+			(uuid "fc99f214-77cf-447c-9945-a862d4e6d8cf")
 		)
 		(pin "17"
-			(uuid "b1db697b-f330-4d3b-9c98-ea960bd9afb1")
+			(uuid "c7f73b15-9330-492f-bdec-8fc921a08a35")
 		)
 		(pin "18"
-			(uuid "45b897ff-779a-475c-9112-a32b06ea909c")
+			(uuid "1c70efd7-a3dc-4f9c-bfd8-740ae2f9854c")
 		)
 		(pin "19"
-			(uuid "d45576c7-a623-4da4-8dc3-8004136715e4")
+			(uuid "e1e9ce96-6f1a-4c45-b00d-1c354b1836c1")
 		)
 		(pin "20"
-			(uuid "101f2ed8-277b-4cda-9262-240788c2c3fd")
+			(uuid "863c3555-f1f2-487f-942b-b1d19e778e80")
 		)
 		(pin "21"
-			(uuid "7815da5b-1396-48d1-b282-a1c1d2025bf8")
+			(uuid "91db220e-a519-4488-ae93-45867dc26e09")
 		)
 		(pin "22"
-			(uuid "c28d94eb-c0f8-4341-8bbc-332b949c4cd6")
+			(uuid "41c931a8-165d-40de-8c46-94a187aad48d")
 		)
 		(pin "23"
-			(uuid "36c3b8f5-acf6-42fb-8335-5a59cbe1423f")
+			(uuid "8ad1396e-8703-4c00-b446-57f029dc2706")
 		)
 		(pin "24"
-			(uuid "8329ab50-fa34-4a8f-9656-4808a50f180c")
+			(uuid "e20063f7-ad50-4373-810b-0cbbb1cdf3bc")
 		)
 		(pin "MP"
-			(uuid "aa8646ca-2366-469e-ac7a-59aa424b8eca")
+			(uuid "cfcd7bd7-8f88-49f1-acec-1541c1fa8cf2")
 		)
 		(instances
 			(project "maratus-core"
@@ -5276,10 +5353,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2f1095ae-5641-4ff0-9f93-affc0d4dbc0a")
+			(uuid "14dc3840-c5d5-45e0-b374-0bfc19c1a0bf")
 		)
 		(pin "2"
-			(uuid "1ef0c2a3-9ce8-4084-ae27-a5c6b6dc121a")
+			(uuid "8af6b252-31bb-404d-8a9a-83f455eb239f")
 		)
 		(instances
 			(project "maratus-core"
@@ -5366,92 +5443,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "ffe30797-56ae-46c8-b421-428cc21c85a6")
+			(uuid "52351faf-c4c5-424b-a82a-3e9936aa6155")
 		)
 		(pin "2"
-			(uuid "76fee600-32f7-4bca-834e-0e48b679c08b")
+			(uuid "8ef0f4d8-6c44-432c-a365-0ccb87fcf9f3")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
 					(reference "R404")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 35.56 71.12 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "5ae54b14-6dd9-599f-9001-00e5f6528540")
-		(property "Reference" "#PWR04003"
-			(at 35.56 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 35.56 71.12 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "72698e29-8b45-42ab-a072-e0eae5027ca4")
-		)
-		(instances
-			(project "maratus-core"
-				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04003")
 					(unit 1)
 				)
 			)
@@ -5523,7 +5523,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e4871483-265d-4e47-aef1-c9a15a709681")
+			(uuid "38d5b163-23f9-4717-8901-c82aa05414f7")
 		)
 		(instances
 			(project "maratus-core"
@@ -5600,7 +5600,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5619be67-1a4c-484e-96a7-b08ddad5205c")
+			(uuid "5377a77c-3e46-4a88-9bb9-b8abda148644")
 		)
 		(instances
 			(project "maratus-core"
@@ -5687,10 +5687,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d5627b70-5220-4923-97ce-300143228662")
+			(uuid "81fa1c00-825a-43f2-a797-bc3d06736774")
 		)
 		(pin "2"
-			(uuid "423430fb-d13f-4516-87bd-dce71921cb22")
+			(uuid "2e7318fe-26c5-46ef-859e-7781d35d790f")
 		)
 		(instances
 			(project "maratus-core"
@@ -5703,7 +5703,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 35.56 78.74 270)
+		(at 35.56 55.88 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5711,9 +5711,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "72cdda1e-1031-5291-b212-5d025904dc3f")
-		(property "Reference" "#PWR04002"
-			(at 35.56 78.74 0)
+		(uuid "6be41a5a-42cb-5424-8d44-81f86c85ce95")
+		(property "Reference" "#PWR04007"
+			(at 35.56 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5724,7 +5724,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 35.56 78.74 0)
+			(at 35.56 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5734,7 +5734,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 35.56 78.74 0)
+			(at 35.56 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5745,7 +5745,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 78.74 0)
+			(at 35.56 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5756,7 +5756,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 78.74 0)
+			(at 35.56 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5767,12 +5767,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "4099d56a-a3d0-4c9d-b8ff-4f1cf83e52b0")
+			(uuid "406f91e2-4960-404e-83ca-98d6c91a1d40")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04002")
+					(reference "#PWR04007")
 					(unit 1)
 				)
 			)
@@ -5854,10 +5854,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "cc4a39df-22c8-47e4-9162-4ffe355b8a3c")
+			(uuid "3027864b-d4c6-46d6-8aee-aa9a4c1b6e1d")
 		)
 		(pin "2"
-			(uuid "3d4db3e0-7573-4be8-9880-371942b4065f")
+			(uuid "4f4b7705-2091-450c-bff4-007ac6183b4f")
 		)
 		(instances
 			(project "maratus-core"
@@ -5933,7 +5933,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "17ea40e1-a096-49da-b2ca-8fa7744b3128")
+			(uuid "ae8beae8-8a06-4454-a538-0a4a946316fb")
 		)
 		(instances
 			(project "maratus-core"
@@ -5946,7 +5946,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 187.96 48.26 270)
+		(at 187.96 40.64 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5954,9 +5954,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "7e711371-53ac-572c-a98a-e54c71367f41")
+		(uuid "8663c47d-34c3-535e-b173-0131a09c5326")
 		(property "Reference" "#PWR04012"
-			(at 187.96 48.26 0)
+			(at 187.96 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5967,7 +5967,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 187.96 48.26 0)
+			(at 187.96 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5977,7 +5977,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 48.26 0)
+			(at 187.96 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5988,7 +5988,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 48.26 0)
+			(at 187.96 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5999,7 +5999,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 187.96 48.26 0)
+			(at 187.96 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6010,89 +6010,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "13d219a0-a4e0-4bcb-a202-cbf0cb5db16d")
+			(uuid "00aafbd6-fd34-495e-9347-852e773e4243")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
 					(reference "#PWR04012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 35.56 43.18 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "84fc14b8-51d2-502b-8397-a421d75f7b78")
-		(property "Reference" "#PWR04007"
-			(at 35.56 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 35.56 43.18 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1b00f52e-28cf-4e34-9116-bd21e5c7a6f6")
-		)
-		(instances
-			(project "maratus-core"
-				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04007")
 					(unit 1)
 				)
 			)
@@ -6174,10 +6097,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "711a3e38-3687-4204-b5bd-76de87c5e613")
+			(uuid "618592cf-d91a-4da0-b6be-14ab29d6303c")
 		)
 		(pin "2"
-			(uuid "448e0d2d-57ce-4319-b520-01c3e61e7745")
+			(uuid "3c9fca57-abb7-45ec-ab85-eadb59de2db9")
 		)
 		(instances
 			(project "maratus-core"
@@ -6264,15 +6187,92 @@
 			)
 		)
 		(pin "1"
-			(uuid "6359b31d-ef9e-4c86-b89d-9f8390dcfcae")
+			(uuid "125333d7-1e63-4b6e-94a8-8e41d86f0331")
 		)
 		(pin "2"
-			(uuid "c3aa40ee-a1bc-4878-800e-3789e3c591cc")
+			(uuid "4ddb499c-e8ba-4900-870d-a1a66aad00c7")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
 					(reference "R408")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 35.56 93.98 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e625da4-6ac5-550d-a8cb-191f8c095b29")
+		(property "Reference" "#PWR04001"
+			(at 35.56 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f7422c70-18f1-410f-8138-5784c78d0f6c")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
+					(reference "#PWR04001")
 					(unit 1)
 				)
 			)
@@ -6354,10 +6354,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "dea1f5aa-f4b5-442f-9fa8-19482b77e284")
+			(uuid "ce9520bb-c82f-427f-9de0-7e56132160d1")
 		)
 		(pin "2"
-			(uuid "358f6773-6c21-4560-bfe2-0fc1603b74a3")
+			(uuid "64ba07c8-8ace-419d-b6ac-8444c4bebcd3")
 		)
 		(instances
 			(project "maratus-core"
@@ -6370,7 +6370,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 35.56 55.88 270)
+		(at 35.56 48.26 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6378,9 +6378,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "941e8e74-6b1e-5090-9be7-f030e124ee22")
-		(property "Reference" "#PWR04005"
-			(at 35.56 55.88 0)
+		(uuid "964c9297-660d-5ffc-ae1c-71283ed2ea42")
+		(property "Reference" "#PWR04008"
+			(at 35.56 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6391,7 +6391,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 35.56 55.88 0)
+			(at 35.56 48.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6401,7 +6401,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 35.56 55.88 0)
+			(at 35.56 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6412,7 +6412,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 55.88 0)
+			(at 35.56 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6423,7 +6423,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 55.88 0)
+			(at 35.56 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6434,89 +6434,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f0b43e1f-1aea-4156-b8a7-0f4b827c1419")
+			(uuid "8ba28e33-8678-4668-acea-2a974df57c4c")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04005")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 35.56 86.36 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "afceee74-a388-57e8-bc4a-a25b58a3eae0")
-		(property "Reference" "#PWR04001"
-			(at 35.56 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 35.56 86.36 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "81009138-1e38-42c2-b68d-2d4a4d3cfdc4")
-		)
-		(instances
-			(project "maratus-core"
-				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04001")
+					(reference "#PWR04008")
 					(unit 1)
 				)
 			)
@@ -6598,92 +6521,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "8211bf59-a1e0-4876-b009-f122ada1892c")
+			(uuid "9a9f4abc-942c-4b75-a174-6c71ca0cfe7a")
 		)
 		(pin "2"
-			(uuid "2dafe865-3efc-443b-a44b-d1675d6959f9")
+			(uuid "b44ab85d-e764-43f9-ab05-8434d28a30f5")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
 					(reference "R402")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 35.56 40.64 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "db253317-576f-5f6f-b12c-5527a52fd9ff")
-		(property "Reference" "#PWR04008"
-			(at 35.56 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 35.56 40.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "479f34b6-7953-46d3-a9c6-e851f6eb4bd8")
-		)
-		(instances
-			(project "maratus-core"
-				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04008")
 					(unit 1)
 				)
 			)
@@ -6765,15 +6611,246 @@
 			)
 		)
 		(pin "1"
-			(uuid "090603b7-7a65-41b7-8ba8-f942f26366d1")
+			(uuid "cc571f29-4592-40a0-a982-03ebf3e59b46")
 		)
 		(pin "2"
-			(uuid "a28e95ee-3873-4dd6-ae51-787d4d48edfe")
+			(uuid "c494128f-f7bf-41eb-a7ae-41af17d86c7b")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
 					(reference "C404")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 35.56 91.44 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e3d7f4b7-5194-542c-a86c-3393b4aceb4e")
+		(property "Reference" "#PWR04002"
+			(at 35.56 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 91.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "116470b3-9a6b-42af-bab1-47f56de73877")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
+					(reference "#PWR04002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 35.56 78.74 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e4053573-e27b-562d-82b3-56ce3fadf4b9")
+		(property "Reference" "#PWR04004"
+			(at 35.56 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "00e3703b-9664-4513-bfe5-e984017c04a2")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
+					(reference "#PWR04004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 35.56 63.5 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e6aa0904-48d1-5f5a-bb04-e6a49fddbc9b")
+		(property "Reference" "#PWR04006"
+			(at 35.56 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3bd8fef5-db17-4be0-8285-e5e6081d9bef")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
+					(reference "#PWR04006")
 					(unit 1)
 				)
 			)
@@ -6845,7 +6922,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "4537dd21-fffa-49f5-afb6-7904793dfe88")
+			(uuid "ad790d54-52b3-49fe-896f-ffbb5a06010b")
 		)
 		(instances
 			(project "maratus-core"
@@ -6922,7 +6999,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2ff21ea4-28f6-4fef-91ab-98e0ce94196e")
+			(uuid "c48bc47f-64f8-4a29-96ff-a70d0d648b21")
 		)
 		(instances
 			(project "maratus-core"
@@ -7009,10 +7086,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "f762669a-84d6-4f77-9b18-034f68174fd5")
+			(uuid "6b995081-b41b-40ab-ba32-7dd8727e9646")
 		)
 		(pin "2"
-			(uuid "0a182446-cd85-4d54-9c59-53d0c743fd03")
+			(uuid "0d0e80cb-1613-4423-bc33-698874f58692")
 		)
 		(instances
 			(project "maratus-core"
@@ -7088,7 +7165,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f75847d2-8a9e-4a1f-88b9-dd426925348c")
+			(uuid "8d69815a-d038-4a12-94d2-2f6d019022e1")
 		)
 		(instances
 			(project "maratus-core"
@@ -7120,7 +7197,7 @@
 				)
 			)
 		)
-		(property "Value" "TE 84952-6"
+		(property "Value" "TE 84953-6"
 			(at 196.85 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7130,7 +7207,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_FFC-FPC:TE_84952-6_1x06-1MP_P1.0mm_Horizontal"
+		(property "Footprint" "Connector_FFC-FPC:TE_84953-6_1x06-1MP_P1.0mm_Horizontal"
 			(at 195.58 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -7163,7 +7240,7 @@
 				)
 			)
 		)
-		(property "Source" "NHD-4.0-480480AF-MSXP-CTP.pdf p.5 touch pins: 1 VDD, 2 GND, 3 SCL, 4 SDA, 5 INT, 6 RST. Reversed onto the connector (pad n = touch pin 7 - n) for the same reason as J2; p.4 back view shows pin 1 on the right. TE 84952-6 instead of the Molex 52271-0679 named on p.5, because KiCad has its footprint: 6 positions, 1 mm, bottom contact, 0.3 mm FFC, active (te.com product page read 2026-11-10; TE drawing not in docs/reference)"
+		(property "Source" "NHD-4.0-480480AF-MSXP-CTP.pdf p.5: 1 VDD, 2 GND, 3 SCL, 4 SDA, 5 INT, 6 RST; pad n = touch pin n, as for J2. TE 84953-6: 6 positions, 1 mm, top contact, 0.3 mm FFC (te.com product page read 2026-11-10; that page also says it is not currently available, so stock is unconfirmed)"
 			(at 195.58 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -7175,25 +7252,25 @@
 			)
 		)
 		(pin "1"
-			(uuid "296df9f2-4fe5-4168-89e8-1f59e124218d")
+			(uuid "96438890-929c-43c1-ad7e-dffca5dbd07b")
 		)
 		(pin "2"
-			(uuid "3194adaa-6621-4027-8de2-6411b9a2d454")
+			(uuid "d9aeadc9-a232-4e94-97c7-d9b92ab0285e")
 		)
 		(pin "3"
-			(uuid "38c1d41c-796d-44e3-b814-21bb1d7f111f")
+			(uuid "7dd3e80e-71e6-405a-98ad-64f144a7d2bb")
 		)
 		(pin "4"
-			(uuid "0f134fee-8f0d-416c-8ce5-b33dec9530ae")
+			(uuid "2a0ecb61-9987-4585-a43a-0be168122cae")
 		)
 		(pin "5"
-			(uuid "caafabfd-5019-4340-9e91-1e17ab51d438")
+			(uuid "3712f3a2-6d14-489c-b275-db65900b3d74")
 		)
 		(pin "6"
-			(uuid "56bd009a-7a07-4352-b594-ac643e82b911")
+			(uuid "1f666388-2268-4ed2-9ccc-91a7e3c15bd1")
 		)
 		(pin "MP"
-			(uuid "f37650bb-13cf-44eb-837b-9fb5d2fb89dd")
+			(uuid "61a01d8c-a517-4826-af64-9a6104ebf056")
 		)
 		(instances
 			(project "maratus-core"
@@ -7269,10 +7346,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "40a1c20b-7ad6-4502-9adb-030361ee635f")
+			(uuid "421258c9-3390-4066-9c4c-f8e80a61a413")
 		)
 		(pin "2"
-			(uuid "2f86bc30-eb6c-4c35-95fd-6af53fcbeb86")
+			(uuid "a0e26bd4-7146-4a11-90be-080b92612f4b")
 		)
 		(instances
 			(project "maratus-core"
@@ -7285,7 +7362,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 35.56 63.5 270)
+		(at 35.56 81.28 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7293,9 +7370,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "fd1600c1-157b-50c4-8a33-931d29777b1e")
-		(property "Reference" "#PWR04004"
-			(at 35.56 63.5 0)
+		(uuid "fafee064-e29a-5e4b-8cd4-6649f60edf3a")
+		(property "Reference" "#PWR04003"
+			(at 35.56 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7306,7 +7383,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 35.56 63.5 0)
+			(at 35.56 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7316,7 +7393,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 35.56 63.5 0)
+			(at 35.56 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7327,7 +7404,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 63.5 0)
+			(at 35.56 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7338,7 +7415,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 63.5 0)
+			(at 35.56 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7349,89 +7426,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e09df5d7-a8d1-405a-82ec-def96ce2b9b1")
+			(uuid "bc26d115-7f6e-4dc1-90fc-1d3a9744c524")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04004")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 35.56 53.34 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fddfaffb-4435-54d2-903e-6aee7eab9742")
-		(property "Reference" "#PWR04006"
-			(at 35.56 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 35.56 53.34 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3f8bec0f-482e-41b2-a486-15fe4f549cab")
-		)
-		(instances
-			(project "maratus-core"
-				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8d2ad1ca-94f9-57e3-bed3-d89881155de6"
-					(reference "#PWR04006")
+					(reference "#PWR04003")
 					(unit 1)
 				)
 			)
@@ -7503,7 +7503,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a9895894-a6cf-4bd2-bde2-754fb84b13fd")
+			(uuid "388eaf8b-67cf-4bd3-a75f-3ada12293afd")
 		)
 		(instances
 			(project "maratus-core"

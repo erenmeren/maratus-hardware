@@ -32,8 +32,10 @@ def build(s):
     s.R("100k", "BUZZER_GATE", "GND", src="design-spec 9: 100k pull-down")
 
     s.group("Service switch - recessed, active low")
-    s.part("SW701", "Switch:SW_Push", "B3U-1000P", {"1": "SERVICE_BTN_N", "2": "GND"},
-           "Button_Switch_SMD:SW_SPST_B3U-1000P", src="b3u_omron.pdf p.1: SPST-NO, no ground terminal, 1.5 N, 10 uA at 1 V minimum load")
+    s.part("SW701", "Switch:SW_Push", "B3U-3000P", {"1": "SERVICE_BTN_N", "2": "GND"},
+           "Button_Switch_SMD:SW_SPST_B3U-3000P",
+           src="b3u_omron.pdf p.1, p.3: side-actuated (owner, 2026-11-14: pressed through a slot in the bottom wall), "
+               "SPST-NO, no ground terminal, 1.59 N, 10 uA at 1 V minimum load. Until then B3U-1000P on the back")
     s.R("10k", "3V3", "SERVICE_BTN_N", src="design-spec 9")
     s.C("100nF", "SERVICE_BTN_N", src="assumption: debounce")
 

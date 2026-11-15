@@ -2676,7 +2676,7 @@
 	)
 	(text "holds P4_EN low until 3V3 is above 2.93 V, then 200 ms"
 		(exclude_from_sim no)
-		(at 208.56 166.25 0)
+		(at 223.8 166.25 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2710,7 +2710,7 @@
 	)
 	(text "Reset supervisor U10"
 		(exclude_from_sim no)
-		(at 208.56 163.71 0)
+		(at 223.8 163.71 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -2810,7 +2810,7 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 181.61) (xy 264.16 179.07)
+			(xy 279.4 181.61) (xy 279.4 179.07)
 		)
 		(stroke
 			(width 0)
@@ -2830,7 +2830,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 180.34) (xy 213.36 177.8)
+			(xy 228.6 180.34) (xy 228.6 177.8)
 		)
 		(stroke
 			(width 0)
@@ -3120,7 +3120,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 196.85) (xy 248.92 199.39)
+			(xy 264.16 196.85) (xy 264.16 199.39)
 		)
 		(stroke
 			(width 0)
@@ -3440,7 +3440,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 195.58) (xy 213.36 198.12)
+			(xy 228.6 195.58) (xy 228.6 198.12)
 		)
 		(stroke
 			(width 0)
@@ -3650,6 +3650,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 172.72) (xy 200.66 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4b8f418-96a8-55e7-aba9-02ccb7957708")
+	)
+	(wire
+		(pts
 			(xy 279.4 123.19) (xy 279.4 120.65)
 		)
 		(stroke
@@ -3770,7 +3780,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 187.96) (xy 226.06 187.96)
+			(xy 238.76 187.96) (xy 241.3 187.96)
 		)
 		(stroke
 			(width 0)
@@ -3910,7 +3920,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 189.23) (xy 248.92 186.69)
+			(xy 264.16 189.23) (xy 264.16 186.69)
 		)
 		(stroke
 			(width 0)
@@ -3970,7 +3980,7 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 189.23) (xy 264.16 191.77)
+			(xy 279.4 189.23) (xy 279.4 191.77)
 		)
 		(stroke
 			(width 0)
@@ -4079,7 +4089,7 @@
 		(uuid "546887b0-260f-5940-8e99-46ffc1abbf57")
 	)
 	(label "SUP_RESET_N"
-		(at 248.92 186.69 90)
+		(at 264.16 186.69 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4129,7 +4139,7 @@
 		(uuid "6ccc6a61-6225-5f4f-be27-3820699543c1")
 	)
 	(label "SUP_RESET_N"
-		(at 226.06 187.96 0)
+		(at 241.3 187.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4684,7 +4694,7 @@
 	)
 	(global_label "3V3"
 		(shape passive)
-		(at 264.16 179.07 90)
+		(at 279.4 179.07 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4693,7 +4703,7 @@
 		)
 		(uuid "530a0352-a5d1-58d6-b336-c5928d1039a3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 264.16 179.07 0)
+			(at 279.4 179.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4882,7 +4892,7 @@
 	)
 	(global_label "3V3"
 		(shape passive)
-		(at 213.36 177.8 90)
+		(at 228.6 177.8 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4891,7 +4901,7 @@
 		)
 		(uuid "9a6b219c-a041-53ab-af60-5057dd2fdd74")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 213.36 177.8 0)
+			(at 228.6 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5388,7 +5398,7 @@
 	)
 	(hierarchical_label "P4_EN"
 		(shape output)
-		(at 248.92 199.39 270)
+		(at 264.16 199.39 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5462,10 +5472,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d2f9e82a-2c70-4583-9cd7-f4e62ec4aaca")
+			(uuid "c45de6a4-e0d0-4785-84b0-4fecb7b9fd74")
 		)
 		(pin "2"
-			(uuid "0e16ec67-ed93-4035-9e4a-11fa755972a9")
+			(uuid "cdda24e9-622d-454b-bb92-b9430280d0a2")
 		)
 		(instances
 			(project "maratus-core"
@@ -5542,7 +5552,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b120efb1-d87c-4b52-bdd6-f31868e04578")
+			(uuid "af5cab08-6c70-47aa-86b1-88a07edcd8ce")
 		)
 		(instances
 			(project "maratus-core"
@@ -5619,7 +5629,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d9cb5636-11ac-4663-9b52-36a27fbf6c85")
+			(uuid "32fb2631-5591-4175-a1c9-e1d7abfc52d5")
 		)
 		(instances
 			(project "maratus-core"
@@ -5696,7 +5706,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "13c995b1-1af3-487b-b730-5bcb35d34d44")
+			(uuid "4daf649d-3287-498a-b0ff-7cef02772ecb")
 		)
 		(instances
 			(project "maratus-core"
@@ -5783,10 +5793,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c660c232-ca25-4628-859a-adc6b250dc0f")
+			(uuid "86bda9de-f585-4837-ae53-520c7fe037a5")
 		)
 		(pin "2"
-			(uuid "2f43d8fc-efbc-431c-9065-a32375cf7d70")
+			(uuid "14a059ea-bde5-4eae-9297-57a777277ce1")
 		)
 		(instances
 			(project "maratus-core"
@@ -5873,55 +5883,55 @@
 			)
 		)
 		(pin "A1"
-			(uuid "4f4fb98a-7db5-450d-82b1-c75fc995446c")
+			(uuid "15707bbe-c293-4f95-8376-606dfa551bb9")
 		)
 		(pin "A4"
-			(uuid "0b3e3b43-cf9a-4518-83fc-53b51aabe2a8")
+			(uuid "fcc55b91-da4f-4b53-8810-f7554e38220b")
 		)
 		(pin "A5"
-			(uuid "cc526ee1-98f7-4969-9caf-424fcef9748f")
+			(uuid "d0f27917-32c3-4ccf-8f41-479565b894f2")
 		)
 		(pin "A6"
-			(uuid "3f4d94fa-69d0-4abe-b620-fe8ad4474c7b")
+			(uuid "ac259b18-b375-4f38-ba2b-4e38ec4c4dcf")
 		)
 		(pin "A7"
-			(uuid "2d365e14-3524-4fc5-aedd-9008bf093f62")
+			(uuid "8c91d7ac-f015-4630-864e-9b80d86a8461")
 		)
 		(pin "A8"
-			(uuid "7ebf5f3f-c1f8-4584-8015-25890bfec420")
+			(uuid "97aebb5c-48bc-45a3-a219-ac65c95715f5")
 		)
 		(pin "A9"
-			(uuid "7da51945-e64b-4c1b-b461-707ff3f25e07")
+			(uuid "bc6ed395-17ba-40fb-9c44-9300b8d28f48")
 		)
 		(pin "A12"
-			(uuid "dfb776ad-dd08-4b58-8d3d-681fbf1c9a48")
+			(uuid "f7e0dbba-e185-4a4d-ba39-6af001fa3eaf")
 		)
 		(pin "B1"
-			(uuid "188c1495-6b9c-4390-8896-cda7b5ba2d4e")
+			(uuid "f76ed461-4310-4e3c-a1ce-80fc7bfd2966")
 		)
 		(pin "B4"
-			(uuid "c84d9841-1788-436d-8b43-6d788e05e410")
+			(uuid "62defe83-cb42-46ec-b1b5-78df7dc21ea2")
 		)
 		(pin "B5"
-			(uuid "9b09453d-e88c-47cd-9c53-47702f26f289")
+			(uuid "615ad6f1-f960-4b9a-ad1e-af42f2f1b18e")
 		)
 		(pin "B6"
-			(uuid "ebc455cd-d332-4cf4-8b27-313c54276c33")
+			(uuid "cd59c6af-ff76-4bde-98ee-97c2512ece30")
 		)
 		(pin "B7"
-			(uuid "af2c8f81-7f5c-4db9-8bb0-1353829dbf2a")
+			(uuid "2ce7a358-4f6f-449a-88c6-9018840efc75")
 		)
 		(pin "B8"
-			(uuid "b27a148d-78e1-46c9-b99e-e6e2e542fcfe")
+			(uuid "7c84ad10-9bf9-48c7-aced-eec514d29652")
 		)
 		(pin "B9"
-			(uuid "b62d55ff-7b9a-4156-8e3e-8b0d1734b3f2")
+			(uuid "a9a62d18-52b6-4aad-811d-3249ca02f975")
 		)
 		(pin "B12"
-			(uuid "5eb38cca-0933-4a8d-b554-3b710607a5d4")
+			(uuid "6970f988-98a4-4751-a1d2-ff810f703053")
 		)
 		(pin "SH"
-			(uuid "cec2a74f-decb-4193-95b2-6ee27a60ed9c")
+			(uuid "aeae854a-cef3-43e0-841a-323ed77785da")
 		)
 		(instances
 			(project "maratus-core"
@@ -5998,7 +6008,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "0be30fb9-8df0-4f7d-8ce0-3d17346e33dc")
+			(uuid "0340b8b0-735d-42fe-af6f-f9f4db86d712")
 		)
 		(instances
 			(project "maratus-core"
@@ -6075,7 +6085,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "7b29c48a-282b-4fb6-97c2-9ac15cd0081d")
+			(uuid "fa0bf984-4092-4c1c-acc0-5073d37ff310")
 		)
 		(instances
 			(project "maratus-core"
@@ -6162,40 +6172,40 @@
 			)
 		)
 		(pin "1"
-			(uuid "60ab5537-43b9-4a91-93fa-85c3a679132c")
+			(uuid "a9291f49-ab86-4ba7-a2e7-41744f4ded2b")
 		)
 		(pin "2"
-			(uuid "e8f9ee9c-a4af-4189-b95a-528931bc70ee")
+			(uuid "f68bda96-54b5-425e-8430-0cfe0e14ea26")
 		)
 		(pin "3"
-			(uuid "5428ceeb-138b-46d3-851c-bbee7101726b")
+			(uuid "34642417-0a92-41be-9a4d-42fde21aa041")
 		)
 		(pin "4"
-			(uuid "459b2618-7e3a-4327-9ba1-cf0af234bec6")
+			(uuid "a8e54933-d351-44a4-aed9-3b82d54ee732")
 		)
 		(pin "5"
-			(uuid "9dbfc969-8d2e-4e4b-90a7-42aafb4a2ae5")
+			(uuid "eb6dfe13-a001-49cd-95ec-9846cd41bf85")
 		)
 		(pin "6"
-			(uuid "e87c5a34-bd0a-4ce7-a054-6d1c746ddd4f")
+			(uuid "e0ddea22-d954-4fad-a32e-f45500364d9c")
 		)
 		(pin "7"
-			(uuid "cf1dd705-b0c6-4d8b-a393-8afbb753e44c")
+			(uuid "a77918c4-3252-48b7-a11e-300aa3d235be")
 		)
 		(pin "8"
-			(uuid "e73bbc5d-412c-4210-b9fc-3a0f32fbf9f6")
+			(uuid "b8f94ea8-7599-4936-8a0d-ac4ce9e4c9ea")
 		)
 		(pin "9"
-			(uuid "1f0702f1-5090-4f08-8e4f-d6c820566761")
+			(uuid "3c2a49ec-7db1-4c8b-bf09-42b22bed63f7")
 		)
 		(pin "10"
-			(uuid "e58c593c-bd24-4518-a7f3-8b7139f78abd")
+			(uuid "f34cd904-7884-426f-b50d-f7aaf00b3d23")
 		)
 		(pin "11"
-			(uuid "972887b3-643b-4bd5-a927-930313090d54")
+			(uuid "b6628184-9f52-4836-aece-7dd8329637a2")
 		)
 		(pin "12"
-			(uuid "44aa2460-4ac6-4dfa-bd30-3e74aaed33a9")
+			(uuid "99d21e3c-5bf7-4af1-bcdc-e8ba69ab2982")
 		)
 		(instances
 			(project "maratus-core"
@@ -6282,10 +6292,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a35fb7d-276b-4b51-8f6f-d9b367a3d196")
+			(uuid "3b4d6dda-b085-4fb2-8d96-3f6849dc46a9")
 		)
 		(pin "2"
-			(uuid "52a8fd3f-5c29-4ea1-be89-ac13e45422dc")
+			(uuid "923dc511-f971-412b-b1dc-93443a42af4c")
 		)
 		(instances
 			(project "maratus-core"
@@ -6361,7 +6371,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5cf4a317-b5a0-48fe-a0da-bfe54d2701f6")
+			(uuid "ff8b018e-427a-4422-8329-c5bb885e4ea4")
 		)
 		(instances
 			(project "maratus-core"
@@ -6438,7 +6448,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f55e680c-ce48-46ab-a11a-f5c3ec64f913")
+			(uuid "117ea83f-b787-4e35-9122-6c9219b2ec86")
 		)
 		(instances
 			(project "maratus-core"
@@ -6451,7 +6461,7 @@
 	)
 	(symbol
 		(lib_id "Power_Supervisor:TPS3839DBZ")
-		(at 213.36 187.96 0)
+		(at 228.6 187.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6461,7 +6471,7 @@
 		(dnp no)
 		(uuid "20da60e6-9ae4-5e16-acef-a619f4b4f223")
 		(property "Reference" "U10"
-			(at 215.9 179.07 0)
+			(at 231.14 179.07 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6471,7 +6481,7 @@
 			)
 		)
 		(property "Value" "TPS3839K33DBZ"
-			(at 215.9 181.61 0)
+			(at 231.14 181.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6481,7 +6491,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 213.36 187.96 0)
+			(at 228.6 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6492,7 +6502,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/sbvs193d/sbvs193d.pdf"
-			(at 213.36 187.96 0)
+			(at 228.6 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6503,7 +6513,7 @@
 			)
 		)
 		(property "Description" "150-nA, Ultralow Power, Supply Voltage Monitor, SOT-23"
-			(at 213.36 187.96 0)
+			(at 228.6 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6514,7 +6524,7 @@
 			)
 		)
 		(property "Source" "tps3839.pdf p.1 (push-pull, 200 ms), p.4 (K33 = 2.93 V)"
-			(at 213.36 187.96 0)
+			(at 228.6 187.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6525,13 +6535,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "c2d7c1cf-1eaf-4c60-b465-5a5ee82238e1")
+			(uuid "7192b3f6-8dcb-4086-87b8-60758933426a")
 		)
 		(pin "2"
-			(uuid "b58fe163-6bb6-404f-8cfb-ba70306addf6")
+			(uuid "572f7b17-6490-457a-9afe-c928cbdbf9a1")
 		)
 		(pin "3"
-			(uuid "a17a337f-5eef-43d1-8ede-5d8625ccf100")
+			(uuid "b95b0034-edce-4528-91ee-003d1d0c4fd0")
 		)
 		(instances
 			(project "maratus-core"
@@ -6608,7 +6618,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a6710f1c-4cac-4151-8d71-1fc859d12b60")
+			(uuid "fd36cbc9-934e-4d17-bb8a-c78ea3eabcbc")
 		)
 		(instances
 			(project "maratus-core"
@@ -6695,10 +6705,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5c2e43d1-fee0-4272-aabb-5ccd1f814524")
+			(uuid "e950c099-0ec4-4781-98ea-47e9b3be68b9")
 		)
 		(pin "2"
-			(uuid "b538cfd5-5893-48d8-8a0b-271c80556516")
+			(uuid "0637a583-a899-4521-aea6-ed592ae52539")
 		)
 		(instances
 			(project "maratus-core"
@@ -6775,7 +6785,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "1f59f15f-a740-43d9-aedd-c9ad27eea0a6")
+			(uuid "252117ef-9c0e-497a-98dd-92b896258268")
 		)
 		(instances
 			(project "maratus-core"
@@ -6862,10 +6872,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "bd7c82ec-b922-4cf4-81fc-4adfa97c0833")
+			(uuid "ba752ae0-e370-4bf9-8581-06a08e13ceda")
 		)
 		(pin "2"
-			(uuid "bc85067b-5116-4ec3-be7d-843e7ae2c974")
+			(uuid "27be8bbe-2cd2-4730-9c33-24379e381d94")
 		)
 		(instances
 			(project "maratus-core"
@@ -6941,10 +6951,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "9fa4450f-e89c-40fa-adf3-a2807e314416")
+			(uuid "cc95814f-e814-41b5-a325-3550dd679ce9")
 		)
 		(pin "2"
-			(uuid "9fff03b2-9d94-4fdb-9ea9-8130b8f65ab1")
+			(uuid "2bc626dc-466b-4768-bc55-4e97ff0717b4")
 		)
 		(instances
 			(project "maratus-core"
@@ -7021,12 +7031,89 @@
 			)
 		)
 		(pin "1"
-			(uuid "a3be0193-bf3c-4c3b-816d-1c6e500d3cbc")
+			(uuid "36eb54a0-a821-48ec-bebd-55325be6ac4a")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
 					(reference "#PWR01002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 200.66 175.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "33ab1427-2f04-5bdb-bbb1-2e12f545b05d")
+		(property "Reference" "#PWR01035"
+			(at 200.66 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 200.66 179.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 200.66 175.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b84b2ca0-14e9-4a46-87d6-e6af80e91aa9")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
+					(reference "#PWR01035")
 					(unit 1)
 				)
 			)
@@ -7097,10 +7184,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5230d48f-0ef7-4e9c-b49d-d916fa91630d")
+			(uuid "dcdb769e-4d1d-44b1-b79f-a1f4a001324a")
 		)
 		(pin "2"
-			(uuid "0cb278ec-f4f9-4cfb-9c23-b447de634c3a")
+			(uuid "19820c2a-f344-4095-a929-7e0506eb62b5")
 		)
 		(instances
 			(project "maratus-core"
@@ -7187,10 +7274,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7c6710ba-a495-418e-a71e-bda8370b88b7")
+			(uuid "b432207d-2007-4b20-8832-dec3cd51ebb9")
 		)
 		(pin "2"
-			(uuid "835bb7e8-0c5f-4a90-a62d-37affa78a814")
+			(uuid "cff11eff-fd7a-4c03-85a8-889a48715388")
 		)
 		(instances
 			(project "maratus-core"
@@ -7203,7 +7290,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 264.16 185.42 0)
+		(at 279.4 185.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7213,7 +7300,7 @@
 		(dnp no)
 		(uuid "441e6ec2-f70c-57c9-b14a-8c9d6f5ed88c")
 		(property "Reference" "C115"
-			(at 264.795 182.88 0)
+			(at 280.035 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7223,7 +7310,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 264.795 187.96 0)
+			(at 280.035 187.96 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7233,7 +7320,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 265.1252 189.23 0)
+			(at 280.3652 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7244,7 +7331,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 264.16 185.42 0)
+			(at 279.4 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7255,7 +7342,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 264.16 185.42 0)
+			(at 279.4 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7266,10 +7353,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "365174f7-7c37-4d1b-98d2-8f2f5a281856")
+			(uuid "aba7fe09-94b1-4bb5-97d5-975be7155209")
 		)
 		(pin "2"
-			(uuid "542fe4e3-73e4-49d1-9970-012392175b43")
+			(uuid "74bce836-20be-4c8f-84dd-cb63ef8edf5b")
 		)
 		(instances
 			(project "maratus-core"
@@ -7356,10 +7443,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "84b9fe42-d4ec-4d53-b8d6-f4f9cdad009b")
+			(uuid "d79d3676-1de4-49cc-b92a-cd8def6a3f11")
 		)
 		(pin "2"
-			(uuid "b0b990a4-6451-4563-a294-f7b1bdbe5611")
+			(uuid "cb76a1aa-8494-4f0e-be44-b6b262fbfd58")
 		)
 		(instances
 			(project "maratus-core"
@@ -7435,7 +7522,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a723c1fe-6bbe-4bdf-b61b-9c0e72bf601d")
+			(uuid "858d0435-1737-4a9c-824e-837d7287859d")
 		)
 		(instances
 			(project "maratus-core"
@@ -7512,7 +7599,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "637d3041-1d33-463c-aa07-d3b7c3aaf2ff")
+			(uuid "67510aaa-fad2-4505-b6b5-9800e0640de7")
 		)
 		(instances
 			(project "maratus-core"
@@ -7588,10 +7675,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5926665a-c88a-4fb1-bcfe-2479d90a4ae0")
+			(uuid "dd26ef72-16f7-45ab-b0a4-34668712b70f")
 		)
 		(pin "2"
-			(uuid "f9ad6ede-5378-4a0c-b7bc-821b7b947e26")
+			(uuid "77b02730-40cf-4659-af4e-66e32a45b36a")
 		)
 		(instances
 			(project "maratus-core"
@@ -7668,7 +7755,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "fb7b5d4d-3d6a-4d3d-8f3b-24ebb6645716")
+			(uuid "bf9b0052-4a7a-438b-a307-abfcddf0c87e")
 		)
 		(instances
 			(project "maratus-core"
@@ -7755,10 +7842,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "64deee0e-085c-46ce-98a7-781411c933a1")
+			(uuid "1232118f-b214-4ed0-a8f1-99088b346c30")
 		)
 		(pin "2"
-			(uuid "ef9754a9-dd00-4d09-a584-12f0d830ea56")
+			(uuid "c18b846c-1405-4276-a3e8-7f05b1798a34")
 		)
 		(instances
 			(project "maratus-core"
@@ -7845,10 +7932,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "02d96710-797f-416a-a3b2-68fca3cb1bff")
+			(uuid "279d4aad-fe7a-4830-9bf9-fea769df0e46")
 		)
 		(pin "2"
-			(uuid "321d4205-c882-4808-99b0-7161025e040c")
+			(uuid "2fdbbfe8-8b9f-44fc-a910-73a8b2d65068")
 		)
 		(instances
 			(project "maratus-core"
@@ -7925,12 +8012,89 @@
 			)
 		)
 		(pin "1"
-			(uuid "117d16d9-a8fc-46e9-9991-9962b471a7f4")
+			(uuid "32e02c8f-d7e5-4359-80b3-00585d8cd34e")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
 					(reference "#PWR01016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 228.6 198.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "596f8e26-e2b3-5691-bd9b-c3cd916cd597")
+		(property "Reference" "#PWR01036"
+			(at 228.6 204.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 228.6 201.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 228.6 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7979c676-89f2-4f5b-b2cd-b9bcd40a8f7a")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
+					(reference "#PWR01036")
 					(unit 1)
 				)
 			)
@@ -8001,10 +8165,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "8800a29c-6f40-4612-abaa-b0a17fb516d0")
+			(uuid "e0ca752d-7ad7-4b6d-8e0f-457728b19972")
 		)
 		(pin "2"
-			(uuid "390a3392-8c03-4bf4-8d5e-cd374366694c")
+			(uuid "969624f2-5710-4aed-a3e5-3b5a629da483")
 		)
 		(instances
 			(project "maratus-core"
@@ -8081,7 +8245,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "7b689a1a-55c2-44a1-8d29-0227d2780a53")
+			(uuid "14e4882a-80b0-4788-bf1f-22a13b744678")
 		)
 		(instances
 			(project "maratus-core"
@@ -8158,7 +8322,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "fd42b36d-3482-43d0-acbc-5777fc3cac1f")
+			(uuid "7de4deaa-29a6-4002-964f-63c6e71e00c9")
 		)
 		(instances
 			(project "maratus-core"
@@ -8235,7 +8399,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "7f18bef3-3d1f-4669-b9d2-3169fd24c2b2")
+			(uuid "86f07fda-38f2-4940-89e9-7239bd92461e")
 		)
 		(instances
 			(project "maratus-core"
@@ -8311,10 +8475,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "80dad3e2-fd35-4a34-9779-910b590e3811")
+			(uuid "c3c7b60c-ebc8-4e5a-a47f-fd9e235a754b")
 		)
 		(pin "2"
-			(uuid "513bd60e-864f-4eba-97af-b5f72eb6a2b2")
+			(uuid "0af10f32-c776-42f2-8334-0b7ae372054f")
 		)
 		(instances
 			(project "maratus-core"
@@ -8391,7 +8555,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "029b5621-8555-400f-93e6-e95b5598fe05")
+			(uuid "71b37782-b0e4-40d5-be3a-48472409fad4")
 		)
 		(instances
 			(project "maratus-core"
@@ -8404,7 +8568,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 248.92 193.04 0)
+		(at 264.16 193.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8414,7 +8578,7 @@
 		(dnp no)
 		(uuid "711d654a-df1f-5d14-bfbc-a52feb084909")
 		(property "Reference" "R124"
-			(at 250.952 193.04 90)
+			(at 266.192 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8424,7 +8588,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 248.92 193.04 90)
+			(at 264.16 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8434,7 +8598,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 247.142 193.04 90)
+			(at 262.382 193.04 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8445,7 +8609,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 248.92 193.04 0)
+			(at 264.16 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8456,7 +8620,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 248.92 193.04 0)
+			(at 264.16 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8467,7 +8631,7 @@
 			)
 		)
 		(property "Source" "assumption"
-			(at 248.92 193.04 0)
+			(at 264.16 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8478,15 +8642,91 @@
 			)
 		)
 		(pin "1"
-			(uuid "689aa562-e41b-4bb8-83a4-ac4e301c3f74")
+			(uuid "51b95f0c-d3a0-4047-86d0-81a7206d48d6")
 		)
 		(pin "2"
-			(uuid "86e19074-2067-4fca-97e8-2794ccc528be")
+			(uuid "9781f525-cd2c-4076-a28c-0723c872e075")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
 					(reference "R124")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 200.66 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "754951f8-4e4e-598d-8148-fd12916f9dbd")
+		(property "Reference" "TP104"
+			(at 200.66 165.862 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 200.66 167.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 205.74 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 200.66 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6605e88c-b768-47c3-80df-bc05efb162b9")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
+					(reference "TP104")
 					(unit 1)
 				)
 			)
@@ -8558,7 +8798,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "168cce4d-b3e1-410a-8f34-d238395865a4")
+			(uuid "82b13907-75ab-40ac-9ba8-1916e2f7d530")
 		)
 		(instances
 			(project "maratus-core"
@@ -8645,10 +8885,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "95ce4d58-3582-4e2b-8b9b-cc643adb7672")
+			(uuid "e2ce2377-8cf7-40cb-ba0a-9fe07ad83e6f")
 		)
 		(pin "2"
-			(uuid "6e382a9f-4f79-4fea-a380-001344b8c620")
+			(uuid "bf5ee395-aeeb-44ea-9e92-d4a2a377549e")
 		)
 		(instances
 			(project "maratus-core"
@@ -8724,10 +8964,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7d0ad428-6ed1-41c3-a55c-031b3cc45c3d")
+			(uuid "c3d86ea2-e2c6-4e38-9894-da2179a6a9a1")
 		)
 		(pin "2"
-			(uuid "1d34780a-bb18-4626-8ba0-b164ed2f5d2b")
+			(uuid "aa7a7d93-d792-44c2-a56e-18ddf518b741")
 		)
 		(instances
 			(project "maratus-core"
@@ -8803,10 +9043,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4004ec42-d74f-4497-aadb-884d18110be8")
+			(uuid "82fe13d7-bc99-4b51-9a8f-140a7a491e5c")
 		)
 		(pin "2"
-			(uuid "767f265a-c127-4472-bfe0-311663035482")
+			(uuid "e315ae86-ce64-46d9-8447-dc112fa7711f")
 		)
 		(instances
 			(project "maratus-core"
@@ -8883,7 +9123,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "dd5f0dd6-7cb9-4205-99d6-4edd4c7b1b75")
+			(uuid "48500da9-1ded-4438-bfe2-c5ecf5c941cc")
 		)
 		(instances
 			(project "maratus-core"
@@ -8970,10 +9210,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "634f55f6-e85d-4c25-9d44-b253c75434cb")
+			(uuid "2c62096a-2861-46a7-b5f5-3c8dd105a01a")
 		)
 		(pin "2"
-			(uuid "b25f3b80-8e5a-4cd5-bfd2-570e1b8a2c5b")
+			(uuid "421d3ff2-dd1e-4308-8899-ac85a80023d1")
 		)
 		(instances
 			(project "maratus-core"
@@ -9060,10 +9300,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "92a7ee93-a216-4d98-8122-6550ce9d35b5")
+			(uuid "a9519a30-0f99-4cf9-9f2c-c3f20c228ca2")
 		)
 		(pin "2"
-			(uuid "74cb2341-88c1-4920-800b-c4ed0e77b903")
+			(uuid "a1e1969b-4363-4919-9aa2-656080a60593")
 		)
 		(instances
 			(project "maratus-core"
@@ -9139,10 +9379,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f161f36-8539-4fd2-8e99-62f11dbd90ab")
+			(uuid "dda9239d-0cce-4977-89ad-f3baeeaf347a")
 		)
 		(pin "2"
-			(uuid "b7ebe0f7-1e46-4bc5-aed7-c8534747917e")
+			(uuid "9733da82-8d65-4e7a-8653-4cbf27d1f96b")
 		)
 		(instances
 			(project "maratus-core"
@@ -9219,7 +9459,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d1f9a17d-c87d-47d2-909d-06d288d23208")
+			(uuid "1b292022-91e9-45ad-9d7e-bdf34a72791c")
 		)
 		(instances
 			(project "maratus-core"
@@ -9306,10 +9546,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "39a77cd7-8436-41ca-afd0-dfe802414961")
+			(uuid "18500c00-f8fd-478b-9028-fe33d34f10c3")
 		)
 		(pin "2"
-			(uuid "70d3ceff-e21a-40c5-ba47-b0b7d5181714")
+			(uuid "a6e08b3e-b64d-4c99-b1c8-a0f1bc0ebad8")
 		)
 		(instances
 			(project "maratus-core"
@@ -9386,7 +9626,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f00bc413-ed3c-4c94-9301-00aa0cc32891")
+			(uuid "c40aac66-ba84-49cd-bace-e50f9305ba60")
 		)
 		(instances
 			(project "maratus-core"
@@ -9463,7 +9703,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "519c8099-b1fc-4928-8725-6c5648116f13")
+			(uuid "9579de50-af81-42a7-9eb4-ec5618ff4ec3")
 		)
 		(instances
 			(project "maratus-core"
@@ -9540,7 +9780,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e17b594d-32c7-4ef3-a13f-ec0ab3517fef")
+			(uuid "04c5a5c2-8381-4122-bdae-1cb59503a2d6")
 		)
 		(instances
 			(project "maratus-core"
@@ -9627,22 +9867,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "736ec5be-9b57-475d-aa1b-763f9a0baa82")
+			(uuid "f020eb89-bcd3-4bd8-bfdb-cad297e60fe9")
 		)
 		(pin "2"
-			(uuid "6d03df6f-41e5-4a76-8293-a082baf98d85")
+			(uuid "8e6a1e13-5c11-48d0-8cab-f7c598eeaaba")
 		)
 		(pin "3"
-			(uuid "bb3024e2-283a-4e98-86b0-4d7bc950bddb")
+			(uuid "d0389c73-75f6-4aa0-bd1b-15100df80909")
 		)
 		(pin "4"
-			(uuid "a2365004-954e-41a6-96b7-3bd8ffead0b4")
+			(uuid "e16b22c8-089e-4917-be9f-101d47d32ec1")
 		)
 		(pin "5"
-			(uuid "d3898c85-efd2-4e3e-8e18-b04a73cb1eb4")
+			(uuid "eff958b2-c5b1-41bf-b203-1f131622cd9e")
 		)
 		(pin "6"
-			(uuid "8816549c-d123-424f-a193-d47660c39e6b")
+			(uuid "0a22e1c3-7dd1-453f-97ed-acd74571dad7")
 		)
 		(instances
 			(project "maratus-core"
@@ -9719,7 +9959,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "502bbeb7-d165-424b-9e57-6387dcd2cdd8")
+			(uuid "9f5d49c1-29df-4fc4-ab48-1e4b6fe9ba25")
 		)
 		(instances
 			(project "maratus-core"
@@ -9806,10 +10046,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "db8d6dba-6049-4a89-a4bf-e77b3dccd596")
+			(uuid "526134f4-327f-4493-8f2d-71b793a69344")
 		)
 		(pin "2"
-			(uuid "0a39260a-81ac-4e4c-945b-edf1fa225a25")
+			(uuid "1f756c4a-0e2c-4cfe-b691-f622e2c8b023")
 		)
 		(instances
 			(project "maratus-core"
@@ -9886,7 +10126,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "dee742f8-9ee2-4562-9a43-a12a1d9ea8a5")
+			(uuid "569cf104-334b-4f8f-b050-bf48dc0ff3ff")
 		)
 		(instances
 			(project "maratus-core"
@@ -9962,10 +10202,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "48819e92-82c5-4b21-8b4f-6e627ac37982")
+			(uuid "98c2ac12-9ce9-4e3b-863a-2307ed5e8bc9")
 		)
 		(pin "2"
-			(uuid "3078ab35-048d-4f25-b75c-01affd319bf9")
+			(uuid "f59e0fd9-997f-4637-acc1-b52a63bfca76")
 		)
 		(instances
 			(project "maratus-core"
@@ -10041,10 +10281,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "115d093b-105b-496e-b60b-4597dca99bb5")
+			(uuid "11ac1f24-0a0a-4cf0-a2e5-8ed410defda2")
 		)
 		(pin "2"
-			(uuid "bf5b7dd9-49a3-4593-83aa-33d8dc63b9f2")
+			(uuid "4be0b6be-473d-4e3b-b716-ae8b78673bc6")
 		)
 		(instances
 			(project "maratus-core"
@@ -10131,10 +10371,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "f029b221-614a-4880-8a67-00942c2cdebc")
+			(uuid "c1e2ddf3-0471-4e50-9096-92569f03bbb5")
 		)
 		(pin "2"
-			(uuid "7c187950-e6d3-47f3-8e11-d7600eb839bd")
+			(uuid "b84e0928-56a3-4d82-bf0c-2e903b38b75d")
 		)
 		(instances
 			(project "maratus-core"
@@ -10221,10 +10461,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a27667c-b089-4543-9aaa-e9f15880b37e")
+			(uuid "9c10fbbb-9ebc-4537-aeeb-baf043d8ffce")
 		)
 		(pin "2"
-			(uuid "4a4e807e-c6dd-47c4-8a88-6e3eaa70bad3")
+			(uuid "979ec88e-2cb4-4b25-9dc6-6d9146c5dd5e")
 		)
 		(instances
 			(project "maratus-core"
@@ -10301,7 +10541,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "98ee12f4-4ba5-4a46-892a-c97730d34a7b")
+			(uuid "19123513-75f8-4a82-9cad-76118d2cc390")
 		)
 		(instances
 			(project "maratus-core"
@@ -10388,10 +10628,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "58d92885-be2e-45de-8bcc-c096c65d87c1")
+			(uuid "e116bcc6-e82a-469b-a7a0-d20d57a38f6b")
 		)
 		(pin "2"
-			(uuid "1e3dd30c-9554-4dd5-9fce-d9af3e60073c")
+			(uuid "c8ababa4-3214-4067-9e3e-55619ade879b")
 		)
 		(instances
 			(project "maratus-core"
@@ -10468,7 +10708,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b76d5dbb-6fc9-423a-b620-c60de1a4d6bf")
+			(uuid "6d9ca848-d94b-496d-8fdf-842015048f33")
 		)
 		(instances
 			(project "maratus-core"
@@ -10555,10 +10795,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "9476e689-a51a-465a-ab1e-e9ac6ea9bffe")
+			(uuid "e77e43a8-0660-484e-9f06-d395b5fe65c1")
 		)
 		(pin "2"
-			(uuid "cc37df3f-5623-40e2-ba09-89adfac8314f")
+			(uuid "c9d2618b-10ea-4904-8417-254e2311946a")
 		)
 		(instances
 			(project "maratus-core"
@@ -10635,7 +10875,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6dfd365a-47ff-496f-a34d-73a0ede82efa")
+			(uuid "b13bdd47-7cf3-49cc-8f3e-d52c52503f67")
 		)
 		(instances
 			(project "maratus-core"
@@ -10712,7 +10952,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "19fbc0e5-d63d-4204-9bb1-6de43ddac110")
+			(uuid "cdde3c58-3749-4ac5-aa19-afa795f5606e")
 		)
 		(instances
 			(project "maratus-core"
@@ -10788,10 +11028,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "75fb6e02-d2e2-4cee-a4f5-91d987305c29")
+			(uuid "481d04a4-c585-42e3-bffa-12032f98280d")
 		)
 		(pin "2"
-			(uuid "5f2a591c-58c8-415a-a6a7-19b054beccad")
+			(uuid "a9201100-5c71-4b3b-aac6-d6d6afdb5d61")
 		)
 		(instances
 			(project "maratus-core"
@@ -10868,7 +11108,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e6fcd9a7-95bb-47d9-a890-6b6420687b51")
+			(uuid "e06f56ac-7c92-4bcc-9950-62c42c785145")
 		)
 		(instances
 			(project "maratus-core"
@@ -10955,10 +11195,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "13b686fe-51a1-45dd-b9de-f2302bfa04ae")
+			(uuid "ba5d2612-6cb3-488e-8e8a-42e4158f7d45")
 		)
 		(pin "2"
-			(uuid "d7c0332f-1b27-4074-abc7-316c1ddad058")
+			(uuid "e154f9f0-bdb2-4ec7-a977-36a2f07718b8")
 		)
 		(instances
 			(project "maratus-core"
@@ -11035,7 +11275,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "bc93d4f4-dca1-42a7-af4d-63cc1f62695a")
+			(uuid "9ac8441e-acbf-4889-8eed-d7c670d236e6")
 		)
 		(instances
 			(project "maratus-core"
@@ -11112,7 +11352,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "452984b1-29f4-4846-89fc-26f6568b4f25")
+			(uuid "66f2852b-ddb7-4ba6-8153-5c2021c76c58")
 		)
 		(instances
 			(project "maratus-core"
@@ -11188,10 +11428,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "10225615-e573-41e7-8e62-eab76e4b74f5")
+			(uuid "b64b0de5-b44f-49cf-87d2-b41170617fdb")
 		)
 		(pin "2"
-			(uuid "7f52785c-598e-4168-ad98-7f56fe7a34e0")
+			(uuid "8d141d26-b097-4d89-a8bf-23320e39bcef")
 		)
 		(instances
 			(project "maratus-core"
@@ -11278,10 +11518,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "00c54eed-f67a-4351-8f33-ad067920f13a")
+			(uuid "38e2e4ee-c0b6-4f57-aad7-cc837433502c")
 		)
 		(pin "2"
-			(uuid "e647f215-22d4-44ec-8a54-879d5c0e0581")
+			(uuid "728ca903-be38-4222-a77f-e5dbc3d97b51")
 		)
 		(instances
 			(project "maratus-core"
@@ -11357,7 +11597,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "083ba922-37b4-4662-9c25-45f8ab642b01")
+			(uuid "98514757-7abd-44e6-b9de-3d1dabba6706")
 		)
 		(instances
 			(project "maratus-core"
@@ -11434,7 +11674,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b79339db-f4fa-4ad7-b6b5-ca38f2d7d158")
+			(uuid "19b5ef38-b1f0-43cc-ad9a-68b0ee090748")
 		)
 		(instances
 			(project "maratus-core"
@@ -11510,92 +11750,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "ad5adf92-6137-4c53-90cd-b7703851ae05")
+			(uuid "a8a8e83d-8206-4c7c-9e48-0f41f0a53c01")
 		)
 		(pin "2"
-			(uuid "19552fe3-2f0c-4f3e-b124-33a73c1723ed")
+			(uuid "05728ec0-34a3-4a7a-b81f-01210a132ebd")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
 					(reference "R120")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 264.16 191.77 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d147e91c-f1f3-5edd-8c79-e86ed31b3241")
-		(property "Reference" "#PWR01036"
-			(at 264.16 198.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 264.16 195.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 264.16 191.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 264.16 191.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 264.16 191.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f46829d5-c3e5-4166-b831-040515846d6e")
-		)
-		(instances
-			(project "maratus-core"
-				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
-					(reference "#PWR01036")
 					(unit 1)
 				)
 			)
@@ -11677,10 +11840,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "1f9daa8f-0853-4f2e-94b3-7c985f0f5098")
+			(uuid "3b01d884-5c18-4f55-85c0-335917ed5563")
 		)
 		(pin "2"
-			(uuid "0abb0f3f-47a8-4eae-9eae-7578d1de6d8b")
+			(uuid "ca00022a-4b24-4643-b67f-29bf578f388c")
 		)
 		(instances
 			(project "maratus-core"
@@ -11757,7 +11920,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "378a447d-b3e6-4cca-b9a0-61b7a1344ec4")
+			(uuid "f0747383-35cf-40f5-8249-abe4c406ee63")
 		)
 		(instances
 			(project "maratus-core"
@@ -11833,10 +11996,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "e114c1a3-1555-4211-8c05-6b5e844a6dfe")
+			(uuid "7390f2b8-c8be-4854-8d30-3f2768a7fa62")
 		)
 		(pin "2"
-			(uuid "edbfca4a-db76-4feb-9f85-9cacfc4ff2d6")
+			(uuid "b8d3a71d-bb68-42bb-82c9-aedeaa630517")
 		)
 		(instances
 			(project "maratus-core"
@@ -11912,10 +12075,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "3c753aba-480f-4db7-81aa-038b399a623e")
+			(uuid "62bec56b-bb7c-452d-aff0-50091297cc9c")
 		)
 		(pin "2"
-			(uuid "62255b48-6e70-4e69-a10f-5ecfe87dc4ef")
+			(uuid "b53189a2-9b1c-4496-a955-3c154570a5c9")
 		)
 		(instances
 			(project "maratus-core"
@@ -11992,12 +12155,89 @@
 			)
 		)
 		(pin "1"
-			(uuid "1cf2c85b-0337-4314-a7b6-21a48b952d5f")
+			(uuid "ab19d2cc-89ea-4557-b52c-cb5c74b55bfe")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
 					(reference "#PWR01019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 279.4 191.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e17b3270-a114-52ea-b8c0-c6f21f027980")
+		(property "Reference" "#PWR01037"
+			(at 279.4 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 279.4 195.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 279.4 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 279.4 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 279.4 191.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "18d9a143-6b68-4b1c-9033-cb94e172d5f4")
+		)
+		(instances
+			(project "maratus-core"
+				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
+					(reference "#PWR01037")
 					(unit 1)
 				)
 			)
@@ -12069,89 +12309,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "7cb1f0bd-24b0-481c-878a-9872d66c42c1")
+			(uuid "36f01b37-1376-4bb1-ad33-f167dd3c0cec")
 		)
 		(instances
 			(project "maratus-core"
 				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
 					(reference "#PWR01028")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 213.36 198.12 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e400771b-2e49-5159-a5de-932d2759a309")
-		(property "Reference" "#PWR01035"
-			(at 213.36 204.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 213.36 201.93 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 213.36 198.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 213.36 198.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 213.36 198.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bfd4c0d1-a45b-4834-8d73-d26bb6695977")
-		)
-		(instances
-			(project "maratus-core"
-				(path "/30ed0471-c136-5e9a-87cf-1583a26edde7/8b75bec6-9c78-561b-bad7-dd604634b8f9"
-					(reference "#PWR01035")
 					(unit 1)
 				)
 			)
@@ -12223,7 +12386,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f1992df-edbc-43d4-9a31-0cbb55ce3a03")
+			(uuid "71485798-82a7-4fa0-87c7-5d2910c01511")
 		)
 		(instances
 			(project "maratus-core"
@@ -12299,10 +12462,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c8b7ad04-4d2f-42d4-a0cc-2cb140fcda02")
+			(uuid "f49c8c52-6a23-4ad5-bcf4-b6c2218aa671")
 		)
 		(pin "2"
-			(uuid "5b718765-e2d3-43b0-9017-c168243466e4")
+			(uuid "0a2285fb-ce6a-4e28-8cb7-7428d53b4c1d")
 		)
 		(instances
 			(project "maratus-core"
@@ -12379,7 +12542,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c52b685b-ffcf-45ba-9423-4b945b28fc27")
+			(uuid "83333866-e200-4596-bcfe-fd1a30286551")
 		)
 		(instances
 			(project "maratus-core"
@@ -12466,19 +12629,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "ebea672d-0d9b-4eda-ac6b-f2755e3ab5a5")
+			(uuid "c48ba9c9-4190-49b4-8534-539db25abf77")
 		)
 		(pin "2"
-			(uuid "20b943f7-da9d-45d1-99b1-fe2ab275da52")
+			(uuid "edaedeae-ac45-4604-b141-cb629cd12f3a")
 		)
 		(pin "3"
-			(uuid "978b49c8-1aa7-4d74-966c-f0aae2622eba")
+			(uuid "889696a6-c3d1-4b8d-9d29-71a3a03d7b99")
 		)
 		(pin "4"
-			(uuid "0820bda8-afc8-4c94-a6b0-f502f10fbd94")
+			(uuid "22eec8db-51f9-4926-a0a0-649757e1ae8d")
 		)
 		(pin "5"
-			(uuid "e7a70d6c-c140-4995-af61-5c53e977ea88")
+			(uuid "16128c30-9ce4-4cb9-b982-71da7b8074b8")
 		)
 		(instances
 			(project "maratus-core"
@@ -12554,10 +12717,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "04ec1ba2-5bcf-40f2-8234-5ce9c2c53235")
+			(uuid "faffccc2-a31c-401e-886a-f3e21dd152d7")
 		)
 		(pin "2"
-			(uuid "a4e23b7f-9337-4a9d-8735-19e4b1c33fb2")
+			(uuid "30c4df29-eaed-4a99-ae13-f3a06c892650")
 		)
 		(instances
 			(project "maratus-core"
@@ -12644,10 +12807,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "55d445b2-5934-47df-8cfa-09e5b6db4106")
+			(uuid "4db619ee-9cd2-4935-b7b2-e38c599d7ea5")
 		)
 		(pin "2"
-			(uuid "b50307dd-f9fb-4341-a28d-dc9a5c55b07b")
+			(uuid "0fc18fbc-a303-4a02-873c-9a9a73b0eca4")
 		)
 		(instances
 			(project "maratus-core"
@@ -12723,10 +12886,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "702be9da-be5f-4adc-ba4e-05d2e86529d5")
+			(uuid "a0b90bac-fd68-4dab-893f-eabe3dfb2efc")
 		)
 		(pin "2"
-			(uuid "07104658-8e0a-4c68-bc90-602c0990f627")
+			(uuid "d0d0d30a-9981-4858-b977-58e56084a6f7")
 		)
 		(instances
 			(project "maratus-core"
@@ -12803,7 +12966,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "24a9f56b-d035-4ed4-8efb-00167d2e7e26")
+			(uuid "a919e599-4612-4653-832b-d8788d7cb2c7")
 		)
 		(instances
 			(project "maratus-core"

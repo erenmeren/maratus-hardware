@@ -41,9 +41,9 @@ def check(cond, msg):
 lib_p4 = {int(n): nm for n, nm, _, _ in LIB["ESP32-P4X"]}
 check(len(P4) == len(lib_p4) == 105, "P4: all 105 pads (104 + EP) assigned")
 check(all(lib_p4.get(p) == name for p, name, *_ in P4), "P4: every pin number/name matches symbol ESP32-P4X")
-lib_c5 = {int(n): nm for n, nm, _, _ in LIB["ESP32-C5-WROOM-1"]}
-check(len(C5) == len(lib_c5) == 29, "C5: all 29 module pads assigned")
-check(all(lib_c5.get(p) == name for p, name, _ in C5), "C5: every pin number/name matches symbol ESP32-C5-WROOM-1")
+lib_c5 = {int(n): nm for n, nm, _, _ in LIB["ESP32-C5-WROOM-1U"]}
+check(len(C5) == len(lib_c5) == 32, "C5: all 32 module pads assigned")
+check(all(lib_c5.get(p) == name for p, name, _ in C5), "C5: every pin number/name matches symbol ESP32-C5-WROOM-1U")
 
 net_of = {name.split("/")[0]: net for _, name, net, _ in P4}
 
@@ -77,7 +77,7 @@ for _, name, net in C5:
     for part in name.split("/"):
         c5net[part] = net
 check(all(c5net.get(g) == s for s, g in C5_SDIO.items()), "SDIO: C5 side on its fixed SDIO slave pins")
-alts = {nm: a for _, nm, _, a in LIB["ESP32-C5-WROOM-1"]}
+alts = {nm: a for _, nm, _, a in LIB["ESP32-C5-WROOM-1U"]}
 check("SDIO_CLK" in alts["GPIO9"] and "SDIO_CMD" in alts["GPIO10"] and "SDIO_DATA0" in alts["GPIO8"]
       and "SDIO_DATA1" in alts["GPIO7"] and "SDIO_DATA2" in alts["GPIO14/USB_D+"]
       and "SDIO_DATA3" in alts["GPIO13/USB_D-"], "SDIO: C5 pin functions confirmed by symbol alternates")
