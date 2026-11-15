@@ -79,7 +79,7 @@ def pads(ref, table):
 
 for ref, label, table in (
         ("U1", "P4: all 105 pads on the gpio-map net", {r[0]: r[2] for r in rows("maratus-core-gpio-map.csv")}),
-        ("U2", "C5: all 29 pads on the pin-map net", {r[0]: r[2] for r in rows("maratus-core-c5-pin-map.csv")}),
+        ("U2", "C5: all 32 pads on the pin-map net", {r[0]: r[2] for r in rows("maratus-core-c5-pin-map.csv")}),
         ("P1", "Rear pads: all 18 pads on the design-spec net", P1)):
     if ref not in part_pins:
         notes.append(f"{ref} not drawn yet")

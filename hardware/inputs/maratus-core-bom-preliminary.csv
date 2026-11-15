@@ -1,6 +1,7 @@
 Ref,Function,Manufacturer,MPN,Package,Qty,Status,Notes
 U1,Application processor,Espressif,ESP32-P4NRW32X,QFN104 10x10 mm,1,Verified,"Chip revision v3.x, 32 MB PSRAM in package. Needs ESP-IDF v5.5.3+ or v6.0+. Footprint: Espressif KiCad library ESP32-P4."
-U2,Wi-Fi 6 dual-band coprocessor,Espressif,ESP32-C5-WROOM-1-N4,18.0 x 27.5 x 3.3 mm module,1,Verified,"PCB antenna, 4 MB flash. Runs ESP-Hosted slave firmware over SDIO. Supply must deliver 0.6 A."
+ANT1,Wi-Fi antenna,Taoglas,FXP830.07.0100C,"42 x 7 mm flex, 100 mm cable",1,Candidate,"2.4 / 5 GHz dipole, I-PEX MHF I plug, adhesive. 5 GHz peak gain 6.86 dBi exceeds the 3.65 dBi the module was certified with."
+U2,Wi-Fi 6 dual-band coprocessor,Espressif,ESP32-C5-WROOM-1U-N4,18.0 x 21.2 x 3.3 mm module,1,Verified,"External antenna connector (U.FL / MHF I), 4 MB flash. Runs ESP-Hosted slave firmware over SDIO. Supply must deliver 0.6 A."
 U3,Boot flash 16 MB,Winbond,W25Q128JVSIQ,SOIC-8 208 mil,1,Candidate,"3.3 V quad SPI NOR powered from VDDO_FLASH. Confirm against Espressif's supported-flash guidance."
 U4,VDD_HP core DCDC,Texas Instruments,TLV62569DBVR,SOT-23-5,1,Verified,"On Espressif's list of verified DCDC parts for the P4. EN and FB driven by the P4."
 U5,3.3 V system buck,Texas Instruments,TLV62569DBVR,SOT-23-5,1,Candidate,"Same part as U4 to keep unique parts low. 5 V in, 3.3 V out, 2 A class. Confirm ratings at capture."
@@ -16,8 +17,8 @@ D7-D8,Schottky diode,onsemi,MBR0540T1G,SOD-123,2,Verified,"Backlight boost diode
 D9,ACC_ID clamp,onsemi,BAT54SLT1G,SOT-23,1,Verified,Series pair to GND and 3V3 at the ADC pin.
 J1,USB-C receptacle (USB 2.0),GCT,USB4105-GF-A,16-pin SMT,1,Candidate,"Service port and standalone power. CC1/CC2 5.1k to GND. Outdoor variant needs a sealed part."
 LCD1,LCD panel with touch,Newhaven Display,NHD-4.0-480480AF-MSXP-CTP,"4.0 inch, 77.86 x 81.84 x 4.15 mm",1,Candidate,"480 x 480 IPS, ST7701SN, 2-lane MIPI DSI, FT5426G touch. Datasheet in docs/reference."
-J2,LCD FFC connector,Amphenol,F32Q-1A7H1-11024,"24-pin, 0.5 mm, top contact",1,Candidate,"Chosen because KiCad has its footprint. Datasheet not in docs/reference; DigiKey lists an 18-week lead time. Alternative: Molex 52435-2471 (panel datasheet p.4), which needs a hand-drawn footprint."
-J4,Touch FFC connector,TE Connectivity,84952-6,"6-pin, 1.0 mm, bottom contact",1,Candidate,"Replaces the Molex 52271-0679 named by the panel datasheet: KiCad has this footprint."
+J2,LCD FFC connector,Hirose,FH12-24S-0.5SH(55),"24-pin, 0.5 mm, bottom contact",1,Candidate,"KiCad has its footprint. Hirose datasheet not in docs/reference."
+J4,Touch FFC connector,TE Connectivity,84953-6,"6-pin, 1.0 mm, top contact",1,Candidate,"KiCad has its footprint. te.com says it is not currently available: confirm stock."
 J3,Camera FFC footprint (DNP),TE Connectivity,1-84952-5,"15-pin, 1.0 mm",0,Reserved,Footprint only. Not populated in V1.
 Y1,P4 crystal,any,40 MHz +/-10 ppm,3225,1,Candidate,Load capacitors tuned on the prototype.
 Y2,PHY crystal,any,25 MHz,3225,1,Candidate,Per IP101GRI datasheet crystal specification.
@@ -25,6 +26,7 @@ L1-L2,Buck inductors,any,per TLV62569 datasheet,-,2,Candidate,
 L3,Backlight boost inductor,Coilcraft,LPS4018-472ML,4 x 4 x 1.8 mm,1,Candidate,"4.7 uH, 1.9 A saturation, from the TPS61169 datasheet Table 7-2."
 BZ1,Buzzer,Same Sky (CUI),CMT-8504-100-SMT-TR,8.5 x 8.5 x 4.0 mm,1,Candidate,"Magnetic, rated 5 V, 4 kHz, 100 dB at 10 cm, 150 mA max. On 5V_SYS, driven from LEDC PWM."
 Q1,Buzzer driver,Alpha & Omega,AO3400A,SOT-23,1,Candidate,"30 V, under 48 mOhm at 2.5 V gate drive."
-SW1,Service switch,Omron,B3U-1000P,SMD,1,Candidate,"Behind the rear housing, reached with a pin tool only."
+SW1,Service switch,Omron,B3U-3000P,SMD,1,Candidate,"Side-actuated, on the part side at the bottom edge; reached with a pin tool only, through a slot in the bottom wall."
+-,Dock magnets,supermagnete,S-10-02-N,"10 x 2 mm disc, N42, Ni-Cu-Ni",4,Candidate,"Glued into the body's floor, not on the PCB: outer pair for BAR, inner pair for FLOAT. About 1.3 kg on steel (supplier page, 2026-11-12). Second source: first4magnets F670."
 P1,Rear accessory contact field,PCB feature,18 gold pads,2 x 9 at 2.54 mm,1,Defined,"No component: pads are part of the main PCB. ENIG for prototypes, hard gold for production."
 -,"Passives (R, C, ferrites)",any,-,0402 / 0603,about 120,Estimate,Count firms up at schematic capture.

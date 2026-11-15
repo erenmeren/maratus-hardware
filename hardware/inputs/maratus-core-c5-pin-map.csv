@@ -2,7 +2,7 @@ C5 module pin,Pin name,Net,Notes
 1,GND,GND,
 2,3V3,3V3,10 uF + 0.1 uF at pin. Supply must deliver >= 0.6 A.
 3,EN/CHIP_PU,C5_EN,"10k pull-up, 1 uF to GND."
-4,GPIO2,C5_TP_GPIO2,Test pad (MTMS).
+4,GPIO2,C5_WAKE,"Host wake-up output (ESP-Hosted host power save), 0R series to P4 GPIO0. Test pad on the module side (MTMS)."
 5,GPIO3,C5_STRAP_MTDI,MTDI strap (SDIO edge). DNP pull-up/pull-down footprints.
 6,GPIO0,NC,
 7,GPIO1,NC,
@@ -28,3 +28,6 @@ C5 module pin,Pin name,Net,Notes
 27,GPIO26,C5_STRAP_GPIO26,Boot strap. Test pad.
 28,GND,GND,
 29,GND,GND,Exposed pad.
+30,GND,GND,
+31,ANT2,NC,"Second RF port, disabled by default (module datasheet p.15 note 4). Left open."
+32,GND,GND,

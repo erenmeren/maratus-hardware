@@ -35,6 +35,7 @@ import uuid
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORE = ROOT / "hardware" / "core"
 PROJECT = "maratus-core"
+TITLE = "Maratus Core"      # tools/dock_sch.py swaps PROJECT, TITLE, CORE, SHEETS and LINKS for the Dock boards
 NS = uuid.UUID("6d617261-7475-732d-636f-726500000001")
 KICAD_SYM = pathlib.Path(os.environ.get("KICAD10_SYMBOL_DIR", "/usr/share/kicad/symbols"))
 KICAD_FP = pathlib.Path(os.environ.get("KICAD10_FOOTPRINT_DIR", "/usr/share/kicad/footprints"))
@@ -53,7 +54,8 @@ LINKS = [(n, "p4-core", a, s, b) for s, rows in {
     "power": [("ACC_PWR_EN", O, I), ("ACC_PWR_FLT_N", I, O), ("PWR_SRC_ST", I, O), ("VSYS_SENSE", I, O),
               ("USBC_CC1_SENSE", I, O), ("USBC_CC2_SENSE", I, O), ("P4_EN", I, O)],
     "wifi": [("SDIO_CLK", O, I), ("SDIO_CMD", B, B), ("SDIO_D0", B, B), ("SDIO_D1", B, B), ("SDIO_D2", B, B),
-             ("SDIO_D3", B, B), ("C5_EN", O, I), ("C5_BOOT", O, I), ("C5_U0RXD", O, I), ("C5_U0TXD", I, O)],
+             ("SDIO_D3", B, B), ("C5_EN", O, I), ("C5_BOOT", O, I), ("C5_U0RXD", O, I), ("C5_U0TXD", I, O),
+             ("C5_WAKE", I, O)],
     "ethernet": [("RMII_REF_CLK", I, O), ("RMII_TX_EN", O, I), ("RMII_TXD0", O, I), ("RMII_TXD1", O, I),
                  ("RMII_CRS_DV", I, O), ("RMII_RXD0", I, O), ("RMII_RXD1", I, O), ("ETH_MDC", O, I),
                  ("ETH_MDIO", B, B), ("ETH_PHY_RST_N", O, I), ("ETH_REFCLK_ALT", O, I)],
@@ -417,7 +419,7 @@ def header(name, title, paper="A3"):
 	(uuid "{uid('sheet', name)}")
 	(paper "{paper}")
 	(title_block
-		(title "Maratus Core - {title}")
+		(title "{TITLE} - {title}")
 		(date "2026-11-09")
 		(rev "0.1")
 		(company "Maratus")
@@ -446,7 +448,7 @@ def root():
             y += 2.54 * (len(rows(n)[0]) + 1) + 15.24
     body, sheets = "", ""
     for page, name in enumerate(SHEETS, start=2):
-        x, y0, w = place[name]
+        x, y0, w = place.get(name, (50.8, 38.1 + 30.48 * (page - 2), 45.72))     # other projects: one column
         left, right = rows(name)
         if name in ("power", "wifi", "ethernet"):  # left column: pins face p4-core
             left, right = [], left

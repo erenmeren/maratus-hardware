@@ -9,7 +9,7 @@ import csv
 
 from sch import ROOT, C0603, C0805
 
-SPARE = ("TP_GPIO0", "TP_GPIO1", "TP_GPIO20", "TP_GPIO21", "TP_GPIO22", "TP_GPIO26", "TP_GPIO27", "TP_GPIO32",
+SPARE = ("TP_GPIO1", "TP_GPIO20", "TP_GPIO21", "TP_GPIO22", "TP_GPIO26", "TP_GPIO27", "TP_GPIO32",
          "TP_GPIO33", "TP_GPIO53", "TP_GPIO54")
 FLASH = {"FLASH_CS": "1", "FLASH_Q": "2", "FLASH_WP": "3", "FLASH_D": "5", "FLASH_CK": "6", "FLASH_HOLD": "7"}
 
@@ -98,7 +98,7 @@ def build(s):
     s.R("10k", "3V3", "TP_GPIO36", src="GPIO36 floats by default and must be 1 for download boot: DS p.36-37 "
                                        "Tables 3-1, 3-3; EV p.3. The gpio map lists a test pad only: differs")
     s.tp("TP_GPIO36")
-    for net in ("UART0_TXD", "UART0_RXD") + SPARE:
+    for net in ("UART0_TXD", "UART0_RXD", "C5_WAKE") + SPARE:   # C5_WAKE is GPIO0: it keeps that pin's test pad
         s.tp(net)
 
     s.group("MIPI reference resistors and ADC input filters")

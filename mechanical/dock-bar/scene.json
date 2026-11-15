@@ -1,0 +1,42 @@
+{
+ "parts": {
+  "body": "body",
+  "cap-left": "accent",
+  "cap-right": "accent",
+  "saddle": "body",
+  "drawer": "body",
+  "core-body": "body",
+  "core-panel": "glass",
+  "core-magnets": "steel",
+  "dock-magnets": "steel",
+  "contact-board": "dark",
+  "base-board": "dark"
+ },
+ "screen": [
+  [
+   -35.93,
+   4.06198025337995,
+   15.27542778411016
+  ],
+  [
+   35.93,
+   4.06198025337995,
+   15.27542778411016
+  ],
+  [
+   35.93,
+   22.22590083867486,
+   83.06410227307698
+  ],
+  [
+   -35.93,
+   22.22590083867486,
+   83.06410227307698
+  ]
+ ],
+ "size": [
+  81.4,
+  51.1,
+  87.5
+ ]
+}

@@ -1,44 +1,59 @@
 """Mechanical constants shared by tools/pcb.py and tools/enclosure.py. All values in mm.
 
-PCB frame: origin at the board's top-left corner seen from the device REAR (= KiCad top view, all parts are on
-that face), x to the right, y down. Panel data: docs/reference/NHD-4.0-480480AF-MSXP-CTP.pdf p.4.
+Slim layout (2026-11-10): the touch glass reaches the edge of the housing on all four sides, the PCB sits
+entirely behind the panel with its parts facing the display, the display is the lid of a one-piece body.
+PCB frame: origin at the board's top-left corner seen from the device FRONT (= KiCad top view, the part side),
+x to the right, y down. Panel data: docs/reference/NHD-4.0-480480AF-MSXP-CTP.pdf p.4.
 """
 PANEL_W, PANEL_H, PANEL_T = 77.86, 81.84, 4.15   # LCM outline, total thickness with touch glass
-PANEL_VA_W, PANEL_VA_H = 72.86, 71.18            # touch glass viewing area
-PANEL_VA_LEFT, PANEL_VA_TOP = 2.50, 2.45         # viewing area offset from the outline, FRONT view
+PANEL_GLASS_T = 1.4                              # touch glass; the FFC tails leave from the 2.75 mm behind it
+PANEL_AA = (3.00, 2.95, 71.86, 70.18)            # lit area in the front view: left, top, width, height; 8.71 below it
 TAIL_LEN = 30.0                                  # both FFC tails, measured from the panel's bottom edge
-LCD_TAIL_FRONT_X, LCD_TAIL_W = 32.68, 12.5       # left edge of the LCD tail in the FRONT view, tail width
-TP_TAIL_FRONT_X, TP_TAIL_W = 10.75, 7.0          # left edge of the touch tail in the FRONT view, tail width
+LCD_TAIL_FRONT_X, LCD_TAIL_W = 32.68, 12.5       # left edge of the LCD tail in the front view, tail width
+TP_TAIL_FRONT_X, TP_TAIL_W = 10.75, 7.0          # left edge of the touch tail in the front view, tail width
 
-PCB_W, PCB_H, PCB_T = 76.0, 96.5, 1.2
+PCB_W, PCB_H, PCB_T = 74.0, 72.0, 1.2
 PCB_R = 2.0                                      # outline corner radius
-PANEL_X0 = (PCB_W - PANEL_W) / 2                 # panel left edge in the PCB frame (-0.93)
-PANEL_Y0 = 8.0                                   # panel top edge: the first 8 mm of the PCB carry the antenna
-PANEL_Y1 = PANEL_Y0 + PANEL_H                    # panel bottom edge (89.84)
+PANEL_X0 = (PCB_W - PANEL_W) / 2                 # panel left edge in the PCB frame (-1.93)
+PANEL_Y0 = -9.5                                  # panel top edge: the strip above the PCB is for the antenna
+PANEL_Y1 = PANEL_Y0 + PANEL_H                    # panel bottom edge (72.34)
 
-# Tail centres in the PCB frame (rear view mirrors the front-view x).
-LCD_TAIL_X = PANEL_X0 + PANEL_W - (LCD_TAIL_FRONT_X + LCD_TAIL_W / 2)   # 38.0
-TP_TAIL_X = PANEL_X0 + PANEL_W - (TP_TAIL_FRONT_X + TP_TAIL_W / 2)      # 62.68
-NOTCH_DEPTH = 2.5                                # the tails wrap around the bottom edge inside these notches
-LCD_NOTCH = (LCD_TAIL_X - 7.0, LCD_TAIL_X + 7.0)
-TP_NOTCH = (TP_TAIL_X - 4.3, TP_TAIL_X + 4.3)
-FFC_MOUTH_Y = 76.0                               # connector openings; leaves about 1.5 mm of slack in a 30 mm tail
+LCD_TAIL_X = PANEL_X0 + LCD_TAIL_FRONT_X + LCD_TAIL_W / 2    # tail centres in the PCB frame: 37.0
+TP_TAIL_X = PANEL_X0 + TP_TAIL_FRONT_X + TP_TAIL_W / 2       # 12.32
+# Connector openings. A tail turns around the panel's bottom edge (about 4.5 mm) and goes 3.5 mm into the
+# connector, which leaves 22 mm; 1.7 mm of that is slack.
+FFC_MOUTH_Y = PANEL_Y1 - 22.0 + 1.7              # 52.04
 
-HOLES = [(3.6, 3.6), (PCB_W - 3.6, 3.6), (3.6, PCB_H - 3.6), (PCB_W - 3.6, PCB_H - 3.6)]   # M2 screws, 2.2 mm
+HOLES = [(3.5, 3.5), (PCB_W - 3.5, 3.5), (3.5, PCB_H - 3.5), (PCB_W - 3.5, PCB_H - 3.5)]   # M2 screws, 2.2 mm
 HOLE_D = 2.2
 
-# Cut-out in the top edge under the C5 module antenna (6.5 mm long): x0, x1, depth. Espressif ESP32-C5 hardware
-# design guidelines, "Positioning a Module on a Base Board": antenna outside the base board, board cut away on
-# both sides of it. The same page asks for 15 mm of clearance to metal; the LCD back is 1 mm away. RF is unproven.
-ANTENNA_NOTCH = (25.0, 51.0, 7.0)
-
 # Positions the enclosure needs (PCB frame). Kept in step with FIXED in tools/pcb.py.
-USB_X = 17.0                                     # USB-C receptacle centre on the bottom edge
-REAR_PADS = (59.0, 34.0)                         # centre of the 2 x 9 contact field P1
-REAR_PADS_SIZE = (22.32, 5.5)                    # pad field extent (9 pads at 2.54 mm, rows 3.5 mm apart, 2 mm pads)
-BUZZER = (51.5, 88.0)
-SERVICE_SW = (71.0, 58.0)
+USB_X = 57.0                                     # USB-C receptacle centre on the bottom edge
+USB_TAB = (12.0, 1.2)                            # the board's tab under the receptacle: width, length beyond the bottom
+                                                 # edge. It brings the receptacle's mouth to 1.39 mm behind the body's
+                                                 # outer face (GCT_USB4105_drawing.pdf p.1: a plug mates up to 1.85 mm)
+REAR_PADS = (LCD_TAIL_X, 66.0)                   # contact field P1 on the BACK of the board, long axis horizontal
+REAR_PADS_SIZE = (22.32, 5.5)                    # 9 pads at 2.54 mm, 2 rows 3.5 mm apart, 2 mm pads
+BUZZER_X = 23.5
+SERVICE_SW = (BUZZER_X - 4.8, 69.5)              # part side, side-actuated, plunger 0.5 mm inside the bottom edge:
+                                                 # its slot is the fourth in the row of the buzzer's three (2.4 mm pitch)
+BUZZER = (BUZZER_X, 62.0)                        # part side; sound leaves through slots in the bottom wall
+ANTENNA = (PCB_W / 2, PANEL_Y0 + 4.6, 42.0, 7.0)  # centre x, centre y, length, width of the flex antenna on the floor
+# The lock point: one M4 thin nut in the floor, on the centre line above the pad window (owner, 2026-11-14: one
+# metal point, not screw holes; the Dock hides what goes into it, and other makers' stands can use the same
+# thread). Nothing is on the back of the board there. Before: four, then two bosses for M2 screws.
+DOCK_LOCK = [(REAR_PADS[0], 55.0)]
+LOCK_NUT = (7.0, 2.2)                            # M4 thin nut, ISO 4035: across flats, height
+# Magnets that hold the Core on a Dock (2026-11-12): one disc under a thin skin of the floor at each place, a stack
+# of two in the Dock's front opposite it. Owner, 2026-11-15: one pair, level with the contact field and the same
+# distance either side of it, as near to it as it goes. The left one cannot go nearer: the buzzer is a magnetic one
+# and stands above the board there (the magnet's edge is 0.75 mm outside the buzzer's outline, its centre 10.8 mm
+# from the buzzer's): test the buzzer with the magnets fitted. The right one lies under the USB-C receptacle.
+# Before: four, an outer pair for BAR and an inner pair for FLOAT, 9.5 and 18.6 mm above the field.
+MAGNET_D, MAGNET_T = 10.0, 2.0                   # N42 disc, magnetised through its thickness
+DOCK_MAGNETS = [(REAR_PADS[0] - 23.5, REAR_PADS[1]), (REAR_PADS[0] + 23.5, REAR_PADS[1])]      # (13.5, 66), (60.5, 66)
 
-# Stack (z from the front glass surface towards the rear).
-GAP_PANEL_PCB = 0.6                              # foam between the panel's metal back and the PCB
-PART_H = 4.0                                     # tallest part on the rear face (buzzer, cmt-8504-100-smt.pdf p.1)
+# Stack. Z = 0 on the PCB's part side, +Z towards the display.
+STANDOFF = 2.0                                   # PCB back to the floor: screw bosses (until 2026-11-14 also the B3U-1000P, 1.6 mm)
+PART_H = 4.0                                     # tallest part (buzzer, cmt-8504-100-smt.pdf p.1)
+GAP_PARTS_PANEL = 0.5

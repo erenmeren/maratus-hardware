@@ -8,7 +8,7 @@ P4 pin,P4 pin name,Net,Group,Notes
 7,GPIO7,I2C0_SDA,touch,"Touch I2C, 4.7k pull-up to 3V3 (panel datasheet p.5). Same pins as the Waveshare P4 boards."
 8,GPIO8,I2C0_SCL,touch,"Touch I2C, 4.7k pull-up to 3V3 (panel datasheet p.5)."
 9,VDD_LP,3V3,power,0.1 uF.
-10,GPIO9,SERVICE_BTN_N,service,"Recessed service switch behind rear housing, active low, 10k pull-up."
+10,GPIO9,SERVICE_BTN_N,service,"Recessed service switch at the bottom edge, pressed with a pin through the bottom wall, active low, 10k pull-up."
 11,GPIO10,ACC_IO1,expansion,"Accessory IO 1. UART1 TXD on IO MUX, or I2C SDA via GPIO matrix. 100R series + ESD."
 12,GPIO11,ACC_IO2,expansion,"Accessory IO 2. UART1 RXD on IO MUX, or I2C SCL via GPIO matrix. 100R series + ESD."
 13,GPIO12,ACC_INT_N,expansion,Accessory interrupt / general IO. 100R series + ESD.
@@ -102,5 +102,5 @@ P4 pin,P4 pin name,Net,Group,Notes
 101,VDD_ANA,3V3,power,0.1 uF.
 102,VDD_BAT,3V3,power,Must not float. 0.1 uF + 10 uF.
 103,CHIP_PU,P4_EN,reset,"10k pull-up + 1 uF, plus a 3.0 V-class supervisor. RESET test pad."
-104,GPIO0,TP_GPIO0,spare,Test pad.
+104,GPIO0,C5_WAKE,wifi,"Host wake-up from the C5 (C5 GPIO2 through 0R), active high. LP pin: wakes the P4 from deep sleep. Test pad kept."
 105,GND,GND,power,Exposed pad.
