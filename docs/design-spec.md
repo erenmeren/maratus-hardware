@@ -443,8 +443,8 @@ any manual edit of `hardware/core/maratus-core.kicad_pcb`.
   mark is on the back's silkscreen at (10.0, 58.0), KiCad's footprint
   `Symbol:OSHW-Logo2_9.8x8mm_SilkScreen`, board-only (`LOGO` in `tools/pcb.py`; added to the routed
   board by a one-off call of `pcb.logo`). DRC of 2026-11-15T13:59: 0 violations, 0 unconnected
-  pads, 0 schematic parity issues. The repository has no licence file yet: the mark says the
-  design may be copied, a licence is what allows it. The owner has to choose one.
+  pads, 0 schematic parity issues. Licence: Apache License 2.0 (owner, 2026-11-15; `LICENSE`).
+  The datasheets in `docs/reference/` and Espressif's library are not the project's to license.
 
 ## 11. Open items
 

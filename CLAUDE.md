@@ -36,8 +36,8 @@ Related repos: `erenmeren/maratus-firmware` (ESP-IDF firmware), `erenmeren/marat
   night); the pictures in `out/maratus-case-compare.pdf` show that, the CAD and the board still
   have the pad window 3.6 mm deep, and the contact part is not chosen (design-spec section 12).
   The owner wants the hardware open so that anyone can build it (2026-11-15): the
-  open-source-hardware mark is on the back of the Core board (design-spec section 10). There is
-  no licence file yet; the owner has to choose the licence.
+  open-source-hardware mark is on the back of the Core board (design-spec section 10), and the
+  repository is public on GitHub under the Apache License 2.0 (owner's choice; `LICENSE`).
 - Dock (brief Phase 3, started at the owner's request on 2026-11-10): draft schematics and
   autorouted boards for its two boards (`dock-contact`, `dock-base`) and two generated bodies
   around the same inner parts (design-spec section 13): BAR (the Core leans on a 38 mm round bar
