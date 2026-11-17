@@ -120,6 +120,7 @@ Related repos: `erenmeren/maratus-firmware` (ESP-IDF firmware), `erenmeren/marat
 | `docs/brief.md` | The original project brief. Read it once; it sets the standard of work. |
 | `docs/design-spec.md` | Phase 0 decisions in schematic-ready form. |
 | `docs/bringup-checklist.md` | Prototype bring-up checklist (all lines untested). |
+| `docs/layout-brief.md` | Brief for a layout engineer (2026-11-16): the critical nets, Espressif's layout rules against the draft's measured lengths, JLCPCB's limits. |
 | `docs/reference/` | Datasheets and reference schematics. Fetch them; do not work from memory. |
 | `hardware/inputs/` | Pin maps, preliminary BOMs of the Core and the Dock, JLCPCB part numbers (CSV). |
 | `hardware/core/` | KiCad project for the Core (generated). |
@@ -179,7 +180,8 @@ Once a person edits the board, stop running `tools/pcb.py place`.
   of both tails is on the left seen from the front, the tails reach the connectors and the
   panel fits the printed body. Still to confirm: the ST7701SN init sequence (needs a board that
   can drive the panel).
-- A layout engineer for the critical nets and a review of the whole draft.
+- A layout engineer for the critical nets and a review of the whole draft. The owner decided on
+  2026-11-16 that this comes before any board is ordered; the brief is `docs/layout-brief.md`.
 - Dock body: the owner picks BAR or FLOAT, on pictures or on prints (design-spec section 13). The
   boards are the same for both.
 - RF: the owner chose the slim body (glass to the edge) with an external flex antenna on

@@ -352,6 +352,13 @@ any manual edit of `hardware/core/maratus-core.kicad_pcb`.
   tracks (VDD_HP above all) are thinner than they should be and need copper areas drawn by hand.
   All of these are assumptions to check against the chosen fabricator's limits and prices. No
   stack-up with dielectric thicknesses is defined, so no impedance is controlled.
+  Held against JLCPCB's pages on 2026-11-16 (`docs/layout-brief.md`): track and space are at
+  its 0.09 mm limit, vias under 0.45 mm cost more (674 of 734), and the 0.15 mm hole clearance
+  and the 0.1 mm edge clearance at J1 are below its 0.2 mm. The same brief holds the draft's
+  routed lengths against Espressif's layout rules: none of the fast groups meets them (DSI
+  pairs up to 72 mil apart inside a pair, SDIO data up to 1148 mil longer than the clock, vias
+  on the crystal's traces). The owner decided that day that a person lays out the critical nets
+  before a board is ordered.
 - Fixed positions: C5 module top left and turned so that its SDIO pins face the P4 (the 1U module
   has no antenna of its own, so its orientation is free), P4 upper middle with its DSI pins facing J2, J2 and J4
   with their openings 52 mm from the top edge, USB-C on the bottom edge at x = 57 mm, PHY right of
@@ -575,12 +582,18 @@ into `mechanical/core/slim/`. The rear, the bottom edge and the board are the sa
   its sheet list starts at 3 mm; Glasstops (Norwich) cuts glass by waterjet with no minimum
   quantity, thinnest glass not stated. No UK firm found that offers 1 mm strengthened glass
   with a black print in small numbers, and none publishes a price for such a part.
+  In China (2026-11-16, from the firms' own pages, all in Dongguan, no price or sample fee
+  published): Saida Glass's FAQ says no minimum quantity, a sampling cost that is refunded with
+  mass production and samples in 12 to 15 days, against the 100 pieces of its product page; WM
+  Cover Glass says no minimum for prototypes, 0.3 to 3.0 mm, chemical strengthening; Fuxin
+  Glass says 200 pieces, free samples with the shipping paid by the customer, within 7 days.
   For a request for a quotation, `tools/lens_drawing.py` writes
   `mechanical/core/maratus-core-lens-drawing.pdf` from the DXF (A4, 1 : 1): the border measured
   on the lens itself is 6.06 mm at the sides, 6.01 mm at the top and 11.77 mm at the bottom (the
   figures above are measured from the rim), the mark is 18.82 x 3.09 mm. Chosen for that sheet on
   2026-11-15, not tried: the print on the rear face (towards the display), opaque black, the mark
-  in a second colour (grey, as in the pictures); outline tolerance +/-0.10 mm from the 0.1 mm of
+  in a second colour (grey, as in the pictures; yellow since 2026-11-16, see the colour
+  study below); outline tolerance +/-0.10 mm from the 0.1 mm of
   play in the seat. Left to the maker and asked on the sheet: glass type, edge finish, inks,
   position tolerance of the print.
 - The panel sits 2.11 mm higher over the board than in the slim body, so that the body's bottom
@@ -601,6 +614,50 @@ into `mechanical/core/slim/`. The rear, the bottom edge and the board are the sa
   `out/case-compare/`, not in git). Since 2026-11-14 night, as the owner asked: a white screen
   with a black QR code and Inter lettering, a silver body on light grey tiles, no labels in the
   pictures. The colours are examples.
+- Colour study of the lens body (owner, 2026-11-15: between orange and red, the silver of the
+  pictures, dark grey and a few more, the wordmark in a colour that suits the body; perhaps
+  after the colour book of a Japanese artist): `out/maratus-core-colours.pdf`, ten options with
+  four views each (sources in `out/case-colours/`, not in git). Six pairs follow Sanzo Wada,
+  A Dictionary of Color Combinations (names, CMYK values and combination numbers from the open
+  data set github.com/mattdesl/dictionary-of-colour-combinations; its hex values are converted
+  from the CMYK): Spectrum Red and Orange, each with the wordmark in the body's colour,
+  Sea Green with Peach Red, Blue with Yellow, Dark Tyrian Blue with Light Glaucous Blue, Slate
+  Color with Golden Yellow. The owner found silver, ivory and dusky green dull the same day,
+  named Teenage Engineering, Nothing and Apple, then asked for blue, purple and red and one
+  more of the assistant's choice, all vivid, and had Peach Red, the first answer to "between
+  orange and red", made more orange (now the book's Orange). Picked by eye, because those makers publish no
+  colour values for these finishes: yellow (after Teenage Engineering's pocket operator modular
+  400), a black body with a red wordmark (after Nothing), pink (after the iPhone 16) and a
+  purple. No body colour is chosen. For a trial of the glass the owner chose Yellow on
+  2026-11-16: five pieces, all with the yellow wordmark (he first named five colours, then
+  dropped them for one). The lens drawing asks for yellow in place of grey and for the maker's
+  minimum order quantity and value. The owner sent the request for a quotation to UQG Optics,
+  Glasstops, Saida Glass, WM Cover Glass and Fuxin Glass on 2026-11-16, with a light copy of
+  the colour PDF. Delivery is to the United Kingdom: the requests to China ask for the cost to the door,
+  import duty and VAT, and the days from payment to arrival. Saida Glass answered the same
+  day without a price: no strict minimum quantity, and two questions (glass or PMMA for the
+  five pieces, the quantity of a later production), then a third: indoors or outdoors. The
+  owner's answers: glass; quantity not fixed, prices asked at 100, 500 and 1,000 pieces;
+  indoors first, outdoors as well but not the priority. No price from Saida Glass yet.
+  WM Cover Glass (Dongguan Weiman Technology) quoted by mail on 2026-11-16, for chemically
+  strengthened AGC glass (grade not named) with a PVD anti-fingerprint coating, black border
+  and yellow mark: 230 USD for the five pieces, refunded once orders reach 3,000 pieces; 50 USD
+  express shipping, duty not included; 5 to 7 days to make and about 5 to 7 days in transit;
+  3.80 USD a piece at 100 pieces plus 85 USD shipping. It asked how often the glass is touched
+  (spray coating is cheaper, PVD lasts longer), whether the mark has to let light through, and
+  whether the black may be Pantone Black C. Not answered in its mail: how the 230 USD is made
+  up, the price of an extra piece, the courier, UK VAT, how to pay. Its second mail the same
+  day, after the owner's questions: the glass is AGC soda-lime, surface stress at least
+  550 MPa, depth of layer over 10 um; five pieces 210 USD with a sprayed coating, 230 USD with
+  PVD; each extra piece 3.80 USD, so ten pieces with PVD 249 USD; the 230 USD is not split
+  (glass, inks, screens, grinding, coating, labour); DHL, UK duty and VAT paid by the owner to
+  the courier; bank transfer or PayPal; 2.00 USD a piece at 500 and 1.80 USD at 1,000 with
+  PVD, 1.85 and 1.65 USD sprayed. Its proposal for the mark, which is not backlit: black
+  first with the letters left clear, then yellow over them; a photo after printing. Not
+  answered: a refund of the sample charge below 3,000 pieces, a Pantone number for the
+  yellow. Nothing ordered.
+  Saida Glass wrote on 2026-11-16 that it is reviewing its price; Fuxin Glass wrote the same
+  day that it will quote on 2026-11-17. No answer from UQG Optics and Glasstops yet.
 - Contacts level with the rear face (owner, 2026-11-14 night, on those pictures: they must not
   lie inside the device). Not designed. The comparison pictures show it; `tools/enclosure.py`,
   the board and the STEP files still have the window with the board's pads 3.6 mm behind the
@@ -609,6 +666,44 @@ into `mechanical/core/slim/`. The rear, the bottom edge and the board are the sa
   place of the window, a footprint for that part in place of the pad field P1, and another way
   to locate the Dock, whose contact block reached 3.0 mm into the window and kept the Core
   from turning (section 13).
+  Looked up on 2026-11-16 in Mill-Max's data sheets, nothing chosen: its surface-mount target
+  discs 1625 and 1656 are 3.18 and 3.96 mm wide and 0.89 mm high, too wide for the 2.54 mm
+  pitch and too low. The nearest stock part is the through-hole target header of series 419
+  (`docs/reference/millmax_419-10-254-00-001000.pdf`, the 54-pin double-row strip: 2.54 mm
+  pitch, flat face, head 1.778 mm, 4.191 mm above the board, tails 0.508 mm for 0.711 mm
+  holes, 3.175 mm long). It does not fit the design as it is: it stands 0.59 mm above the
+  3.6 mm; the field's rows are 3.5 mm apart (the sheet's text gives the pitch, not the row
+  spacing); its head leaves the Dock's 0.9 mm plunger 0.44 mm of misalignment where the 2.0 mm
+  pad leaves 0.55 mm (open item 6); its tails come out 1.6 mm on the part side, where U6 and
+  BZ701 reach over the field's ends. An 18-pin version, price and stock are not checked.
+  Magnetic pairs (owner, 2026-11-16: Square's devices have spring contacts, and such connector
+  pairs are sold): EDAC's series 685/686 (`docs/reference/edac_685-686-689_ordering-guide.pdf`:
+  2 to 31 contacts, one or two rows, magnets hold and polarise) has an 18-contact pair with
+  drawings, male 685A1821220113Q and female 686A1821F20111E (read on 2026-11-16 at
+  files.edac.net/edac/content/685/685A1821220113Q.pdf and .../686/686A1821F20111E.pdf; not
+  copied into the repository, their title blocks forbid reproduction): two rows of nine
+  2.40 mm apart, two N52 magnets 27.40 mm apart,
+  2 A and 12 V a contact, 0.8 mm stroke, 10,000 cycles, 0.8 mm through-hole pins, hand or
+  selective soldering only. The female's contact nose is 18.30 x 5.30 mm and stands 3.0 mm
+  before a 2.0 mm flange, made to pass through a wall and end level with it. Its face,
+  however, is 11.80 mm in front of its board and its body is 38.5 x 9.1 mm, against the 3.6 mm
+  between this board and the rear face: it does not fit the body as it is. The male is 49.60 x
+  8.80 mm with two screw ears. No distributor, price or stock was found for this pair. EDAC's
+  MPM/MPF pairs end at 9 contacts in one row; Mill-Max's Maxnetic 878 has 2 pins at 4 mm and
+  stands 9.6 mm high. Makers in Dongguan that offer custom magnetic pairs on their own pages,
+  nothing asked: CFE (2 to 30 pins), Promax, Yiwei (double row, 2.54 mm). The AliExpress
+  listing the owner named could not be opened, and no source was found for how Square builds
+  its contacts. The same day the owner sent a request for a proposal to CFE, Promax and EDAC's
+  office in England: a pair with 18 flat contacts on the Core, level with the rear face 3.6 mm
+  from the board (3.5 to 4.5 mm offered), in an opening of about 26 x 9 mm, and spring pins on
+  the Dock; one-page sheet `out/maratus-core-contact-request.pdf` (script in
+  `out/contact-request/`, not in git). Magnets inside the pair are not asked for (owner, same
+  day, after weighing it: a magnet that fits 3.6 mm may not hold the Core, and reflow harms
+  magnets): the Core keeps its two 10 x 2 mm discs, and the request says magnets in the
+  connector are welcome, not required. CFE answered on 2026-11-17 with no proposal and no
+  price: it says it can develop a custom pair and first asks for the yearly volume, the
+  timeline, whether the device is the owner's own product, and the company's name, website
+  and place. No answer from Promax and EDAC yet.
 - Two soft plugs (owner, same day), `plug-lock.stl` and `plug-usb.stl`: for the lock point when
   the Core is used without a Dock, for the USB-C opening when it is on one. First guesses.
 - Not tried, and the reason the slim body is kept: the panel's touch through 1 mm more glass
