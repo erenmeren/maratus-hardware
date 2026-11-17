@@ -16,7 +16,9 @@ import enclosure as e
 DXF = e.BASE / "maratus-core-lens.dxf"
 PDF = e.BASE / "maratus-core-lens-drawing.pdf"
 LX, LY = 45.0, 58.0         # the lens's top left corner on the sheet, mm
-GREY = "#8d8e93"            # the mark's colour in the pictures (out/case-compare/faces.py)
+# The mark's colour: owner, 2026-11-16, trial glass for the Yellow of out/maratus-core-colours.pdf
+# (value from out/case-colours/options.json).
+YELLOW = "#f7c200"
 
 
 def hdim(xa, xb, y, text, cls=""):
@@ -75,12 +77,13 @@ def main():
         f"6  Window {ww:.2f} x {wh:.2f}, corners R{radius['window']:g}, clear. Border: {left:.2f} left and right,",
         f"    {top:.2f} top, {bottom:.2f} bottom. Print position to the outline: please state yours.",
         f"7  Mark \"maratus\" in the bottom border, {mx1 - mx0:.2f} x {my1 - my0:.2f}, centred left to right,",
-        f"    its middle {(my0 + my1) / 2 - oy0:.2f} above the bottom edge. Second colour: grey, near {GREY}",
+        f"    its middle {(my0 + my1) / 2 - oy0:.2f} above the bottom edge. Second colour: yellow, near {YELLOW}",
         "    (to be approved on a sample). Letter outlines: DXF layer \"mark\".",
         "8  Edges ground, small chamfer on both faces: please state your standard.",
         "9  Front face: no print. Anti-fingerprint coating: please quote as an option.",
         "10 File: maratus-core-lens.dxf, layers outline / window / mark, millimetres.",
-        "11 Please quote 5, 20 and 100 pieces, with tooling or screen charges and lead time.",
+        "11 Glass: 5 pieces. Please state tooling or screen charges, lead time,",
+        "    your minimum order quantity and your minimum order value.",
     ]
     text = [f'<text class="t" x="20" y="24">Maratus Core cover lens</text>',
             f'<text x="20" y="31">Drawing for a quotation, {datetime.date.today().isoformat()}. Seen from the front. Scale 1 : 1 on A4. Millimetres.</text>',
