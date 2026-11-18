@@ -656,8 +656,43 @@ into `mechanical/core/slim/`. The rear, the bottom edge and the board are the sa
   first with the letters left clear, then yellow over them; a photo after printing. Not
   answered: a refund of the sample charge below 3,000 pieces, a Pantone number for the
   yellow. Nothing ordered.
-  Saida Glass wrote on 2026-11-16 that it is reviewing its price; Fuxin Glass wrote the same
-  day that it will quote on 2026-11-17. No answer from UQG Optics and Glasstops yet.
+  Saida Glass quoted on 2026-11-17 (quotation SD-2026111705, not in the repo), for
+  chemically strengthened soda-lime glass with the black border, the yellow mark and an
+  anti-fingerprint coating whose kind is not stated: 140 USD for the five pieces plus 53 USD
+  shipping by air with UK duties and taxes included; 3.00 USD a piece at 100 (shipping
+  85 USD), 1.50 USD at 500 (195 USD), 1.30 USD at 1,000 (325 USD); with UV-resistant ink
+  160 USD for five, 4.00, 1.60 and 1.40 USD a piece; 15 days to make the samples and 15 to 18
+  days in transit; the sample charge refunded at 2,000 pieces; payment in advance by bank
+  transfer. Against WM Cover Glass: cheaper, and about three weeks slower.
+  The owner decided on 2026-11-17 to take five samples from each of the two, to compare them
+  before choosing one for production; speed no longer decides, because the board is not
+  ordered yet. He told both the same day. WM Cover Glass then offered 210 USD plus 50 USD
+  shipping for its five pieces (the owner had named Saida's price, not the firm); whether
+  that is still with PVD is asked. Saida Glass answered the same day: its coating is
+  sprayed, the glass is AGC with a surface stress of at least 500 MPa and a depth of layer of
+  at least 8 um, payment by PayPal is possible, and it asked for a Pantone or RAL number for
+  the yellow. Named for it: Pantone 7408 C, the nearest of two candidates to #f7c200 by the
+  screen values in third-party tables (7408 C #F6BE00, 7406 C #F1C400; Pantone's own values
+  were not read, and a screen value is not the printed colour). So the two sample sets differ
+  in the coating: PVD from WM Cover Glass, sprayed from Saida Glass. WM Cover Glass sent its
+  proforma invoice PI-K016-261117 the same day: five pieces at 42 USD, with PVD, plus 50 USD
+  freight, 260 USD in all, 5 to 7 days after payment, customs code 7007190000. The owner
+  paid it by PayPal on 2026-11-17 (205.58 GBP) and confirmed Saida's order of five the same
+  day (193 USD). Saida sent its proforma invoice SD-2026111806 on 2026-11-18 (193 USD: five
+  pieces 140 USD, air DDP shipping 53 USD; made 15 days after payment; its transport terms
+  field says EXW Dongguan while the shipping line says DDP) and the owner paid it by PayPal the
+  same day (152.72 GBP, to vicky_xu@saideglass.com, shown as Han XiaoWei). PayPal held an old
+  delivery address; the right one is on the invoice, and Saida is asked to ship there and to
+  confirm DDP. No glass has arrived.
+  Fuxin Glass quoted on 2026-11-18 with a drawing of its own (not in the repo), for chemically
+  strengthened aluminosilicate glass: five samples 469 USD ex works (312.5 USD the pieces,
+  156.5 USD the screen-printing setup, credited once orders reach 500 pieces), shipping, duty
+  and VAT not included; minimum order 100 pieces at 7.50 USD, 6.25 USD at 500; 15 to 20 days
+  after full payment. The only maker of the three to offer aluminosilicate, but two to four
+  times the price of the others; the owner did not order (2026-11-18) and keeps it in reserve
+  if the soda-lime samples prove too weak.
+  Glasstops declined on 2026-11-17: no custom glass at
+  present, its waterjet is out of use. No answer from UQG Optics yet.
 - Contacts level with the rear face (owner, 2026-11-14 night, on those pictures: they must not
   lie inside the device). Not designed. The comparison pictures show it; `tools/enclosure.py`,
   the board and the STEP files still have the window with the board's pads 3.6 mm behind the
@@ -700,10 +735,17 @@ into `mechanical/core/slim/`. The rear, the bottom edge and the board are the sa
   `out/contact-request/`, not in git). Magnets inside the pair are not asked for (owner, same
   day, after weighing it: a magnet that fits 3.6 mm may not hold the Core, and reflow harms
   magnets): the Core keeps its two 10 x 2 mm discs, and the request says magnets in the
-  connector are welcome, not required. CFE answered on 2026-11-17 with no proposal and no
+  connector are welcome, not required. That wording was softer than the owner's decision; on
+  2026-11-18 he confirmed: no magnets in the contact pair, the two in the body stay. CFE answered on 2026-11-17 with no proposal and no
   price: it says it can develop a custom pair and first asks for the yearly volume, the
   timeline, whether the device is the owner's own product, and the company's name, website
-  and place. No answer from Promax and EDAC yet.
+  and place. The owner's answers (2026-11-17): 500 to 1,000 a year in the first year of
+  production, prototypes as soon as possible, the first production batch in the first quarter
+  of 2027, his own product, no registered company yet (he orders as an individual), London.
+  CFE declined the same day: no standard pair of its own fits, a custom pair needs a new
+  mould, and its minimum for magnetic connectors is 5,000 sets, against 500 to 1,000 a year.
+  It offers to look again if the design is changed to take one of its standard connectors.
+  So CFE makes no custom pair at this volume. No answer from Promax and EDAC yet.
 - Two soft plugs (owner, same day), `plug-lock.stl` and `plug-usb.stl`: for the lock point when
   the Core is used without a Dock, for the USB-C opening when it is on one. First guesses.
 - Not tried, and the reason the slim body is kept: the panel's touch through 1 mm more glass
@@ -840,8 +882,23 @@ side up), but its harness plug then spans x = -10.7 to +10.7 mm of the Dock, whe
 takes x = -22.0 to -5.9 mm (heights not compared, nothing built to check). So the contact board,
 its seat, the saddle and both bodies have to be drawn again. Not done: the owner is still choosing
 the Dock's look (BAR, FLOAT or one of the later concepts). Until then `tools/dock.py` stops with
-a message, and the files in `mechanical/dock*`, `hardware/dock-contact` and the Dock's order
-files are the upright-field versions.
+a message, and the files in `mechanical/dock-bar`, `mechanical/dock-float`, `hardware/dock-contact`
+and the Dock's order files are the upright-field versions.
+
+Print prototypes for the Core as it is (owner, 2026-11-18): `tools/dock_print.py` draws A BAR and
+D TILE (concept 2) for both Core bodies into `mechanical/dock-{lens,slim}-{bar,tile}`, to print
+and try the look and the fit. Each has a block that reaches 3.0 mm into the pad window with 18
+pin holes, a recess for a horizontal contact board of 31 x 12 x 1.6 mm (not drawn, not fixed),
+two pockets for stacks of two 10 x 2 mm discs opposite the Core's two magnets, a 5 mm boss with a
+4.5 mm hole for an M4 x 8 lock bolt into the Core's nut, and the unchanged port drawer and base
+board; the script checks that no two parts overlap. BAR: the bar is 40 mm across (38 before) and
+its axis 15 mm behind the Core's rear face (13 before), because the magnets now sit low and their
+pockets need room in front of the base board; the bar touches the Core from 0.8 to 27.2 mm up its
+rear face and the Core's bottom edge stands 8.9 mm above the table. Its lock bolt cannot be
+reached with the bar closed. TILE: a 2.2 mm shell of the Core's outline on a 3 mm base plate (four
+M2 screws), glass 25 degrees from the table, upright rear wall with the port panel; the lock bolt
+goes in from inside with the plate off. Not printed, not tried; no contact part and no contact
+board exist for them yet.
 
 - Function: power and Ethernet for the Core through its rear pads, a stand, magnets that hold the
   Core (since 2026-11-12), and an optional screw lock.
