@@ -26,10 +26,12 @@ PALETTE = {       # the Core and the Dock's body are printed in the same materia
     "bar": {"body": dict(color=(0.66, 0.66, 0.62), rough=0.48), "accent": ORANGE},
     "float": {"body": dict(color=(0.028, 0.028, 0.031), rough=0.46), "accent": ORANGE},
 }
+for _core in ("lens", "slim"):      # tools/dock_print.py (2026-11-18): BAR in BAR's colours, TILE in FLOAT's
+    PALETTE[f"{_core}-bar"], PALETTE[f"{_core}-tile"] = PALETTE["bar"], PALETTE["float"]
 COMMON = {"glass": dict(color=(0.004, 0.004, 0.005), rough=0.07), "dark": dict(color=(0.02, 0.05, 0.03), rough=0.6),
           "steel": dict(color=(0.55, 0.55, 0.57), rough=0.3)}
 # What a picture leaves out: `inside` the Dock's outer part, `open` the Core (the Dock as it stands when the Core is off).
-HIDE = {"inside": {"body", "pod", "cap"}, "open": {"core-body", "core-panel", "core-magnets", "screen"}}
+HIDE = {"inside": {"body", "pod", "cap", "shell"}, "open": {"core-body", "core-panel", "core-lens", "core-magnets", "screen"}}
 # Camera offset from the target in mm, lens in mm (None: orthographic side view), key light offset.
 SHOTS = {"hero": ((175, -330, 135), 85, (-260, -330, 420)),
          "open": ((175, -330, 135), 85, (-260, -330, 420)),
@@ -127,5 +129,5 @@ def build(key):
     bpy.ops.wm.save_as_mainfile(filepath=str(OUT / f"maratus-dock-{key}.blend"))
 
 
-for variant in [a for a in ARGS if a in PALETTE] or PALETTE:
+for variant in [a for a in ARGS if a in PALETTE] or ("bar", "float"):
     build(variant)
