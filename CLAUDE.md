@@ -115,9 +115,12 @@ Related repos: `erenmeren/maratus-firmware` (ESP-IDF firmware), `erenmeren/marat
   `dock-base` has 2 known `silk_edge_clearance` warnings: the RJ45 jack overhangs the board edge.
   The contact board's size and pin field are written in both `tools/dock_pcb.py` and
   `tools/dock.py`: change them together.
-- Dock print prototypes for the current Core (2026-11-18): `out/tools/cadenv/bin/python tools/dock_print.py [slim] [bar|tile]`
-  writes `mechanical/dock-{lens,slim}-{bar,tile}/` (A BAR and D TILE, interference check with the Core);
-  `blender -b -P tools/dock_blend.py -- lens-bar lens-tile slim-bar slim-tile` renders them into `out/`.
+- Dock print prototypes for the current Core (2026-11-18): `out/tools/cadenv/bin/python tools/dock_print.py [slim] [bar|tile|mono]`
+  writes `mechanical/dock-{lens,slim}-{bar,tile,mono}/` (A BAR, D TILE and, since 2026-11-21, B MONO: SOFT for the
+  lens body, SHARP for the slim body; interference check with the Core);
+  `blender -b -P tools/dock_blend.py -- lens-bar lens-tile lens-mono slim-bar slim-tile slim-mono` renders them into `out/`.
+  `python3 tools/print_set.py ~/Desktop/maratus-print` collects what the owner prints into one folder per body
+  (`lens/`, `slim/`: Core body and plugs, MONO, TILE; owner, 2026-11-21).
 - Order files for JLCPCB: `python3 tools/jlc.py` writes `out/fab/jlcpcb/` from the boards as they
   are (Gerber archives of all three boards, BOM and placement file of the Core). Part numbers
   are in `hardware/inputs/jlcpcb-parts.csv`; stock there changes daily. The boards are drafts.

@@ -956,6 +956,30 @@ in git). A: the Core's back cuts a 48 mm round bar flat from the table up, so th
 over the table instead of 13 mm, and the port drawer sits above the contact part. G: a 124 mm
 lavender disc behind the Core, carried by one dark fin that holds the ports, and a low ridge for the
 contact part and the magnets. Fit checked on points only; not drawn for printing.
+Then B, drawn twice and made for each body (owner: one with rounded edges, one without):
+`out/maratus-dock-mono.pdf` (generator `out/concepts7`, not in git). SOFT for the lens body: Core and
+chin one rounded square from the front, a convex back, edges rounded 3 to 8 mm, blue with a yellow
+wordmark. SHARP for the slim body: a prism with one 45 degree slope and 0.6 mm edges, orange with a
+black port plate. In both the Core sits on a thin chin in a pocket of the foot; its buzzer and
+service slots then face the chin (openings through it not drawn).
+Then D, drawn twice the same way: `out/maratus-dock-tile.pdf` (generator `out/concepts8`, not in
+git), both at 25 degrees from the table with an upright rear wall. SOFT for the lens body: the Core
+the usual way up on a pedestal of its outline 2 mm smaller (shadow line all round), rear top edge
+rounded 10 mm, sea green with a peach-red line. SHARP for the slim body: the Core turned round, its
+bottom edge with the contact part at the high rear end, so the front is 15 mm high instead of 25;
+the firmware has to turn the picture and the touch 180 degrees on that Dock (not on the lens body,
+whose printed wordmark would read upside down); black with a red line.
+The owner's verdict the same day: the earlier TILE looked better, "more retro" (light grey with an
+orange plate, after ESP-Mosaico); the two redrawn TILEs are not taken. The print files keep the
+earlier TILE.
+Print files of B the same day, as the owner asked for B and D to print: `tools/dock_print.py mono`
+writes `mechanical/dock-{lens,slim}-mono/`: a 2.2 mm shell of the SOFT or SHARP foot (1.6 mm behind
+the Core), the Core in a pocket with 0.3 mm play on a chin 3 mm thick under its rear edge, the
+contact part, magnets and lock boss on the foot's front wall as on the other print Docks, the port
+drawer flush in the rear wall, an inset 3 mm base plate with four countersunk M2 screws. On the
+lens body the corner cups stop 7 mm up (1.2 mm thick there; 12 mm in the pictures) and the side
+edges are rounded 8 mm with the inside rounded to match. No two parts overlap; not printed, not
+tried. `tools/print_set.py` gathers the parts to print per body (`lens/`, `slim/`).
 
 - Function: power and Ethernet for the Core through its rear pads, a stand, magnets that hold the
   Core (since 2026-11-12), and an optional screw lock.
