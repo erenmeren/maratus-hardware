@@ -68,7 +68,10 @@ MAG_POCKET = 2 * m.MAGNET_T + 0.1            # a stack of two discs, 0.1 mm unde
 # height (wurth_7499010121A.pdf p.1: 16.1 x 25.4 x 13.55 mm); it stands 2.3 mm over the rear edge. j3 = harness header.
 BASE = dict(size=(46.2, 25.0), t=1.6, holes=[(3.0, 12.0), (17.0, 21.0)], rj45_x=37.05, usb_x=6.6,
             jack=(29.0, 1.9, 45.1, 27.3, 13.55), j3=(22.2, 4.55, 27.7, 23.45))
-PANEL = (49.2, 20.0, 2.0)                    # port panel: width, height, thickness; the jack is 0.3 mm proud of it
+# Port panel: width, height, thickness. 1.3 mm since 2026-11-21 (was 2.0): the USB-C opening is the Core's small oval
+# with no pocket for the plug's overmould (owner), so the receptacle's mouth, at the panel's inside, has to lie within
+# 1.85 mm of the outer face (as in tools/enclosure.py); the jack is now 1.0 mm proud of the panel.
+PANEL = (49.2, 20.0, 1.3)
 SHELF_H = 3.5                                # under the board: the jack's pins are 3.05 mm long (wurth p.1)
 RJ45_CUT = (16.6, 14.05)                     # panel cut-out of the jack, from the base board's top face
 # Shelf under the base board (KiCad x0, y0, x1; to the rear edge): not under the jack's pins and pegs, not under the
@@ -213,13 +216,18 @@ def lock(f, positions, reach=70.0):
     return f.place(cut)
 
 
-def magnets(f, places):
-    """The Dock's magnets: (solid to add inside the Dock's outer shape, cutter, the two stacks). Each pocket is open
-    to the front, where the magnets are glued in, and has 1.2 mm of plastic around and behind it."""
+def magnets(f, places, skin=0.0):
+    """The Dock's magnets: (solid to add inside the Dock's outer shape, cutter, the two stacks). With skin = 0 each
+    pocket is open to the front, where the magnets are glued in, and has 1.2 mm of plastic around and behind it.
+    With skin > 0 the front stays closed (`skin` of plastic in front of the magnets, as in the Core's floor) and the
+    pocket opens backwards into the Dock's inside, from where the magnets are glued in."""
     def discs(radius, w0, w1):
         each = [Pos(u, v, w0) * extrude(Circle(radius), amount=w1 - w0) for u, v in places]
         return f.place(sum(each[1:], each[0]))
     r = m.MAGNET_D / 2
+    if skin:
+        return (discs(r + 1.3, -skin - MAG_POCKET, 0), discs(r + 0.1, -skin - MAG_POCKET - 6.0, -skin),
+                discs(r, -skin - MAG_POCKET + 0.1, -skin))
     return discs(r + 1.3, -MAG_POCKET - 1.2, 0), discs(r + 0.1, -MAG_POCKET, 1), discs(r, -MAG_POCKET, -0.1)
 
 
@@ -244,9 +252,9 @@ class Drawer:
         part = block(-pw / 2, yp - pt, zb, pw / 2, yp, zb + ph)
         jx, ux = self.xy(BASE["rj45_x"], 0)[0], self.xy(BASE["usb_x"], 0)[0]
         part -= block(jx - RJ45_CUT[0] / 2, yp - pt - 1, top, jx + RJ45_CUT[0] / 2, yp + 1, top + RJ45_CUT[1])
-        # USB-C opening with a pocket for the plug's overmould (0.55 mm of panel left)
-        part -= block(ux - 4.8, yp - pt - 1, top + 1.63 - 1.9, ux + 4.8, yp + 1, top + 1.63 + 1.9)
-        part -= block(ux - 6.5, yp - 1.45, top + 1.63 - 3.2, ux + 6.5, yp + 1, top + 1.63 + 3.2)
+        # USB-C opening: the Core's oval (tools/enclosure.py), no pocket for the plug's overmould (owner, 2026-11-21)
+        part -= Pos(ux, yp - pt / 2, top + 1.63) * Rot(90, 0, 0) * extrude(
+            RectangleRounded(core.USB_W, core.USB_H, core.USB_H / 2 - 0.01), amount=pt / 2 + 1, both=True)
         for x0, y0, x1 in SHELF:
             (ax, ay), (bx, by) = self.xy(x0, y0), self.xy(x1, BASE["size"][1])
             part += block(bx, ay, zb, ax, by + 0.01, zb + SHELF_H)
