@@ -680,8 +680,9 @@ def cmd_import():
         raise SystemExit("session import failed")
     apply_fanout(board, json.loads((OUT / "fanout.json").read_text()))
     bridge_usb(board)
-    for pad in board.FindFootprintByReference("J1").Pads():     # USB-C GND pins: two thermal spokes do not fit
-        pad.SetLocalZoneConnection(pcbnew.ZONE_CONNECTION_FULL)
+    for ref in ("J1", "P1"):    # USB-C GND pins, contact part's GND pins: two thermal spokes do not fit
+        for pad in board.FindFootprintByReference(ref).Pads():
+            pad.SetLocalZoneConnection(pcbnew.ZONE_CONNECTION_FULL)
     tracks = board.GetTracks()
     vias = sum(t.GetClass() == "PCB_VIA" for t in tracks)
     narrow = [t for t in tracks if t.GetClass() != "PCB_VIA" and t.GetWidth() < IU(0.1)]

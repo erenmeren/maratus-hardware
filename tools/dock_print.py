@@ -7,10 +7,12 @@ lies on a wedge of its own outline, like a card terminal, concept of 2026-11-13)
   out/tools/cadenv/bin/python tools/dock_print.py [slim] [bar|tile]  -> mechanical/dock-{lens,slim}-{bar,tile}/
 
 Made to print and to try the look and the fit with a printed Core. Inside each Dock:
-- A block that reaches 3.0 mm into the Core's pad window (0.3 mm play all round) and puts the Core in place; 18
-  holes through it at the pads, for spring pins once a contact part is chosen (docs/design-spec.md section 12).
-- A 0.2 mm oversize recess behind the block for a horizontal contact board of 31 x 12 x 1.6 mm. That board is not
-  drawn yet (tools/dock_pcb.py still draws the vertical one) and nothing fixes it in the recess.
+- Since 2026-11-19 the spring-pin half of the connector, Promax NF6268-20PA's mate NC6268-20PA
+  (docs/reference/promax_NC6268-20PA.pdf p.1): its housing in a pocket, its raised part in a window of the face
+  (0.2 mm play), its board's front 6.10 mm (the working height) behind the face, so the Core's flat contacts press
+  the pins 1.40 mm; its two guide pins (8.50 mm high) reach 2.40 mm into the Core's part and put the Core in place.
+- A 0.2 mm oversize recess for that contact board, 56 x 12 x 1.6 mm, with 2.4 mm behind it for the pins' tails. The
+  board is not drawn yet (tools/dock_pcb.py still draws the vertical one) and nothing fixes it in the recess.
 - Two pockets, each for a stack of two 10 x 2 mm discs, opposite the Core's two magnets.
 - A 5 mm thick boss with a 4.5 mm hole opposite the Core's M4 nut, for an M4 x 8 bolt (3 mm into the Core).
 - The port drawer of tools/dock.py (port panel, shelf, base board with RJ45 and USB-C), unchanged.
@@ -37,9 +39,9 @@ CORE_D = core.Z_TOP - core.Z_REAR                    # rear face to the front fa
 CV = core.OY1 - m.REAR_PADS[1]                       # v of the pad field's centre (its u is 0)
 V_LOCK = core.OY1 - m.DOCK_LOCK[0][1]                # v of the Core's M4 nut
 MAG_UV = [(x - m.PCB_W / 2, core.OY1 - y) for x, y in m.DOCK_MAGNETS]
-WIN_W, WIN_H = m.REAR_PADS_SIZE[0] + 3.0, m.REAR_PADS_SIZE[1] + 3.0      # the Core's pad window (enclosure.py)
-BOARD = (31.0, 12.0, 1.6)                            # contact board, not drawn: width, height, thickness
-BOARD_W = -1.3                                       # its front face behind the Core's rear face (as in dock.py)
+BOARD = (56.0, 12.0, 1.6)                            # contact board, not drawn: width, height, thickness
+BOARD_W = -6.1                                       # its front face behind the Core's rear face: NC6268's working height
+NC_BASE, NC_TOP = 2.5, 4.5                           # NC6268-20PA: housing base and raised part, height over its board
 SLAB, BOLT = 5.0, 4.5                                # the lock boss's thickness, the bolt's clearance hole
 
 
@@ -78,15 +80,24 @@ def front(f, hull):
     """What every Dock has where it meets the Core: (solid to add inside `hull`, cutter)."""
     add = magnets(f, MAG_UV)[0] & hull
     add += f.place(box(-SLAB - 0.5, V_LOCK - SLAB - 0.5, -SLAB, SLAB + 0.5, V_LOCK + SLAB + 0.5, 0)) & hull
-    add += f.place(Pos(0, CV, -0.1) * extrude(RectangleRounded(WIN_W - 0.6, WIN_H - 0.6, 1.2), amount=3.1))
     bw, bh, bt = BOARD
-    cut = f.place(box(-bw / 2 - 0.2, CV - bh / 2 - 0.2, BOARD_W - bt - 0.2, bw / 2 + 0.2, CV + bh / 2 + 0.2, BOARD_W))
-    for du in range(-4, 5):
-        for dv in (-1.75, 1.75):
-            cut += f.place(Pos(du * 2.54, CV + dv, BOARD_W - 0.1) * extrude(Circle(0.95), amount=5.0))
+    cut = f.place(box(-bw / 2 - 0.2, CV - bh / 2 - 0.2, BOARD_W - bt - 2.4, bw / 2 + 0.2, CV + bh / 2 + 0.2, BOARD_W))
+    (bl, bwd, _), (rl, rw, _) = m.CONTACT_BASE, m.CONTACT_BOSS      # NC6268's housing has NF6268's outline
+    cut += f.place(Pos(0, CV, BOARD_W - 0.01) * extrude(RectangleRounded(bl + 0.4, bwd + 0.4, bwd / 2 + 0.19),
+                                                       amount=NC_BASE + 0.11))
+    cut += f.place(box(-rl / 2 - 0.2, CV - rw / 2 - 0.2, BOARD_W, rl / 2 + 0.2, CV + rw / 2 + 0.2, 0.5))
     cut += magnets(f, MAG_UV)[1]
     cut += f.place(Pos(0, V_LOCK, -SLAB - 1) * extrude(Circle(BOLT / 2), amount=SLAB + 2))
     return add, cut
+
+
+def nc_part(f):
+    """NC6268-20PA's housing and its board, without pins, for the overlap check."""
+    (bl, bwd, _), (rl, rw, _) = m.CONTACT_BASE, m.CONTACT_BOSS
+    bw, bh, bt = BOARD
+    part = f.place(Pos(0, CV, BOARD_W) * extrude(RectangleRounded(bl, bwd, bwd / 2 - 0.01), amount=NC_BASE))
+    part += f.place(box(-rl / 2, CV - rw / 2, BOARD_W + NC_BASE, rl / 2, CV + rw / 2, BOARD_W + NC_TOP))
+    return part + f.place(box(-bw / 2, CV - bh / 2, BOARD_W - bt, bw / 2, CV + bh / 2, BOARD_W))
 
 
 def base_board(d):
@@ -106,8 +117,8 @@ def bar():
     the bar carries the front; orange caps close the bar's ends; the port panel is a flat on its back.
     shortcut: the lock bolt cannot be reached with the bar closed; add an access path if the lock is wanted."""
     # r and s are larger than in dock.py (19, 13): the magnets now sit low, and their pockets need room in front of
-    # the base board
-    r, wall, cut, s, cap, skin, floor, foot, va = 20.0, 2.0, 1.5, 15.0, 2.2, 1.6, 2.0, 18.0, 14.0
+    # the base board. 22 and 17 since 2026-11-19 (were 20, 15): the NC6268-20PA's board lies 6.1 mm deep
+    r, wall, cut, s, cap, skin, floor, foot, va = 22.0, 2.0, 1.5, 17.0, 2.2, 1.6, 2.0, 18.0, 14.0
     zc = r - cut
     lean = 15.0
     sn, cs = math.sin(math.radians(lean)), math.cos(math.radians(lean))
@@ -115,7 +126,7 @@ def bar():
     f = Frame(lean, CORE_D * cs + (z0 + CORE_D * sn) * sn / cs, z0)   # the glass's plane meets the table at y = 0
     yc = f.pt(va, -s)[0]
     flat = math.sqrt(r * r - s * s)
-    for (_, v), what in ((MAG_UV[0], "a magnet"), ((0, V_LOCK), "the lock boss"), ((0, CV - WIN_H / 2), "the window")):
+    for (_, v), what in ((MAG_UV[0], "a magnet"), ((0, V_LOCK), "the lock boss"), ((0, CV - m.CONTACT_BASE[1] / 2 - 0.2), "the window")):
         assert abs(v - va) + 6.3 < flat or what == "the window" and va - v + 1.0 < flat, f"{what} is off the bar's flat"
     end = CORE_W / 2 - cap
     tube = lambda rad, x0, x1: Pos((x0 + x1) / 2, yc, zc) * Rot(0, 90, 0) * Cylinder(rad, x1 - x0)
@@ -156,7 +167,8 @@ def tile():
     """D: the Core lies on a wedge of its own outline, its glass 25 degrees from the table, its bottom edge in front.
     The wedge is a 2.2 mm shell on an orange 3 mm base plate (four countersunk M2 screws from below); its rear wall
     is upright and carries the port panel. The lock bolt goes in from inside, with the base plate off."""
-    tilt, thick, plate_t, wall, rear = 25.0, 6.0, 3.0, 2.2, 5.0
+    # thick 13 since 2026-11-19 (was 6): the NC6268-20PA, its board and the pins' tails reach 10.1 mm behind the face
+    tilt, thick, plate_t, wall, rear = 25.0, 13.0, 3.0, 2.2, 5.0
     f = Frame(90 - tilt, CORE_D * math.sin(math.radians(tilt)), thick * math.cos(math.radians(tilt)))
     y_rear = f.pt(CORE_H, 0)[0]
     outline = lambda grow, w0, w1: f.place(Pos(0, CORE_H / 2, w0) * extrude(
@@ -196,7 +208,8 @@ def build(name):
     out.mkdir(parents=True, exist_ok=True)
     f, d, printed, note = VARIANTS[name]()
     parts = {**{k: p for k, (p, _) in printed.items()}, "drawer": d.part(), **f.core(),
-             "dock-magnets": magnets(f, MAG_UV)[2], "base-board": base_board(d)}
+             "dock-magnets": magnets(f, MAG_UV)[2], "base-board": base_board(d),
+             "dock-contact": nc_part(f)}
     for key in [*printed, "drawer"]:
         part = parts[key]
         assert part.is_valid and len(part.solids()) == 1, f"{key}: {len(part.solids())} solids"
@@ -217,7 +230,7 @@ def build(name):
     print(f"  docked: {allbb.size.X:.1f} wide, {allbb.size.Y:.1f} deep, {allbb.max.Z:.1f} mm high; {note}")
     export_step(Compound(children=list(parts.values())), str(out / f"maratus-dock-{BODY}-{name}-assembly.step"))
     mats = {**{k: mat for k, (_, mat) in printed.items()}, "drawer": "body", "core-body": "body", "core-panel": "glass",
-            "core-magnets": "steel", "dock-magnets": "steel", "base-board": "dark"}
+            "core-magnets": "steel", "dock-magnets": "steel", "base-board": "dark", "dock-contact": "dark"}
     if "core-lens" in parts:
         mats["core-lens"] = "glass"
     scene = {"parts": mats, "screen": f.screen(),

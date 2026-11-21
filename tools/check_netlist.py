@@ -28,8 +28,8 @@ ROOT = sch.ROOT
 NET = ROOT / "out" / "maratus-core.net"
 # design-spec.md section 7
 P1 = {"a1": "GND", "a2": "ETH_TX_P", "a3": "ETH_TX_N", "a4": "GND", "a5": "ETH_RX_P", "a6": "ETH_RX_N",
-      "a7": "GND", "a8": "ACC_USB_DP", "a9": "ACC_USB_DN", "b1": "VIN", "b2": "VIN", "b3": "GND",
-      "b4": "ACC_ID", "b5": "ACC_IO1", "b6": "ACC_IO2", "b7": "ACC_INT_N", "b8": "GND", "b9": "V_ACC"}
+      "a7": "GND", "a8": "ACC_USB_DP", "a9": "ACC_USB_DN", "a10": "GND", "b1": "VIN", "b2": "VIN", "b3": "GND",
+      "b4": "ACC_ID", "b5": "ACC_IO1", "b6": "ACC_IO2", "b7": "ACC_INT_N", "b8": "GND", "b9": "V_ACC", "b10": "GND"}
 
 
 def rows(name):
@@ -80,7 +80,7 @@ def pads(ref, table):
 for ref, label, table in (
         ("U1", "P4: all 105 pads on the gpio-map net", {r[0]: r[2] for r in rows("maratus-core-gpio-map.csv")}),
         ("U2", "C5: all 32 pads on the pin-map net", {r[0]: r[2] for r in rows("maratus-core-c5-pin-map.csv")}),
-        ("P1", "Rear pads: all 18 pads on the design-spec net", P1)):
+        ("P1", "Rear contact part: all 20 contacts on the design-spec net", P1)):
     if ref not in part_pins:
         notes.append(f"{ref} not drawn yet")
         continue

@@ -32,12 +32,17 @@ USB_X = 57.0                                     # USB-C receptacle centre on th
 USB_TAB = (12.0, 1.2)                            # the board's tab under the receptacle: width, length beyond the bottom
                                                  # edge. It brings the receptacle's mouth to 1.39 mm behind the body's
                                                  # outer face (GCT_USB4105_drawing.pdf p.1: a plug mates up to 1.85 mm)
-REAR_PADS = (LCD_TAIL_X, 66.0)                   # contact field P1 on the BACK of the board, long axis horizontal
-REAR_PADS_SIZE = (22.32, 5.5)                    # 9 pads at 2.54 mm, 2 rows 3.5 mm apart, 2 mm pads
-BUZZER_X = 23.5
+REAR_PADS = (LCD_TAIL_X, 66.0)                   # contact part P1 on the BACK of the board, long axis horizontal
+# P1 since 2026-11-19 (owner): Promax NF6268-20PA, docs/reference/promax_NF6268-20PA.pdf p.1. Its housing stands
+# 3.50 mm on the board's back and goes through the floor: contact faces 0.10 mm behind the rear face (2.0 + 1.6).
+REAR_PADS_SIZE = (28.9, 4.3)                     # its pins' copper on the board: 2 x 10 at 3.00 mm, rows 2.40 mm, 1.9 mm pads
+CONTACT_BASE = (50.4, 7.4, 2.5)                  # housing on the board: length, width (round ends), height
+CONTACT_BOSS = (38.0, 5.5, 1.0)                  # its raised part with the contacts, through the floor
+BUZZER_X = 23.5                                  # centre of the row of three sound slots in the bottom wall
 SERVICE_SW = (BUZZER_X - 4.8, 69.5)              # part side, side-actuated, plunger 0.5 mm inside the bottom edge:
                                                  # its slot is the fourth in the row of the buzzer's three (2.4 mm pitch)
-BUZZER = (BUZZER_X, 62.0)                        # part side; sound leaves through slots in the bottom wall
+BUZZER = (BUZZER_X + 2.3, 58.5)                  # part side. Until 2026-11-19 at (23.5, 62): P1's left pins come
+                                                 # through the board there; 2.3 mm right of the slots to clear J4
 ANTENNA = (PCB_W / 2, PANEL_Y0 + 4.6, 42.0, 7.0)  # centre x, centre y, length, width of the flex antenna on the floor
 # The lock point: one M4 thin nut in the floor, on the centre line above the pad window (owner, 2026-11-14: one
 # metal point, not screw holes; the Dock hides what goes into it, and other makers' stands can use the same
@@ -50,8 +55,10 @@ LOCK_NUT = (7.0, 2.2)                            # M4 thin nut, ISO 4035: across
 # and stands above the board there (the magnet's edge is 0.75 mm outside the buzzer's outline, its centre 10.8 mm
 # from the buzzer's): test the buzzer with the magnets fitted. The right one lies under the USB-C receptacle.
 # Before: four, an outer pair for BAR and an inner pair for FLOAT, 9.5 and 18.6 mm above the field.
+# Since 2026-11-19 (owner: the magnets may move) 10.5 mm higher: P1's housing, 50.4 mm long, reaches under both old
+# places, and beside it the screw bosses are in the way. The left one is again 0.75 mm outside the buzzer's outline.
 MAGNET_D, MAGNET_T = 10.0, 2.0                   # N42 disc, magnetised through its thickness
-DOCK_MAGNETS = [(REAR_PADS[0] - 23.5, REAR_PADS[1]), (REAR_PADS[0] + 23.5, REAR_PADS[1])]      # (13.5, 66), (60.5, 66)
+DOCK_MAGNETS = [(REAR_PADS[0] - 23.5, REAR_PADS[1] - 10.5), (REAR_PADS[0] + 23.5, REAR_PADS[1] - 10.5)]  # (13.5, 55.5), (60.5, 55.5)
 
 # Stack. Z = 0 on the PCB's part side, +Z towards the display.
 STANDOFF = 2.0                                   # PCB back to the floor: screw bosses (until 2026-11-14 also the B3U-1000P, 1.6 mm)

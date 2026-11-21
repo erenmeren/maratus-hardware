@@ -11,7 +11,8 @@ from mathutils import Vector
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC, OUT = ROOT / "mechanical" / "core", ROOT / "out"
 PARTS = {"maratus-core-body": (0.08, 0.08, 0.09), "panel-dummy": (0.01, 0.01, 0.012), "pcb-dummy": (0.02, 0.25, 0.08),
-         "lens-dummy": (0.012, 0.012, 0.014)}       # the lens body's cover lens; the slim body has none
+         "lens-dummy": (0.012, 0.012, 0.014),        # the lens body's cover lens; the slim body has none
+         "contact-dummy": (0.03, 0.03, 0.03)}        # P1, NF6268-20PA, in the rear face
 PARTS = {name: colour for name, colour in PARTS.items() if (SRC / f"{name}.stl").exists()}
 CENTRE = Vector((37.0, -31.5, 2.0))
 

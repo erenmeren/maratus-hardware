@@ -28,5 +28,5 @@ BZ1,Buzzer,Same Sky (CUI),CMT-8504-100-SMT-TR,8.5 x 8.5 x 4.0 mm,1,Candidate,"Ma
 Q1,Buzzer driver,Alpha & Omega,AO3400A,SOT-23,1,Candidate,"30 V, under 48 mOhm at 2.5 V gate drive."
 SW1,Service switch,Omron,B3U-3000P,SMD,1,Candidate,"Side-actuated, on the part side at the bottom edge; reached with a pin tool only, through a slot in the bottom wall."
 -,Dock magnets,supermagnete,S-10-02-N,"10 x 2 mm disc, N42, Ni-Cu-Ni",4,Candidate,"Glued into the body's floor, not on the PCB: outer pair for BAR, inner pair for FLOAT. About 1.3 kg on steel (supplier page, 2026-11-12). Second source: first4magnets F670."
-P1,Rear accessory contact field,PCB feature,18 gold pads,2 x 9 at 2.54 mm,1,Defined,"No component: pads are part of the main PCB. ENIG for prototypes, hard gold for production."
+P1,Rear accessory contact part (Core half of the Dock connector),Dongguan Promax Electronics,NF6268-20PA,"2 x 10 flat contacts at 3.00 mm, through-hole, 50.4 x 7.4 x 3.5 mm",1,Candidate,"Mates with NC6268-20PA on the Dock. 2.0 A max at 12 V per contact, 50 mOhm. Drawing in docs/reference. No price yet (asked 2026-11-19)."
 -,"Passives (R, C, ferrites)",any,-,0402 / 0603,about 120,Estimate,Count firms up at schematic capture.
