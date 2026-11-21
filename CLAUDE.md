@@ -58,6 +58,9 @@ Related repos: `erenmeren/maratus-firmware` (ESP-IDF firmware), `erenmeren/marat
   its centre (design-spec section 12), not the four the Docks were drawn to. They are
   to be drawn again once the owner has chosen the Dock's look (he asked for more concepts on
   2026-11-15: `out/maratus-design-concepts-4.pdf`).
+  On 2026-11-21 he kept seven looks (A BAR, B MONO, D TILE, G HALO, J PUCK, K CLEAR, L TWIN;
+  `out/maratus-dock-concepts-5.pdf`) and, after printing BAR and TILE, asked for a 20 degree lean (TILE stays at 25
+  from the table), magnets hidden inside the Dock and the Core's small USB-C oval; `tools/dock_print.py` has all three.
 - Nothing here is manufacturing-ready. No hardware has been built or tested.
 
 ## Rules

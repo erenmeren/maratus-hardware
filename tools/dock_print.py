@@ -13,7 +13,8 @@ Made to print and to try the look and the fit with a printed Core. Inside each D
   the pins 1.40 mm; its two guide pins (8.50 mm high) reach 2.40 mm into the Core's part and put the Core in place.
 - A 0.2 mm oversize recess for that contact board, 56 x 12 x 1.6 mm, with 2.4 mm behind it for the pins' tails. The
   board is not drawn yet (tools/dock_pcb.py still draws the vertical one) and nothing fixes it in the recess.
-- Two pockets, each for a stack of two 10 x 2 mm discs, opposite the Core's two magnets.
+- Two pockets, each for a stack of two 10 x 2 mm discs, opposite the Core's two magnets. Since 2026-11-21 (owner:
+  the magnets stay inside, as in the Core) they are closed at the front by 0.5 mm of plastic and open to the inside.
 - A 5 mm thick boss with a 4.5 mm hole opposite the Core's M4 nut, for an M4 x 8 bolt (3 mm into the Core).
 - The port drawer of tools/dock.py (port panel, shelf, base board with RJ45 and USB-C), unchanged.
 Not a tooling design; not printed, not tried. The magnets' pull is calculated, not measured.
@@ -39,6 +40,7 @@ CORE_D = core.Z_TOP - core.Z_REAR                    # rear face to the front fa
 CV = core.OY1 - m.REAR_PADS[1]                       # v of the pad field's centre (its u is 0)
 V_LOCK = core.OY1 - m.DOCK_LOCK[0][1]                # v of the Core's M4 nut
 MAG_UV = [(x - m.PCB_W / 2, core.OY1 - y) for x, y in m.DOCK_MAGNETS]
+MAG_SKIN = core.MAGNET_SKIN                         # plastic in front of the Dock's magnets, as in the Core
 BOARD = (56.0, 12.0, 1.6)                            # contact board, not drawn: width, height, thickness
 BOARD_W = -6.1                                       # its front face behind the Core's rear face: NC6268's working height
 NC_BASE, NC_TOP = 2.5, 4.5                           # NC6268-20PA: housing base and raised part, height over its board
@@ -78,7 +80,7 @@ class Frame:
 
 def front(f, hull):
     """What every Dock has where it meets the Core: (solid to add inside `hull`, cutter)."""
-    add = magnets(f, MAG_UV)[0] & hull
+    add = magnets(f, MAG_UV, MAG_SKIN)[0] & hull
     add += f.place(box(-SLAB - 0.5, V_LOCK - SLAB - 0.5, -SLAB, SLAB + 0.5, V_LOCK + SLAB + 0.5, 0)) & hull
     bw, bh, bt = BOARD
     cut = f.place(box(-bw / 2 - 0.2, CV - bh / 2 - 0.2, BOARD_W - bt - 2.4, bw / 2 + 0.2, CV + bh / 2 + 0.2, BOARD_W))
@@ -86,7 +88,7 @@ def front(f, hull):
     cut += f.place(Pos(0, CV, BOARD_W - 0.01) * extrude(RectangleRounded(bl + 0.4, bwd + 0.4, bwd / 2 + 0.19),
                                                        amount=NC_BASE + 0.11))
     cut += f.place(box(-rl / 2 - 0.2, CV - rw / 2 - 0.2, BOARD_W, rl / 2 + 0.2, CV + rw / 2 + 0.2, 0.5))
-    cut += magnets(f, MAG_UV)[1]
+    cut += magnets(f, MAG_UV, MAG_SKIN)[1]
     cut += f.place(Pos(0, V_LOCK, -SLAB - 1) * extrude(Circle(BOLT / 2), amount=SLAB + 2))
     return add, cut
 
@@ -111,7 +113,7 @@ def base_board(d):
 
 
 def bar():
-    """A: a round bar as long as the Core is wide lies on the table; the Core leans 15 degrees back onto a flat on
+    """A: a round bar as long as the Core is wide lies on the table; the Core leans 20 degrees back onto a flat on
     its front. Since the pads, the magnets and the lock lie in the Core's lowest 25 mm, the bar touches the Core
     around 14 mm up its rear face, which lifts the Core's bottom edge off the table. A foot under the middle of
     the bar carries the front; orange caps close the bar's ends; the port panel is a flat on its back.
@@ -120,7 +122,7 @@ def bar():
     # the base board. 22 and 17 since 2026-11-19 (were 20, 15): the NC6268-20PA's board lies 6.1 mm deep
     r, wall, cut, s, cap, skin, floor, foot, va = 22.0, 2.0, 1.5, 17.0, 2.2, 1.6, 2.0, 18.0, 14.0
     zc = r - cut
-    lean = 15.0
+    lean = 20.0                                         # 15 until 2026-11-21: too upright on the print (owner)
     sn, cs = math.sin(math.radians(lean)), math.cos(math.radians(lean))
     z0 = zc - va * cs + s * sn                          # the axis is s behind the rear face, level with v = va
     f = Frame(lean, CORE_D * cs + (z0 + CORE_D * sn) * sn / cs, z0)   # the glass's plane meets the table at y = 0
@@ -208,7 +210,7 @@ def build(name):
     out.mkdir(parents=True, exist_ok=True)
     f, d, printed, note = VARIANTS[name]()
     parts = {**{k: p for k, (p, _) in printed.items()}, "drawer": d.part(), **f.core(),
-             "dock-magnets": magnets(f, MAG_UV)[2], "base-board": base_board(d),
+             "dock-magnets": magnets(f, MAG_UV, MAG_SKIN)[2], "base-board": base_board(d),
              "dock-contact": nc_part(f)}
     for key in [*printed, "drawer"]:
         part = parts[key]

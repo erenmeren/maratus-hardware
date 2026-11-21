@@ -937,6 +937,25 @@ reached with the bar closed. TILE: a 2.2 mm shell of the Core's outline on a 3 m
 M2 screws), glass 25 degrees from the table, the wedge 13 mm high at the front (6 mm until
 2026-11-19: the contact part with its board reaches 10.1 mm behind the face), upright rear wall with the port panel; the lock bolt
 goes in from inside with the plate off. Not printed, not tried; the contact board is not drawn.
+Owner, 2026-11-21, after printing BAR and TILE: BAR at 15 degrees stood too upright, TILE at 25
+degrees from the table looked right; the magnets must not show, as in the Core; the Dock's USB-C
+opening must be small, like the Core's. Changed the same day: BAR leans 20 degrees; the magnet
+pockets are closed at the front by 0.5 mm of plastic (the Core's `MAGNET_SKIN`) and open to the
+inside, where the stacks are glued in, so the gap between a Dock magnet and a Core magnet grows
+from 0.6 to 1.0 mm (pull not recalculated); the port panel's USB-C opening is the Core's
+8.9 x 3.1 mm oval with no pocket for the plug's overmould, and the panel is 1.3 mm thick instead
+of 2.0 so that the receptacle's mouth lies 1.3 mm behind its face (within the 1.85 mm of the
+plug, as in the Core); the RJ45 jack now stands 1.0 mm proud of the panel. No two parts overlap.
+BAR now: the Core's bottom edge 13.2 mm above the table, 86.6 x 56.2 x 103.1 mm docked.
+The owner kept seven of the twelve looks the same day: A BAR, B MONO, D TILE, G HALO, J PUCK,
+K CLEAR, L TWIN, drawn again around today's Core at 20 degrees (TILE 25 from the table) in
+`out/maratus-dock-concepts-5.pdf` (generator `out/concepts5`, not in git); C, E, F, H and I are
+dropped. None is chosen yet. The same day he asked for A and G to be drawn again from scratch, for
+both Core bodies, as pictures only: `out/maratus-dock-bar-halo.pdf` (generator `out/concepts6`, not
+in git). A: the Core's back cuts a 48 mm round bar flat from the table up, so the Core hovers 1.5 mm
+over the table instead of 13 mm, and the port drawer sits above the contact part. G: a 124 mm
+lavender disc behind the Core, carried by one dark fin that holds the ports, and a low ridge for the
+contact part and the magnets. Fit checked on points only; not drawn for printing.
 
 - Function: power and Ethernet for the Core through its rear pads, a stand, magnets that hold the
   Core (since 2026-11-12), and an optional screw lock.
