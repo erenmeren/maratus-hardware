@@ -106,32 +106,41 @@ def write():
     subprocess.run(["kicad-cli", "sym", "upgrade", "--force", str(tmp)], check=True, stdout=subprocess.DEVNULL)
     os.replace(tmp, OUT)  # atomic: a parallel reader never sees a half-written library
     PRETTY.mkdir(exist_ok=True)
-    (PRETTY / f"{REAR_PADS}.kicad_mod").write_text(rear_pads())
+    (PRETTY / f"{CONTACT}.kicad_mod").write_text(contact())
+    (PRETTY / "RearPads_2x9_P2.54mm_D2.0mm.kicad_mod").unlink(missing_ok=True)   # the field before NF6268-20PA
     (PRETTY / f"{SPRING_PIN}.kicad_mod").write_text(spring_pin())
     subprocess.run(["kicad-cli", "fp", "upgrade", "--force", str(PRETTY)], check=True, stdout=subprocess.DEVNULL)
 
 
 PRETTY = OUT.with_name("maratus.pretty")
-REAR_PADS = "RearPads_2x9_P2.54mm_D2.0mm"
+CONTACT = "Promax_NF6268-20PA"
 
 
-def rear_pads():
-    """P1 contact field, docs/design-spec.md section 7: 2 rows of 9 round pads, 2.54 mm pitch, rows 3.5 mm apart.
-    The 2.0 mm pad diameter is an assumption (0.54 mm gap); confirm it against the Dock's spring pins."""
+def contact():
+    """P1, the Core's half of the Dock connector: Promax NF6268-20PA, flat contacts, through-hole (owner, 2026-11-19).
+    docs/reference/promax_NF6268-20PA.pdf p.1: 2 rows of 10 at 3.00 mm, rows 2.40 mm apart, pins 1.10 mm, 1.90 mm
+    below the housing; housing 50.40 x 7.40 x 2.50 mm with a 38.00 x 5.50 mm part 1.00 mm higher (3.50 in all).
+    The drawing gives no PCB layout: the 1.3 mm hole (pin + 0.2 mm) and the 1.9 mm pad are assumptions, asked of
+    Promax on 2026-11-19. Pads numbered as the old field: row a at -y, pad 1 at -x (on the back: right, seen from
+    the front). No holes under the housing's two 2.30 mm flange holes: the pins hold it."""
     text = lambda prop, value, y, layer: (
         f'\t(property "{prop}" "{value}" (at 0 {y:g} 0) (layer "{layer}") '
         f'(effects (font (size 1 1) (thickness 0.15))))\n')
     pads = "".join(
-        f'\t(pad "{row}{i + 1}" smd circle (at {2.54 * (i - 4):g} {y:g}) (size 2 2) (layers "F.Cu" "F.Mask"))\n'
-        for row, y in (("a", -1.75), ("b", 1.75)) for i in range(9))
-    assert pads.count("(pad ") == 18
-    return (f'(footprint "{REAR_PADS}" (version 20241229) (generator "maratus_tools") (layer "F.Cu")\n'
-            '\t(descr "Maratus Core rear contact field P1: 2 x 9 round pads, 2.54 mm pitch, rows 3.5 mm apart, '
-            'pad 2.0 mm (assumed). design-spec section 7")\n'
-            + text("Reference", "REF**", -4.2, "F.SilkS") + text("Value", REAR_PADS, 4.2, "F.Fab")
-            + '\t(attr smd exclude_from_pos_files exclude_from_bom)\n'
-            '\t(fp_rect (start -11.41 -3) (end 11.41 3) (stroke (width 0.05) (type solid)) (fill no) '
-            '(layer "F.CrtYd"))\n' + pads + ")\n")
+        f'\t(pad "{row}{i + 1}" thru_hole circle (at {3.0 * (i - 4.5):g} {y:g}) (size 1.9 1.9) (drill 1.3) '
+        f'(layers "*.Cu" "*.Mask"))\n'
+        for row, y in (("a", -1.2), ("b", 1.2)) for i in range(10))
+    assert pads.count("(pad ") == 20
+    line = lambda x0, y0, x1, y1, layer, w: (f'\t(fp_rect (start {x0:g} {y0:g}) (end {x1:g} {y1:g}) '
+                                             f'(stroke (width {w}) (type solid)) (fill no) (layer "{layer}"))\n')
+    return (f'(footprint "{CONTACT}" (version 20241229) (generator "maratus_tools") (layer "F.Cu")\n'
+            '\t(descr "Promax NF6268-20PA flat-contact connector, 2 x 10 at 3.00 mm, rows 2.40 mm apart, through-hole. '
+            'Hole and pad sizes assumed. design-spec section 7")\n'
+            + text("Reference", "REF**", -4.6, "F.SilkS") + text("Value", CONTACT, 4.6, "F.Fab")
+            + '\t(attr through_hole exclude_from_pos_files)\n'
+            + line(-25.45, -3.95, 25.45, 3.95, "F.CrtYd", 0.05)
+            + line(-25.2, -3.7, 25.2, 3.7, "F.Fab", 0.1) + line(-19.0, -2.75, 19.0, 2.75, "F.Fab", 0.1)
+            + pads + ")\n")
 
 
 SPRING_PIN = "SpringPin_Harwin_P70-2300045R"

@@ -20,8 +20,7 @@ Related repos: `erenmeren/maratus-firmware` (ESP-IDF firmware), `erenmeren/marat
   (side-actuated B3U-3000P, pressed through a fourth slot beside the buzzer's three) and the
   Dock lock holes went from four to two and then to one M4 nut above the pad window: the back
   carries the pads only, and the rear of the body shows the pad window and one hole. The switch was moved on the routed
-  board by a one-off script (DRC of 2026-11-14T19:56: 0 violations, 0 unconnected pads); a new
-  `route` from scratch left connections open, so keep `out/pcb/routed-2026-11-14.kicad_pcb`.
+  board by a one-off script (DRC of 2026-11-14T19:56: 0 violations, 0 unconnected pads).
   Late that day the USB-C receptacle moved onto a 1.2 mm tab of the board so that the body has
   a phone-style oval opening (design-spec sections 10 and 12); again a one-off script on the
   routed board, DRC of 2026-11-14T20:51: 0 violations, 0 unconnected pads.
@@ -33,8 +32,14 @@ Related repos: `erenmeren/maratus-firmware` (ESP-IDF firmware), `erenmeren/marat
   that front on Apple's HomeView); the slim body before it is kept as a fallback because the
   panel's touch through the lens is not tried. None of it is reviewed by a hardware or
   mechanical engineer. The owner wants the rear contacts level with the rear face (2026-11-14
-  night); the pictures in `out/maratus-case-compare.pdf` show that, the CAD and the board still
-  have the pad window 3.6 mm deep, and the contact part is not chosen (design-spec section 12).
+  night). On 2026-11-19 he chose Promax's standard pair NF6268-20PA (Core) and NC6268-20PA (Dock),
+  ten pairs for prototypes, price not yet quoted (design-spec sections 7 and 12). P1 is now that
+  part: 2 x 10 through-hole on the board's back, contact faces 0.10 mm behind the rear face; its
+  hole and pad sizes are assumed until Promax sends a PCB layout, and its STEP from Promax is the
+  wrong part. The buzzer moved to (25.8, 58.5) and the magnets 10.5 mm up, and the board was
+  placed and routed again from scratch: DRC of 2026-11-19 has 6 violations, all J1's shell tabs
+  and pegs inside P1's courtyard on the back (known, design-spec section 10), 0 unconnected
+  pads. Keep `out/pcb/routed-2026-11-19.kicad_pcb`: routing differs from run to run.
   The owner wants the hardware open so that anyone can build it (2026-11-15): the
   open-source-hardware mark is on the back of the Core board (design-spec section 10), and the
   repository is public on GitHub under the Apache License 2.0 (owner's choice; `LICENSE`).
@@ -49,10 +54,10 @@ Related repos: `erenmeren/maratus-firmware` (ESP-IDF firmware), `erenmeren/marat
   is taped to the counter. Not reviewed. The LAN Module is not started.
   Out of date since 2026-11-14: both bodies, the saddle and the contact board are drawn for the
   upright pad field and no longer fit the Core. `tools/dock.py` stops with a message. Since
-  2026-11-15 the Core has two magnets, level with the pad field and 23.5 mm either side of its
-  centre (owner; design-spec section 12), not the four the Docks were drawn to. They are
-  to be drawn again once the owner has chosen the Dock's look (he asked for more concepts that
-  day: `out/maratus-design-concepts-4.pdf`).
+  2026-11-19 the Core has two magnets 10.5 mm above the contact part and 23.5 mm either side of
+  its centre (design-spec section 12), not the four the Docks were drawn to. They are
+  to be drawn again once the owner has chosen the Dock's look (he asked for more concepts on
+  2026-11-15: `out/maratus-design-concepts-4.pdf`).
 - Nothing here is manufacturing-ready. No hardware has been built or tested.
 
 ## Rules
@@ -183,6 +188,9 @@ Once a person edits the board, stop running `tools/pcb.py place`.
   of both tails is on the left seen from the front, the tails reach the connectors and the
   panel fits the printed body. Still to confirm: the ST7701SN init sequence (needs a board that
   can drive the panel).
+- Espressif's hardware review: the owner submitted the schematic, the KiCad project of the
+  2026-11-19 board and ten questions on 2026-11-20 through the link Espressif's sales sent
+  (files built into `out/espressif-review/`, not in git). No answer yet.
 - A layout engineer for the critical nets and a review of the whole draft. The owner decided on
   2026-11-16 that this comes before any board is ordered; the brief is `docs/layout-brief.md`.
 - Dock body: the owner picks BAR or FLOAT, on pictures or on prints (design-spec section 13). The

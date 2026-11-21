@@ -35,7 +35,7 @@ files, not into the `.kicad_sch`.
 
 Board: 74.0 x 72.0 mm plus a 12.0 x 1.2 mm tab for the USB-C receptacle, 1.2 mm thick, 4 copper
 layers: F.Cu parts and signals, In1.Cu ground, In2.Cu 3V3, B.Cu signals. Parts on the front
-only; the back carries the 18 rear pads. Rules of the draft: 0.09 mm clearance, 0.1 mm tracks,
+only; the back carries the rear contact part P1 (since 2026-11-19 Promax NF6268-20PA, through-hole). Rules of the draft: 0.09 mm clearance, 0.1 mm tracks,
 0.4 / 0.2 mm vias, power nets 0.2 mm tracks and 0.45 / 0.2 mm vias.
 
 Checks run on 2026-11-16 (reports in `reports/`):
@@ -122,11 +122,12 @@ strips under the two tails where no part may stand; the buzzer BZ701; the servic
 at the bottom edge; part heights under the panel. The C5 module may move, but its U.FL connector
 has to reach the flex antenna on the housing floor.
 
-Not fixed: the rear contacts. The owner wants them level with the rear face, and a contact part
-is being asked for from connector makers (spec section 12). The pad field P1, 2 x 9 pads at the
-bottom edge, may become a soldered part of about 26 x 9 mm on the same place, or a through-hole
-target header. Keep the Ethernet and accessory USB runs to that area easy to change, and do not
-put anything on the part side above it that cannot move.
+Rear contacts (changed 2026-11-19, after the measurements above): P1 is now Promax
+NF6268-20PA on the back, 2 x 10 through-hole pins at 3.00 mm, rows 2.40 mm apart, centre
+(37.0, 66.0), housing 50.4 x 7.4 mm (spec section 7). Its pins come through to the part side,
+1.9 mm long; the buzzer moved to (25.8, 58.5) to make room, and the board was placed and routed
+again, so the lengths in the table above are from the board before that day. The hole and pad
+sizes are assumed until Promax sends its PCB layout.
 
 ## Acceptance
 

@@ -1,8 +1,8 @@
-"""expansion: 18-pad rear contact field P1 and its protection parts.
+"""expansion: rear contact part P1 (Promax NF6268-20PA, 20 flat contacts) and its protection parts.
 
 Sources: docs/design-spec.md section 7 (pad table, ACC_ID network, series and pull-up values).
 Datasheets (docs/reference/, PDF page indexes): tpd4e05u06.pdf, bat54s_onsemi.pdf.
-P1 footprint: tools/maratus_lib.py rear_pads().
+P1 footprint: tools/maratus_lib.py contact(), from promax_NF6268-20PA.pdf p.1.
 """
 from sch import NC
 
@@ -11,14 +11,14 @@ ESD_FP = "Package_SON:USON-10_2.5x1.0mm_P0.5mm"
 
 
 def build(s):
-    s.group("P1 rear contact field - 2 x 9 pads, row a / row b as in design-spec section 7")
-    s.part("P1", "Connector_Generic:Conn_02x09_Row_Letter_First", "Rear pads 2x9", {
+    s.group("P1 rear contact part - Promax NF6268-20PA, 2 x 10, row a / row b as in design-spec section 7")
+    s.part("P1", "Connector_Generic:Conn_02x10_Row_Letter_First", "Promax NF6268-20PA", {
         "a1": "GND", "a2": "ETH_TX_P", "a3": "ETH_TX_N", "a4": "GND", "a5": "ETH_RX_P", "a6": "ETH_RX_N",
-        "a7": "GND", "a8": "ACC_USB_DP", "a9": "ACC_USB_DN",
+        "a7": "GND", "a8": "ACC_USB_DP", "a9": "ACC_USB_DN", "a10": "GND",
         "b1": "VIN", "b2": "VIN", "b3": "GND", "b4": "ACC_ID", "b5": "ACC_IO1_PAD", "b6": "ACC_IO2_PAD",
-        "b7": "ACC_INT_N_PAD", "b8": "GND", "b9": "V_ACC",
-    }, "maratus:RearPads_2x9_P2.54mm_D2.0mm",
-        src="design-spec 7 pad table. Pad diameter 2.0 mm is an assumption: confirm against the Dock's spring pins")
+        "b7": "ACC_INT_N_PAD", "b8": "GND", "b9": "V_ACC", "b10": "GND",
+    }, "maratus:Promax_NF6268-20PA",
+        src="design-spec 7 pad table; promax_NF6268-20PA.pdf p.1 (2.0 A per contact at 12 V). a10, b10: spare, GND")
 
     s.group("Accessory ID - 10k pull-up, 10k series, clamp to the rails; the 0.1 uF sits at the ADC pin on p4-core")
     s.R("10k 1%", "3V3", "ACC_ID", src="design-spec 7")

@@ -1,8 +1,32 @@
 ** Drc report for maratus-core.kicad_pcb **
-** Created on 2026-11-18T07:49:18 **
+** Created on 2026-11-20T12:48:43 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 0 DRC violations **
+** Found 6 DRC violations **
+[npth_inside_courtyard]: NPTH inside courtyard
+    Local override; error
+    @(54.1100 mm, 66.9200 mm): NPTH pad of J1
+    @(37.0000 mm, 66.0000 mm): Footprint P1
+[npth_inside_courtyard]: NPTH inside courtyard
+    Local override; error
+    @(59.8900 mm, 66.9200 mm): NPTH pad of J1
+    @(37.0000 mm, 66.0000 mm): Footprint P1
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(52.6800 mm, 66.4200 mm): PTH pad SH [GND] of J1
+    @(37.0000 mm, 66.0000 mm): Footprint P1
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(52.6800 mm, 70.6000 mm): PTH pad SH [GND] of J1
+    @(37.0000 mm, 66.0000 mm): Footprint P1
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(61.3200 mm, 66.4200 mm): PTH pad SH [GND] of J1
+    @(37.0000 mm, 66.0000 mm): Footprint P1
+[pth_inside_courtyard]: PTH inside courtyard
+    Local override; error
+    @(61.3200 mm, 70.6000 mm): PTH pad SH [GND] of J1
+    @(37.0000 mm, 66.0000 mm): Footprint P1
 
 ** Found 0 unconnected pads **
 

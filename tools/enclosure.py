@@ -113,9 +113,13 @@ def body():
         part -= cyl(x, y, m.MAGNET_D + 0.2, Z_REAR + MAGNET_SKIN, Z_PCB_BACK)
     ax, ay, al, aw = m.ANTENNA                                           # 0.4 mm recess that locates the antenna
     part -= block(ax - al / 2 - 0.5, ay - aw / 2 - 0.5, ax + al / 2 + 0.5, ay + aw / 2 + 0.5, Z_FLOOR - 0.4, Z_FLOOR)
-    px, py = m.REAR_PADS                                                  # window in the floor over the contact field
-    w, h = m.REAR_PADS_SIZE[0] + 3.0, m.REAR_PADS_SIZE[1] + 3.0
-    part -= block(px - w / 2, py - h / 2, px + w / 2, py + h / 2, Z_REAR, Z_FLOOR, r=1.5)
+    # Contact part P1 (NF6268-20PA): its housing sinks into a pocket on the inside of the floor (1.0 mm of floor
+    # left), its raised part fills a window through the floor with 0.15 mm play; contact faces at the rear face.
+    px, py = m.REAR_PADS
+    (bl, bw, bh), (rl, rw, _) = m.CONTACT_BASE, m.CONTACT_BOSS
+    part -= slot(px, py, bl + 0.4, bw + 0.4, Z_PCB_BACK - bh - 0.1, Z_FLOOR + 0.01)
+    part -= block(px - rl / 2 - 0.15, py - rw / 2 - 0.15, px + rl / 2 + 0.15, py + rw / 2 + 0.15, Z_REAR - 0.01,
+                  Z_FLOOR, r=0.3)
     # Bottom wall: USB-C opening (owner, 2026-11-14: like a phone's). The receptacle stands on the board's tab, its
     # mouth mech.USB_TAB[1] beyond the bottom edge, in a pocket on the inside of the wall (also cut into the shelf
     # above it); the plug goes through an oval hole in the wall's outer part. The plug's overmould stops on the
@@ -133,7 +137,7 @@ def body():
         part -= block(cx - half, PCY1 - 0.1, cx + half, PCY1 + 1.2, Z_PANEL_BACK - SHELF, Z_GLASS - m.PANEL_GLASS_T)
     z0, z1 = 0.1, 3.3
     for dx in (-2.4, 0.0, 2.4):
-        part -= block(m.BUZZER[0] + dx - 0.6, CY1 - 0.2, m.BUZZER[0] + dx + 0.6, OY1 + 0.2, z0, z1)
+        part -= block(m.BUZZER_X + dx - 0.6, CY1 - 0.2, m.BUZZER_X + dx + 0.6, OY1 + 0.2, z0, z1)
     # Service switch (owner, 2026-11-14): a fourth slot in the same row. From outside it is a slot like the other
     # three, 1 mm deep; only its lowest 1.2 mm goes through the wall, at the height of the switch's plunger
     # (b3u_omron.pdf p.3: body 1.2 mm high), so a pin cannot pass over the switch into the board.
@@ -174,6 +178,10 @@ def dummies():
     for x, y in m.HOLES:     # so a printed stand-in can be screwed onto the bosses
         pcb -= cyl(x, y, m.HOLE_D, Z_PCB_BACK, 0)
     out["pcb-dummy"] = pcb
+    px, py = m.REAR_PADS        # P1, NF6268-20PA without its pins (promax_NF6268-20PA.pdf p.1)
+    (bl, bw, bh), (rl, rw, rh) = m.CONTACT_BASE, m.CONTACT_BOSS
+    out["contact-dummy"] = slot(px, py, bl, bw, Z_PCB_BACK - bh, Z_PCB_BACK) + block(
+        px - rl / 2, py - rw / 2, px + rl / 2, py + rw / 2, Z_PCB_BACK - bh - rh, Z_PCB_BACK - bh)
     if LENS:
         (x0, y0, x1, y1, r), _ = lens_outline()
         out["lens-dummy"] = block(x0, y0, x1, y1, Z_GLASS, Z_TOP, r=r)
