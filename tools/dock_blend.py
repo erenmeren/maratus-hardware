@@ -28,6 +28,9 @@ PALETTE = {       # the Core and the Dock's body are printed in the same materia
 }
 for _core in ("lens", "slim"):      # tools/dock_print.py (2026-11-18): BAR in BAR's colours, TILE in FLOAT's
     PALETTE[f"{_core}-bar"], PALETTE[f"{_core}-tile"] = PALETTE["bar"], PALETTE["float"]
+# B MONO (2026-11-21), in the colours of its concept sheet (out/maratus-dock-mono.pdf): SOFT blue, SHARP orange.
+PALETTE["lens-mono"] = {"body": dict(color=(0.0, 0.156, 0.479), rough=0.42), "accent": dict(color=(0.93, 0.86, 0.0), rough=0.4)}
+PALETTE["slim-mono"] = {"body": dict(color=(0.896, 0.175, 0.014), rough=0.45), "accent": dict(color=(0.011, 0.011, 0.012), rough=0.5)}
 COMMON = {"glass": dict(color=(0.004, 0.004, 0.005), rough=0.07), "dark": dict(color=(0.02, 0.05, 0.03), rough=0.6),
           "steel": dict(color=(0.55, 0.55, 0.57), rough=0.3)}
 # What a picture leaves out: `inside` the Dock's outer part, `open` the Core (the Dock as it stands when the Core is off).

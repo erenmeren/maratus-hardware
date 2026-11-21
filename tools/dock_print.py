@@ -4,7 +4,9 @@ magnets level with it, one M4 lock point above it). Two looks the owner asked fo
 both Core bodies (lens and slim): A BAR (the Core leans on a round bar, concept of 2026-11-10) and D TILE (the Core
 lies on a wedge of its own outline, like a card terminal, concept of 2026-11-13).
 
-  out/tools/cadenv/bin/python tools/dock_print.py [slim] [bar|tile]  -> mechanical/dock-{lens,slim}-{bar,tile}/
+  out/tools/cadenv/bin/python tools/dock_print.py [slim] [bar|tile|mono]  -> mechanical/dock-{lens,slim}-{bar,tile,mono}/
+
+Since 2026-11-21 also B MONO (`mono`), drawn for each body: SOFT for the lens body, SHARP for the slim body.
 
 Made to print and to try the look and the fit with a printed Core. Inside each Dock:
 - Since 2026-11-19 the spring-pin half of the connector, Promax NF6268-20PA's mate NC6268-20PA
@@ -24,8 +26,8 @@ import math
 import pathlib
 import sys
 
-from build123d import (Box, Circle, Compound, Cone, Cylinder, Pos, RectangleRounded, Rot, export_step, export_stl,
-                       extrude, import_step)
+from build123d import (Box, Circle, Compound, Cone, Cylinder, Line, Plane, Pos, RectangleRounded, Rot, ThreePointArc,
+                       export_step, export_stl, extrude, fillet, import_step, make_face)
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import dock  # noqa: E402  (imports enclosure, which reads `slim` from sys.argv)
@@ -198,7 +200,132 @@ def tile():
     return f, d, printed, note
 
 
-VARIANTS = {"bar": bar, "tile": tile}
+def section(outline):
+    """A closed (y, z) outline as a face on the YZ plane (points, or (mid, end) pairs for arcs), as dock.profile."""
+    edges, prev = [], outline[0]
+    for item in [*outline[1:], outline[0]]:
+        if isinstance(item[0], tuple):
+            edges.append(ThreePointArc(prev, *item))
+            prev = item[1]
+        else:
+            edges.append(Line(prev, item))
+            prev = item
+    return Plane.YZ * make_face(edges)
+
+
+def across(face, x0, x1):
+    return Pos(x0, 0, 0) * extrude(face, amount=x1 - x0, dir=(1, 0, 0))
+
+
+def try_fillet(edges, radii, part):
+    """The largest of `radii` that works on `edges`, or `part` unchanged."""
+    for radius in radii:
+        try:
+            return fillet(edges, radius), radius
+        except ValueError:
+            continue
+    return part, 0.0
+
+
+def circle3(a, b, c):
+    """Centre and radius of the circle through three (y, z) points."""
+    (ax, ay), (bx, by), (cx, cy) = a, b, c
+    d = 2 * (ax * (by - cy) + bx * (cy - ay) + cx * (ay - by))
+    ux = ((ax * ax + ay * ay) * (by - cy) + (bx * bx + by * by) * (cy - ay) + (cx * cx + cy * cy) * (ay - by)) / d
+    uy = ((ax * ax + ay * ay) * (cx - bx) + (bx * bx + by * by) * (ax - cx) + (cx * cx + cy * cy) * (bx - ax)) / d
+    return (ux, uy), math.hypot(ax - ux, ay - uy)
+
+
+def mono():
+    """B, drawn once for each body (owner, 2026-11-21: one with rounded edges, one without). Core and foot are one
+    block of one colour: the Core sits in a pocket of the foot on a thin chin, leaning 20 degrees back, its rear face
+    on the foot's front wall, which carries the contact part, the magnets and the lock boss as on the other Docks.
+    Lens body, SOFT: seen from the front Core and chin make one rounded square; one convex curve behind; the curve's
+    side edges rounded 8 mm. Slim body, SHARP: one flat 45 degree slope to an upright rear wall; edges 0.6 mm.
+    A 2.2 mm shell (1.6 mm behind the Core) over an inset 3 mm base plate with four countersunk M2 screws; the port
+    drawer flush in the rear wall, two M2 screws from below; the lock bolt goes in from inside with the plate off.
+    The corner cups beside the lens Core's lowest corners stop 7 mm up, where they are still 1.2 mm thick."""
+    lean, z0, depth, gap, wall, skin, plate_t = 20.0, 3.0, 58.0, 0.3, 2.2, 1.6, 3.0
+    sn, cs = math.sin(math.radians(lean)), math.cos(math.radians(lean))
+    f = Frame(lean, CORE_D * cs + (z0 + CORE_D * sn) * sn / cs, z0)   # the front's plane meets the table at y = 0
+    half = CORE_W / 2
+    v_front = (0 - z0 - CORE_D * sn) / cs
+    on_face = lambda z: f.pt((z - z0 + skin * sn) / cs, -skin)          # the shell's inner face behind the Core
+    if core.LENS:
+        r_cup, h_rear = 7.0, 30.0
+        p_top, e_top = f.pt(46.0, 0), (depth, h_rear)
+        dy, dz = e_top[0] - p_top[0], p_top[1] - e_top[1]
+        mid = ((p_top[0] + e_top[0]) / 2 + 0.17 * dz, (p_top[1] + e_top[1]) / 2 + 0.17 * dy)
+        back = [p_top, (mid, e_top)]
+        (yc, zc), rho = circle3(p_top, mid, e_top)
+        ri = rho - wall                                                  # the shell's inner curve
+        k0, k1 = f.pt(0, -skin), (sn, cs)                                # inner face: point and direction
+        b = 2 * ((k0[0] - yc) * k1[0] + (k0[1] - zc) * k1[1])
+        c = (k0[0] - yc) ** 2 + (k0[1] - zc) ** 2 - ri * ri
+        t = (-b + math.sqrt(b * b - 4 * c)) / 2
+        c2 = (k0[0] + t * k1[0], k0[1] + t * k1[1])
+        c3 = (depth - wall, zc + math.sqrt(ri * ri - (depth - wall - yc) ** 2))
+        a2, a3 = math.atan2(c2[1] - zc, c2[0] - yc), math.atan2(c3[1] - zc, c3[0] - yc)
+        am = (a2 + a3) / 2
+        inner = [on_face(-1.0), c2, ((yc + ri * math.cos(am), zc + ri * math.sin(am)), c3), (depth - wall, -1.0)]
+    else:
+        r_cup, h_rear, tip = 0.0, 24.0, 1.2
+        t = ((depth - f.y0) * cs - (h_rear - z0) * sn - tip) / (cs + sn)
+        top = (depth - t, h_rear + t)                                   # the 45 degree slope meets the Core
+        back = [f.pt((top[0] - f.y0) * sn + (top[1] - z0) * cs, 0), top, (depth, h_rear)]
+        k = depth + h_rear - wall * math.sqrt(2)                       # the slope's inner face: y + z = k
+        y_face0, z_face0 = f.pt(0, -skin)
+        v2 = (k - y_face0 - z_face0) / (sn + cs)
+        inner = [on_face(-1.0), f.pt(v2, -skin), (depth - wall, k - depth + wall), (depth - wall, -1.0)]
+    outer = [f.pt(v_front, CORE_D), f.pt(r_cup, CORE_D), f.pt(r_cup, 0), *back, (depth, 0.0)]
+    hull = across(section(outer), -half, half)
+    hull &= f.place(Pos(0, v_front + 60, -80) * extrude(RectangleRounded(CORE_W, 120, core.R_OUT), amount=80 + CORE_D + 1))
+    pocket = f.place(Pos(0, CORE_H / 2, 0) * extrude(RectangleRounded(CORE_W + 2 * gap, CORE_H + 2 * gap,
+                                                                     core.R_OUT + gap), amount=CORE_D + 10))
+    cav = across(section(inner), -half + wall, half - wall)
+    r_side = 0.0
+    if core.LENS:
+        rear = [g for g in hull.edges() if abs(g.center().Y - depth) < 0.05 and abs(g.center().Z - h_rear) < 0.5]
+        hull = try_fillet(rear, (4.0, 3.0), hull)[0]                   # first: the side edges then run smoothly
+        side = [g for g in hull.edges() if abs(abs(g.center().X) - half) < 0.05 and g.center().Y > back[0][0] - 1.0
+                and g.center().Z > 0.5]
+        hull, r_side = try_fillet(side, (8.0, 6.0, 4.0), hull)
+        crest = [g for g in cav.edges() if abs(g.center().Y - (depth - wall)) < 0.05 and abs(g.center().Z - c3[1]) < 0.5]
+        cav = try_fillet(crest, (2.0, 1.5, 1.0), cav)[0]              # the inside follows the outside: same order
+        inside = [g for g in cav.edges() if abs(abs(g.center().X) - (half - wall)) < 0.05 and g.center().Y > c2[0] - 1.0
+                  and g.center().Z > 0.5]
+        cav, r_in = try_fillet(inside, (max(r_side - wall, 1.0), 5.0, 4.5), cav)  # concentric: the wall stays 2.2 mm
+        assert r_side <= wall or r_in, "the shell's inner corners would break through the rounded outer edges"
+    else:
+        outside = [g for g in hull.edges() if g.center().Z > 0.05]
+        hull = try_fillet(outside, (0.6, 0.4), hull)[0]
+    hull -= pocket                                                     # after the fillets: they work on the plain shape
+    body = hull - cav
+    pillars = [(sgn * (half - wall - 2.0), y) for sgn in (-1, 1) for y in (on_face(plate_t + 8)[0] + 4.0, depth - wall - 4.0)]
+    for x, y in pillars:
+        body += block(x - 2.0, y - 3.0, plate_t, x + 2.0, y + 3.0, plate_t + 8) & hull
+        body -= Pos(x, y, plate_t) * extrude(Circle(0.85), amount=7)
+    add, cutter = front(f, hull)
+    body += add
+    body -= cutter
+    d = Drawer(depth, plate_t)                                          # the panel flush with the rear face
+    body -= d.opening(wall + 1.5, 0.2)
+    y0p = on_face(plate_t)[0] + 0.2
+    pw_, pl_ = CORE_W - 2 * wall - 0.4, depth - wall - 0.2 - y0p
+    r_plate = max(r_side - wall - 0.2, 0.5) if core.LENS else 0.5      # the cavity's rear corners are round on SOFT
+    plate = Pos(0, y0p + pl_ / 2, 0) * extrude(RectangleRounded(pw_, pl_, r_plate), amount=plate_t) - cutter
+    for x, y in pillars:
+        plate -= Pos(x, y, 0) * extrude(Circle(1.15), amount=plate_t) + Pos(x, y, 0.6) * Cone(1.95, 0.75, 1.2)
+    for i in range(len(dock.DRAWER_SCREWS)):
+        plate -= d.screw(i, plate_t)
+    printed = {"foot": (body, "body"), "plate": (plate, "body")}
+    note = (f"{'SOFT' if core.LENS else 'SHARP'}: foot {CORE_W:.1f} wide, {depth:.0f} deep, rear wall {h_rear:.0f} mm "
+            f"high{f', side edges rounded {r_side:.0f} mm' if r_side else ''}; the Core leans {lean:.0f} degrees, its "
+            f"rear edge {z0:.0f} mm over the table")
+    return f, d, printed, note
+
+
+VARIANTS = {"bar": bar, "tile": tile, "mono": mono}
 
 
 def overlap(a, b):
