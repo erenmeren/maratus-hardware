@@ -47,6 +47,32 @@ BOARD = (56.0, 12.0, 1.6)                            # contact board, not drawn:
 BOARD_W = -6.1                                       # its front face behind the Core's rear face: NC6268's working height
 NC_BASE, NC_TOP = 2.5, 4.5                           # NC6268-20PA: housing base and raised part, height over its board
 SLAB, BOLT = 5.0, 4.5                                # the lock boss's thickness, the bolt's clearance hole
+# Recess for a self-adhesive bumper under each Dock (owner, 2026-11-21: they must not slide; little height): 3M Bumpon
+# SJ5302, clear, 7.9 mm across and 2.2 mm high, so 1.0 mm stands out of a 1.2 mm deep recess.
+FOOT = (8.4, 1.2)
+PILOT = (0.85, 7.0)                                  # pilot hole of an M2 screw into a pillar: radius, depth
+
+
+def inside(part, probe):
+    return (probe - part).volume < 0.01
+
+
+def check_pilots(hull, places, z0):
+    """Each M2 pilot hole, with 0.6 mm of plastic round it, has to stay inside the Dock's outer shape: on the lens
+    TILE of 2026-11-18 the front two broke through its rounded front corners."""
+    for x, y in places:
+        probe = Pos(x, y, z0) * extrude(Circle(PILOT[0] + 0.6), amount=PILOT[1])
+        assert inside(hull, probe), f"the pilot hole at ({x:.1f}, {y:.1f}) breaks out of the Dock"
+
+
+def feet(part, places):
+    """Bumper recesses cut into `part` from below, each checked for 1 mm of plastic round it and 0.8 mm above it."""
+    d, h = FOOT
+    for x, y in places:
+        probe = Pos(x, y, 0) * extrude(Circle(d / 2 + 1.0), amount=h + 0.8)
+        assert inside(part, probe), f"the bumper recess at ({x:.1f}, {y:.1f}) is too near an edge or another hole"
+        part -= Pos(x, y, -0.01) * extrude(Circle(d / 2), amount=h + 0.01)
+    return part
 
 
 class Frame:
@@ -115,55 +141,59 @@ def base_board(d):
 
 
 def bar():
-    """A: a round bar as long as the Core is wide lies on the table; the Core leans 20 degrees back onto a flat on
-    its front. Since the pads, the magnets and the lock lie in the Core's lowest 25 mm, the bar touches the Core
-    around 14 mm up its rear face, which lifts the Core's bottom edge off the table. A foot under the middle of
-    the bar carries the front; orange caps close the bar's ends; the port panel is a flat on its back.
+    """A, drawn again on 2026-11-21 (owner: one BAR that fits both bodies). The Core leans 20 degrees on a round bar
+    that its rear face cuts flat: the bar lies on the table behind the Core, and the plane of the Core's rear face
+    passes `e` in front of the bar's axis, so the flat runs from the table up to 48 mm and carries the contact part at
+    the bottom and the magnets above it. The Core hovers 1.5 mm over the table: from the front there is only the
+    screen. Both bodies share the rear face, the contact part, the magnets, the lock point and the bottom edge; only
+    width, height, corners and thickness differ. So the bar is placed from the Core's rear face, not from its front,
+    and is 76 mm long with its caps, shorter than both (81.4 and 86.6 mm): the same printed parts fit either body.
+    The port drawer sits above the contact part on the bar's axis, its panel a flat on the bar's back; orange caps.
+    Print the bar standing on one end: it is open at both ends and needs no supports.
     shortcut: the lock bolt cannot be reached with the bar closed; add an access path if the lock is wanted."""
-    # r and s are larger than in dock.py (19, 13): the magnets now sit low, and their pockets need room in front of
-    # the base board. 22 and 17 since 2026-11-19 (were 20, 15): the NC6268-20PA's board lies 6.1 mm deep
-    r, wall, cut, s, cap, skin, floor, foot, va = 22.0, 2.0, 1.5, 17.0, 2.2, 1.6, 2.0, 18.0, 14.0
-    zc = r - cut
-    lean = 20.0                                         # 15 until 2026-11-21: too upright on the print (owner)
+    # e 14 and z0 3.5 since the bumpers (2026-11-21; were 9 and 1.5): the flat strip the bar stands on is then 24 mm
+    # deep, room for two rows of bumper recesses, and the contact board's recess stays 2.3 mm above the table (it came
+    # within 0.3 mm before).
+    r, e, wall, cap, skin, floor, length = 24.0, 14.0, 2.0, 2.2, 1.6, 2.0, 76.0
+    lean, z0 = 20.0, 3.5
     sn, cs = math.sin(math.radians(lean)), math.cos(math.radians(lean))
-    z0 = zc - va * cs + s * sn                          # the axis is s behind the rear face, level with v = va
-    f = Frame(lean, CORE_D * cs + (z0 + CORE_D * sn) * sn / cs, z0)   # the glass's plane meets the table at y = 0
-    yc = f.pt(va, -s)[0]
-    flat = math.sqrt(r * r - s * s)
-    for (_, v), what in ((MAG_UV[0], "a magnet"), ((0, V_LOCK), "the lock boss"), ((0, CV - m.CONTACT_BASE[1] / 2 - 0.2), "the window")):
-        assert abs(v - va) + 6.3 < flat or what == "the window" and va - v + 1.0 < flat, f"{what} is off the bar's flat"
-    end = CORE_W / 2 - cap
-    tube = lambda rad, x0, x1: Pos((x0 + x1) / 2, yc, zc) * Rot(0, 90, 0) * Cylinder(rad, x1 - x0)
-    solid = f.behind() & above(0)
-    d = Drawer(yc + math.sqrt(r ** 2 - (dock.PANEL[1] / 2) ** 2), zc - dock.PANEL[1] / 2)
-    hull = (tube(r, -end, end) + block(-foot, yc - 60, 0, foot, yc, zc)) & solid
-    body = hull - (tube(r - wall, -end, end) & above(floor) & f.behind(-skin))
+    f = Frame(lean, 15.0, z0)                           # the Core's rear bottom edge: the same for both bodies
+    y_p0, z_p0 = f.pt(0, 0)
+    yc = y_p0 + (e + (r - z_p0) * sn) / cs             # the axis: e behind the rear face's plane, r above the table
+    a = f.pt(-z0 / cs, 0)                               # where that plane meets the table
+    k0 = (y_p0 - yc, z_p0 - r)
+    bq, cq = 2 * (k0[0] * sn + k0[1] * cs), k0[0] ** 2 + k0[1] ** 2 - r * r
+    b = f.pt((-bq + math.sqrt(bq * bq - 4 * cq)) / 2, 0)   # the flat's upper end, on the circle
+    section = lambda x0, x1: dock.profile([a, b, ((yc + r, r), (yc, 0.0))], x0, x1)
+    end = length / 2 - cap
+    tube = lambda rad, x0, x1: Pos((x0 + x1) / 2, yc, r) * Rot(0, 90, 0) * Cylinder(rad, x1 - x0)
+    inner = lambda g, x0, x1: tube(r - wall - g, x0, x1) & above(floor + g) & f.behind(-skin - g)
+    hull = section(-end, end)
+    body = hull - inner(0, -end - 1, end + 1)
+    d = Drawer(yc + math.sqrt(r ** 2 - (dock.PANEL[1] / 2) ** 2), r - dock.PANEL[1] / 2)
     add, cutter = front(f, hull)
     body += add
     for sgn in (-1, 1):                 # walls at the ends of the panel
         x0, x1 = sorted((sgn * (dock.PANEL[0] / 2 - 1.0), sgn * (dock.PANEL[0] / 2 + 2.0)))
         body += tube(r - wall + 0.1, x0, x1) & block(-BIG, yc + 12, -BIG, BIG, yc + BIG, BIG)
     sx, sy = d.xy(*dock.DRAWER_SCREWS[0])
-    body += Pos(sx, sy, 0) * extrude(Circle(3.5), amount=d.zb - 0.1)               # the drawer's shelf lands on this
+    body += (Pos(sx, sy, 0) * extrude(Circle(3.5), amount=d.zb - 0.1)) & hull       # the drawer's shelf lands on this
     body -= cutter
     body -= d.opening(12.0)
     body -= d.screw(0, d.zb)
-    body -= block(-35, yc - 6, -1, 35, yc + 2.5, 0.3)                              # 0.3 mm recess for mounting tape
     for sgn in (-1, 1):                 # shadow groove where a cap meets the bar
         x0, x1 = sorted((sgn * (end - 0.4), sgn * end))
-        body -= tube(r + 1, x0, x1) - tube(r - 0.9, x0, x1)
+        body -= section(x0, x1) - (tube(r - 0.9, x0, x1) & f.behind(-0.9) & above(0.9))
+    body = feet(body, [(sgn * (end - 6.0), y) for sgn in (-1, 1) for y in (a[0] + 7.0, a[0] + 18.0)])
 
     def end_cap(sgn):
         x0, x1 = sorted((sgn * end, sgn * (end + cap)))
-        part = tube(r, x0, x1) & solid
         s0, s1 = sorted((sgn * (end - 2.0), sgn * end))                 # spigot: a ring that fits the bar's bore
-        ring = lambda g: tube(r - wall - g, s0, s1) & above(floor + g) & f.behind(-skin - g)
-        part += ring(0.15) - ring(1.75)
-        return part
+        return section(x0, x1) + (inner(0.15, s0, s1) - inner(1.75, s0, s1))
 
     printed = {"body": (body, "body"), "cap-left": (end_cap(-1), "accent"), "cap-right": (end_cap(1), "accent")}
-    note = (f"bar {2 * r:.0f} mm across, axis {zc:.1f} mm above the table; it touches the Core from {va - flat:.1f} to "
-            f"{va + flat:.1f} mm up its rear face; the Core's bottom edge is {z0:.1f} mm above the table")
+    note = (f"bar {2 * r:.0f} mm across, {length:.0f} mm long with its caps; the Core's rear face cuts it flat from the "
+            f"table up to {b[1]:.1f} mm; the Core hovers {z0:.1f} mm over the table")
     return f, d, printed, note
 
 
@@ -185,7 +215,10 @@ def tile():
     add, cutter = front(f, hull)
     shell += add
     d = Drawer(y_rear - 1.0, plate_t)                    # the panel 1 mm inside the rear face
-    pillars = [(sgn * (CORE_W / 2 - wall - 2.0), y, 4.0, 6.0) for sgn in (-1, 1) for y in (12.0, y_rear - rear - 8.0)]
+    # The front pillars at y = 20 (12 until 2026-11-21: on the lens body their pilot holes broke through the rounded
+    # front corners, a hole the owner saw on the print).
+    pillars = [(sgn * (CORE_W / 2 - wall - 2.0), y, 4.0, 6.0) for sgn in (-1, 1) for y in (20.0, y_rear - rear - 8.0)]
+    check_pilots(hull, [(x, y) for x, y, _, _ in pillars], plate_t)
     for x, y, px, py in pillars:
         shell += block(x - px / 2, y - py / 2, plate_t, x + px / 2, y + py / 2, plate_t + 8) & hull
         shell -= Pos(x, y, plate_t) * extrude(Circle(0.85), amount=7)
@@ -194,6 +227,8 @@ def tile():
     shell -= d.opening(rear + 1, 0.2)
     for i in range(len(dock.DRAWER_SCREWS)):
         plate -= d.screw(i, plate_t)
+    y_front = plate.bounding_box().min.Y
+    plate = feet(plate, [(sgn * (CORE_W / 2 - 12.0), y) for sgn in (-1, 1) for y in (y_front + 8.0, y_rear - 7.0)])
     printed = {"shell": (shell, "body"), "plate": (plate, "accent")}
     note = (f"wedge {CORE_W:.1f} wide, {y_rear:.1f} deep, rear wall {f.pt(CORE_H, 0)[1]:.1f} mm high; glass "
             f"{tilt:.0f} degrees from the table; base plate {plate_t:.0f} mm")
@@ -302,6 +337,7 @@ def mono():
     hull -= pocket                                                     # after the fillets: they work on the plain shape
     body = hull - cav
     pillars = [(sgn * (half - wall - 2.0), y) for sgn in (-1, 1) for y in (on_face(plate_t + 8)[0] + 4.0, depth - wall - 4.0)]
+    check_pilots(hull, pillars, plate_t)
     for x, y in pillars:
         body += block(x - 2.0, y - 3.0, plate_t, x + 2.0, y + 3.0, plate_t + 8) & hull
         body -= Pos(x, y, plate_t) * extrude(Circle(0.85), amount=7)
@@ -318,6 +354,8 @@ def mono():
         plate -= Pos(x, y, 0) * extrude(Circle(1.15), amount=plate_t) + Pos(x, y, 0.6) * Cone(1.95, 0.75, 1.2)
     for i in range(len(dock.DRAWER_SCREWS)):
         plate -= d.screw(i, plate_t)
+    body = feet(body, [(sgn * (half - 11.0), 7.5) for sgn in (-1, 1)])                    # in the chin
+    plate = feet(plate, [(sgn * (half - 11.0), depth - wall - 6.5) for sgn in (-1, 1)])  # near the rear corners
     printed = {"foot": (body, "body"), "plate": (plate, "body")}
     note = (f"{'SOFT' if core.LENS else 'SHARP'}: foot {CORE_W:.1f} wide, {depth:.0f} deep, rear wall {h_rear:.0f} mm "
             f"high{f', side edges rounded {r_side:.0f} mm' if r_side else ''}; the Core leans {lean:.0f} degrees, its "
