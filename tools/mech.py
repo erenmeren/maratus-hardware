@@ -33,12 +33,12 @@ USB_TAB = (12.0, 1.2)                            # the board's tab under the rec
                                                  # edge. It brings the receptacle's mouth to 1.39 mm behind the body's
                                                  # outer face (GCT_USB4105_drawing.pdf p.1: a plug mates up to 1.85 mm)
 REAR_PADS = (LCD_TAIL_X, 66.0)                   # contact part P1 on the BACK of the board, long axis horizontal
-# P1 since 2026-11-19 (owner): Promax NF9642-20PA, docs/reference/promax_NF9642-20PA.pdf p.1 (housing height from
-# promax_NF6268-20PA.pdf p.1, the same part with wire tails). Its housing stands
-# 3.50 mm on the board's back and goes through the floor: contact faces 0.10 mm behind the rear face (2.0 + 1.6).
+# P1 since 2026-11-19 (owner): Promax NF9642-20PA, docs/reference/promax_NF9642-20PA.pdf p.1 and Promax's STEP of
+# 2026-11-23. Its housing stands 4.50 mm on the board's back (owner, 2026-11-23: the standard 4.50 mm housing, not a
+# 3.50 mm one for USD 2000 of tooling) and goes through the floor: contact faces 0.10 mm behind the rear face (3.0 + 1.6).
 REAR_PADS_SIZE = (29.1, 4.5)                     # its pins' copper on the board: 2 x 10 at 3.00 mm, rows 2.40 mm, 2.1 mm pads
 CONTACT_BASE = (50.4, 7.4, 2.5)                  # housing on the board: length, width (round ends), height
-CONTACT_BOSS = (38.0, 5.5, 1.0)                  # its raised part with the contacts, through the floor
+CONTACT_BOSS = (38.0, 5.5, 2.0)                  # its raised part with the contacts, through the floor
 BUZZER_X = 23.5                                  # centre of the row of three sound slots in the bottom wall
 SERVICE_SW = (BUZZER_X - 4.8, 69.5)              # part side, side-actuated, plunger 0.5 mm inside the bottom edge:
                                                  # its slot is the fourth in the row of the buzzer's three (2.4 mm pitch)
@@ -62,6 +62,7 @@ MAGNET_D, MAGNET_T = 10.0, 2.0                   # N42 disc, magnetised through 
 DOCK_MAGNETS = [(REAR_PADS[0] - 23.5, REAR_PADS[1] - 10.5), (REAR_PADS[0] + 23.5, REAR_PADS[1] - 10.5)]  # (13.5, 55.5), (60.5, 55.5)
 
 # Stack. Z = 0 on the PCB's part side, +Z towards the display.
-STANDOFF = 2.0                                   # PCB back to the floor: screw bosses (until 2026-11-14 also the B3U-1000P, 1.6 mm)
+STANDOFF = 3.0                                   # PCB back to the floor: screw bosses. 3.0 since 2026-11-23 for P1's 4.50 mm housing (was 2.0;
+                                                 # until 2026-11-14 also the B3U-1000P, 1.6 mm)
 PART_H = 4.0                                     # tallest part (buzzer, cmt-8504-100-smt.pdf p.1)
 GAP_PARTS_PANEL = 0.5

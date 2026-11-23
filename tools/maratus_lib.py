@@ -121,8 +121,8 @@ def contact():
     """P1, the Core's half of the Dock connector: Promax NF9642-20PA, flat contacts, through-hole (owner, 2026-11-19;
     the through-hole version of NF6268-20PA, drawing of 2026-11-23). docs/reference/promax_NF9642-20PA.pdf p.1:
     2 rows of 10 at 3.00 mm, rows 2.40 mm apart, pins 1.10 mm, 1.70 mm below the housing; recommended PCB layout
-    1.30 mm hole, 2.10 mm pad. Housing 50.40 x 7.40 x 2.50 mm with a 38.00 x 5.50 mm part 1.00 mm higher (3.50 in all:
-    promax_NF6268-20PA.pdf p.1 and Promax's mail of 2026-11-23; the 9642 drawing says 4.50, asked to correct it).
+    1.30 mm hole, 2.10 mm pad. Housing 50.40 x 7.40 x 2.50 mm with a 38.00 x 5.50 mm part 2.00 mm higher (4.50 in all; Promax's
+    STEP of 2026-11-23; owner, 2026-11-23: the standard housing, not a 3.50 mm one).
     Pads numbered as the old field: row a at -y, pad 1 at -x (on the back: right, seen from
     the front). No holes under the housing's two 2.30 mm flange holes: the pins hold it."""
     text = lambda prop, value, y, layer: (
