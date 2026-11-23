@@ -61,4 +61,4 @@ TPS3839K33DBZ,Package_TO_SOT_SMD:SOT-23,C96333,Texas Instruments,TPS3839K33DBZR,
 CMT-8504-100-SMT,Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT,,Same Sky (CUI),CMT-8504-100-SMT-TR,,,2026-11-13,"no stock at JLCPCB (C3811795, listed as no longer manufactured): buy elsewhere and solder by hand"
 ESP32-C5-WROOM-1U-N4,PCM_Espressif:ESP32-C5-WROOM-1U,,Espressif,ESP32-C5-WROOM-1U-N4,,,2026-11-13,no stock at JLCPCB (C55169999) or anywhere found: solder by hand when it can be bought
 B3U-3000P,Button_Switch_SMD:SW_SPST_B3U-3000P,C963349,Omron,B3U-3000P,Extended,0.4047,2026-11-14,"side-actuated, on the part side since 2026-11-14: no part is left on the back. The version with a ground terminal (B3U-3100PM, C4364500) had no stock that day"
-Promax NF6268-20PA,maratus:Promax_NF6268-20PA,,Promax,NF6268-20PA,,,,"bought from Promax, soldered by hand (through-hole, on the back)"
+Promax NF9642-20PA,maratus:Promax_NF9642-20PA,,Promax,NF9642-20PA,,,,"bought from Promax, soldered by hand (through-hole, on the back)"

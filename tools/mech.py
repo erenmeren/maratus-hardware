@@ -33,9 +33,10 @@ USB_TAB = (12.0, 1.2)                            # the board's tab under the rec
                                                  # edge. It brings the receptacle's mouth to 1.39 mm behind the body's
                                                  # outer face (GCT_USB4105_drawing.pdf p.1: a plug mates up to 1.85 mm)
 REAR_PADS = (LCD_TAIL_X, 66.0)                   # contact part P1 on the BACK of the board, long axis horizontal
-# P1 since 2026-11-19 (owner): Promax NF6268-20PA, docs/reference/promax_NF6268-20PA.pdf p.1. Its housing stands
+# P1 since 2026-11-19 (owner): Promax NF9642-20PA, docs/reference/promax_NF9642-20PA.pdf p.1 (housing height from
+# promax_NF6268-20PA.pdf p.1, the same part with wire tails). Its housing stands
 # 3.50 mm on the board's back and goes through the floor: contact faces 0.10 mm behind the rear face (2.0 + 1.6).
-REAR_PADS_SIZE = (28.9, 4.3)                     # its pins' copper on the board: 2 x 10 at 3.00 mm, rows 2.40 mm, 1.9 mm pads
+REAR_PADS_SIZE = (29.1, 4.5)                     # its pins' copper on the board: 2 x 10 at 3.00 mm, rows 2.40 mm, 2.1 mm pads
 CONTACT_BASE = (50.4, 7.4, 2.5)                  # housing on the board: length, width (round ends), height
 CONTACT_BOSS = (38.0, 5.5, 1.0)                  # its raised part with the contacts, through the floor
 BUZZER_X = 23.5                                  # centre of the row of three sound slots in the bottom wall

@@ -9,11 +9,12 @@ lies on a wedge of its own outline, like a card terminal, concept of 2026-11-13)
 Since 2026-11-21 also B MONO (`mono`), drawn for each body: SOFT for the lens body, SHARP for the slim body.
 
 Made to print and to try the look and the fit with a printed Core. Inside each Dock:
-- Since 2026-11-19 the spring-pin half of the connector, Promax NF6268-20PA's mate NC6268-20PA
-  (docs/reference/promax_NC6268-20PA.pdf p.1): its housing in a pocket, its raised part in a window of the face
+- Since 2026-11-19 the spring-pin half of the connector, Promax NF9642-20PA's mate NC9642-20PA
+  (docs/reference/promax_NC9642-20PA.pdf p.1, the through-hole NC6268-20PA): its housing in a pocket, its raised part in a window of the face
   (0.2 mm play), its board's front 6.10 mm (the working height) behind the face, so the Core's flat contacts press
   the pins 1.40 mm; its two guide pins (8.50 mm high) reach 2.40 mm into the Core's part and put the Core in place.
-- A 0.2 mm oversize recess for that contact board, 56 x 12 x 1.6 mm, with 2.4 mm behind it for the pins' tails. The
+- A 0.2 mm oversize recess for that contact board, 56 x 12 x 1.2 mm (since 2026-11-23: the 1.70 mm tails come
+  0.5 mm through it), with 2.4 mm behind it for the tails and their solder. The
   board is not drawn yet (tools/dock_pcb.py still draws the vertical one) and nothing fixes it in the recess.
 - Two pockets, each for a stack of two 10 x 2 mm discs, opposite the Core's two magnets. Since 2026-11-21 (owner:
   the magnets stay inside, as in the Core) they are closed at the front by 0.5 mm of plastic and open to the inside.
@@ -43,9 +44,9 @@ CV = core.OY1 - m.REAR_PADS[1]                       # v of the pad field's cent
 V_LOCK = core.OY1 - m.DOCK_LOCK[0][1]                # v of the Core's M4 nut
 MAG_UV = [(x - m.PCB_W / 2, core.OY1 - y) for x, y in m.DOCK_MAGNETS]
 MAG_SKIN = core.MAGNET_SKIN                         # plastic in front of the Dock's magnets, as in the Core
-BOARD = (56.0, 12.0, 1.6)                            # contact board, not drawn: width, height, thickness
+BOARD = (56.0, 12.0, 1.2)                            # contact board, not drawn: width, height, thickness
 BOARD_W = -6.1                                       # its front face behind the Core's rear face: NC6268's working height
-NC_BASE, NC_TOP = 2.5, 4.5                           # NC6268-20PA: housing base and raised part, height over its board
+NC_BASE, NC_TOP = 2.5, 4.5                           # NC9642-20PA: housing base and raised part, height over its board
 SLAB, BOLT = 5.0, 4.5                                # the lock boss's thickness, the bolt's clearance hole
 # Recess for a self-adhesive bumper under each Dock (owner, 2026-11-21: they must not slide; little height): 3M Bumpon
 # SJ5302, clear, 7.9 mm across and 2.2 mm high, so 1.0 mm stands out of a 1.2 mm deep recess.
@@ -201,7 +202,7 @@ def tile():
     """D: the Core lies on a wedge of its own outline, its glass 25 degrees from the table, its bottom edge in front.
     The wedge is a 2.2 mm shell on an orange 3 mm base plate (four countersunk M2 screws from below); its rear wall
     is upright and carries the port panel. The lock bolt goes in from inside, with the base plate off."""
-    # thick 13 since 2026-11-19 (was 6): the NC6268-20PA, its board and the pins' tails reach 10.1 mm behind the face
+    # thick 13 since 2026-11-19 (was 6): the NC9642-20PA, its board and the pins' tails reach 9.7 mm behind the face
     tilt, thick, plate_t, wall, rear = 25.0, 13.0, 3.0, 2.2, 5.0
     f = Frame(90 - tilt, CORE_D * math.sin(math.radians(tilt)), thick * math.cos(math.radians(tilt)))
     y_rear = f.pt(CORE_H, 0)[0]

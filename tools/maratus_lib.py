@@ -108,34 +108,36 @@ def write():
     PRETTY.mkdir(exist_ok=True)
     (PRETTY / f"{CONTACT}.kicad_mod").write_text(contact())
     (PRETTY / "RearPads_2x9_P2.54mm_D2.0mm.kicad_mod").unlink(missing_ok=True)   # the field before NF6268-20PA
+    (PRETTY / "Promax_NF6268-20PA.kicad_mod").unlink(missing_ok=True)   # before the through-hole NF9642-20PA
     (PRETTY / f"{SPRING_PIN}.kicad_mod").write_text(spring_pin())
     subprocess.run(["kicad-cli", "fp", "upgrade", "--force", str(PRETTY)], check=True, stdout=subprocess.DEVNULL)
 
 
 PRETTY = OUT.with_name("maratus.pretty")
-CONTACT = "Promax_NF6268-20PA"
+CONTACT = "Promax_NF9642-20PA"
 
 
 def contact():
-    """P1, the Core's half of the Dock connector: Promax NF6268-20PA, flat contacts, through-hole (owner, 2026-11-19).
-    docs/reference/promax_NF6268-20PA.pdf p.1: 2 rows of 10 at 3.00 mm, rows 2.40 mm apart, pins 1.10 mm, 1.90 mm
-    below the housing; housing 50.40 x 7.40 x 2.50 mm with a 38.00 x 5.50 mm part 1.00 mm higher (3.50 in all).
-    The drawing gives no PCB layout: the 1.3 mm hole (pin + 0.2 mm) and the 1.9 mm pad are assumptions, asked of
-    Promax on 2026-11-19. Pads numbered as the old field: row a at -y, pad 1 at -x (on the back: right, seen from
+    """P1, the Core's half of the Dock connector: Promax NF9642-20PA, flat contacts, through-hole (owner, 2026-11-19;
+    the through-hole version of NF6268-20PA, drawing of 2026-11-23). docs/reference/promax_NF9642-20PA.pdf p.1:
+    2 rows of 10 at 3.00 mm, rows 2.40 mm apart, pins 1.10 mm, 1.70 mm below the housing; recommended PCB layout
+    1.30 mm hole, 2.10 mm pad. Housing 50.40 x 7.40 x 2.50 mm with a 38.00 x 5.50 mm part 1.00 mm higher (3.50 in all:
+    promax_NF6268-20PA.pdf p.1 and Promax's mail of 2026-11-23; the 9642 drawing says 4.50, asked to correct it).
+    Pads numbered as the old field: row a at -y, pad 1 at -x (on the back: right, seen from
     the front). No holes under the housing's two 2.30 mm flange holes: the pins hold it."""
     text = lambda prop, value, y, layer: (
         f'\t(property "{prop}" "{value}" (at 0 {y:g} 0) (layer "{layer}") '
         f'(effects (font (size 1 1) (thickness 0.15))))\n')
     pads = "".join(
-        f'\t(pad "{row}{i + 1}" thru_hole circle (at {3.0 * (i - 4.5):g} {y:g}) (size 1.9 1.9) (drill 1.3) '
+        f'\t(pad "{row}{i + 1}" thru_hole circle (at {3.0 * (i - 4.5):g} {y:g}) (size 2.1 2.1) (drill 1.3) '
         f'(layers "*.Cu" "*.Mask"))\n'
         for row, y in (("a", -1.2), ("b", 1.2)) for i in range(10))
     assert pads.count("(pad ") == 20
     line = lambda x0, y0, x1, y1, layer, w: (f'\t(fp_rect (start {x0:g} {y0:g}) (end {x1:g} {y1:g}) '
                                              f'(stroke (width {w}) (type solid)) (fill no) (layer "{layer}"))\n')
     return (f'(footprint "{CONTACT}" (version 20241229) (generator "maratus_tools") (layer "F.Cu")\n'
-            '\t(descr "Promax NF6268-20PA flat-contact connector, 2 x 10 at 3.00 mm, rows 2.40 mm apart, through-hole. '
-            'Hole and pad sizes assumed. design-spec section 7")\n'
+            '\t(descr "Promax NF9642-20PA flat-contact connector, 2 x 10 at 3.00 mm, rows 2.40 mm apart, through-hole. '
+            'Promax recommended layout: 1.30 mm hole, 2.10 mm pad. design-spec section 7")\n'
             + text("Reference", "REF**", -4.6, "F.SilkS") + text("Value", CONTACT, 4.6, "F.Fab")
             + '\t(attr through_hole exclude_from_pos_files)\n'
             + line(-25.45, -3.95, 25.45, 3.95, "F.CrtYd", 0.05)

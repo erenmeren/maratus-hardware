@@ -69,6 +69,7 @@ def outline(w, h, notch):
 
 def rules(board):
     bds = board.GetDesignSettings()
+    # The contact board for the NC9642-20PA is to be 1.2 mm (2026-11-23: its 1.70 mm tails); this one is out of date.
     bds.SetBoardThickness(IU(1.6))
     bds.m_MinClearance, bds.m_TrackMinWidth = IU(0.2), IU(0.2)
     bds.m_ViasMinSize, bds.m_ViasMinAnnularWidth, bds.m_MinThroughDrill = IU(0.6), IU(0.13), IU(0.3)

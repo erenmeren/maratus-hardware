@@ -2068,7 +2068,7 @@
 		)
 		(uuid "5548fc59-75f6-5fc5-9215-594c005a05a8")
 	)
-	(text "Promax NF6268-20PA, 2 x 10, row a / row b as in design-spec section 7"
+	(text "Promax NF9642-20PA, 2 x 10, row a / row b as in design-spec section 7"
 		(exclude_from_sim no)
 		(at 20.32 26.67 0)
 		(effects
@@ -3213,7 +3213,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "59e6bed1-7f10-4b1b-b995-9b65e8c95f8b")
+			(uuid "d0e3712c-2ef6-4fb8-87cb-f0f399d9d111")
 		)
 		(instances
 			(project "maratus-core"
@@ -3290,7 +3290,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5251faaa-7921-4acb-bd18-ea7612a30030")
+			(uuid "4357dca2-9103-4e95-ae08-64733cdd6bac")
 		)
 		(instances
 			(project "maratus-core"
@@ -3367,7 +3367,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6802d366-6f7d-4688-a57b-0e319951abe3")
+			(uuid "e820d43c-ca21-4e5c-a9fb-05a664bb60e8")
 		)
 		(instances
 			(project "maratus-core"
@@ -3454,10 +3454,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4e919f3d-0c05-4e37-a195-9c7bc9739de4")
+			(uuid "99ef8cf5-3a46-42f0-a550-7ce24ae5e726")
 		)
 		(pin "2"
-			(uuid "b7dc40e7-a9c6-436f-8447-d9e9112297a4")
+			(uuid "b06abdbe-f6a6-4ae8-bf68-4a259ca0de87")
 		)
 		(instances
 			(project "maratus-core"
@@ -3534,7 +3534,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "63f0538e-353e-49f0-9070-88d33dc16469")
+			(uuid "2e2a9144-5d9b-4aa8-b4ab-f2fe510ee202")
 		)
 		(instances
 			(project "maratus-core"
@@ -3621,34 +3621,34 @@
 			)
 		)
 		(pin "1"
-			(uuid "ddab7b7e-284f-497a-8e65-980f45f89295")
+			(uuid "e63832dd-9d8b-43c4-bd7f-5e0edd96dfd8")
 		)
 		(pin "2"
-			(uuid "c4373be8-94b2-4f5a-8bff-55c3221e86e0")
+			(uuid "9093e0cc-b023-40ca-ac60-9fd43577f60d")
 		)
 		(pin "3"
-			(uuid "207ef8fa-7619-4f5e-9312-9be25e1fbd28")
+			(uuid "d35624d5-f3c8-49c4-9ce5-a5b206b5ea1f")
 		)
 		(pin "4"
-			(uuid "9c1dfffe-f934-4ec2-9c89-b6230e62175a")
+			(uuid "b49e0fda-a4be-4da4-b473-7d8fb00e381e")
 		)
 		(pin "5"
-			(uuid "924610bd-a245-41fb-8644-e12c0d46742b")
+			(uuid "18716144-3259-403a-a02d-69dbeecc3358")
 		)
 		(pin "6"
-			(uuid "7c778452-338e-4d5b-bab7-d0cd2352da52")
+			(uuid "1d435864-2afe-47e0-8c0a-e4dcd1faa071")
 		)
 		(pin "7"
-			(uuid "c0ccaf22-acab-49e6-9a4b-4f16ba3a6179")
+			(uuid "74b59010-430c-4bd7-8154-debaf2234a6d")
 		)
 		(pin "8"
-			(uuid "ca9d745f-4e1a-420a-b512-71ab3618695f")
+			(uuid "0cf611b8-2f4d-4d38-846c-0cceb015935c")
 		)
 		(pin "9"
-			(uuid "a83942f7-8868-49a9-8826-343e69290d6c")
+			(uuid "979ce216-c099-468a-b86d-7459a0f3cf04")
 		)
 		(pin "10"
-			(uuid "6ce82279-0923-46c9-a4ad-3150257956a3")
+			(uuid "22065ab4-db33-4abe-beaf-df5b6d7aa73b")
 		)
 		(instances
 			(project "maratus-core"
@@ -3725,7 +3725,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2eda10a6-b1e8-4f76-8b4d-e4d676739fa3")
+			(uuid "cb5ec09b-5afa-474e-b52c-642681300e8f")
 		)
 		(instances
 			(project "maratus-core"
@@ -3802,7 +3802,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c2535603-618f-44e8-abdc-12e3ab64d4c8")
+			(uuid "2f666252-cf40-4fc3-b03a-393bb3ab44be")
 		)
 		(instances
 			(project "maratus-core"
@@ -3889,10 +3889,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "390f465b-d9c6-48a0-8bd1-eabd15206788")
+			(uuid "a14b9c2d-30d2-4924-9612-447a4a7f17b1")
 		)
 		(pin "2"
-			(uuid "d0af7215-96d7-48b2-9a95-2270293e9cec")
+			(uuid "4ab19f3d-7f02-431e-8451-584a042f6048")
 		)
 		(instances
 			(project "maratus-core"
@@ -3969,7 +3969,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "38aa0970-e240-4425-8b46-986c8f545049")
+			(uuid "f2c1da22-b6ea-422e-9383-0d95b16f53fe")
 		)
 		(instances
 			(project "maratus-core"
@@ -4056,10 +4056,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "341cf0ba-8375-45f9-9dee-f9c7dbd4c8a9")
+			(uuid "dd2e4ef6-a34d-4477-a860-811416c62009")
 		)
 		(pin "2"
-			(uuid "c8f009e1-def2-452b-affc-e63c384e1f45")
+			(uuid "f49bbb65-5c06-4e7c-896e-87ab932a7aab")
 		)
 		(instances
 			(project "maratus-core"
@@ -4146,10 +4146,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "967ac97d-1a92-434e-a627-9d28855bc311")
+			(uuid "b0cf1d37-5b20-4561-8b10-e78cc3feb788")
 		)
 		(pin "2"
-			(uuid "1a5415b6-0579-40ac-8c23-be9afa5befbc")
+			(uuid "14fc1a3e-deae-4071-819d-b4fe35dd936f")
 		)
 		(instances
 			(project "maratus-core"
@@ -4236,34 +4236,34 @@
 			)
 		)
 		(pin "1"
-			(uuid "b999773a-3de6-476a-9b31-fbf1c7953ca8")
+			(uuid "69c5f880-6550-4cdd-9e9e-e4332851746b")
 		)
 		(pin "2"
-			(uuid "23c00f23-f09c-43e5-87f9-cd96f1b78ff5")
+			(uuid "790c8280-5d40-4e84-8624-a9ec1503b06a")
 		)
 		(pin "3"
-			(uuid "f0c4546d-5f2b-4a4b-919b-e2834b5144fe")
+			(uuid "b515e83b-b07b-4c5d-bfe0-28e17f2751c0")
 		)
 		(pin "4"
-			(uuid "0c8a9ede-8f35-49cc-806f-917c995c42a3")
+			(uuid "80aa5d3f-a50b-43d1-82e4-5ab81a419754")
 		)
 		(pin "5"
-			(uuid "ec4f9025-91f2-4ca2-bdeb-13b76cb1b0e6")
+			(uuid "e6a557d2-44ee-4e43-9077-b8b1cb748807")
 		)
 		(pin "6"
-			(uuid "894720c7-d106-4489-a390-54446232c3d4")
+			(uuid "aacc54b2-8623-4c8a-81c6-3315ab3952d4")
 		)
 		(pin "7"
-			(uuid "035d848d-5576-4d71-8f01-17ba163a4793")
+			(uuid "af1871a7-b131-41d9-878f-84438a42bbae")
 		)
 		(pin "8"
-			(uuid "2b356bdf-25f5-4400-a2c2-6bd9cc2b9fa1")
+			(uuid "d8146ef9-1a93-468a-a57e-3c2825497a36")
 		)
 		(pin "9"
-			(uuid "2ee9a8a7-fc57-4611-bbb1-9b2ace308a23")
+			(uuid "30d77420-5854-4839-b7d6-be980b0de8bd")
 		)
 		(pin "10"
-			(uuid "1b25dd22-05bd-413d-99df-d789a0294556")
+			(uuid "81abf17a-c26e-4651-b401-015da4bba961")
 		)
 		(instances
 			(project "maratus-core"
@@ -4350,10 +4350,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d8953b6e-aa4b-4c0b-b71b-b4c6fc401e92")
+			(uuid "dfd73dac-cbc3-4c97-b3b6-ff0ca0068118")
 		)
 		(pin "2"
-			(uuid "8d181324-f60e-4348-bf9f-be1d13fd6ffb")
+			(uuid "624df79d-bb66-4fe4-bef8-262111386f84")
 		)
 		(instances
 			(project "maratus-core"
@@ -4440,10 +4440,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "f296f25b-6874-4fc4-b032-54a8b475676c")
+			(uuid "1d8c4c10-5a08-45f8-a787-4c007b0819e9")
 		)
 		(pin "2"
-			(uuid "da316ec2-56e4-4364-b783-6ea68fabfc8d")
+			(uuid "672fca1a-7b6d-4b71-af5e-8365ad9e6f02")
 		)
 		(instances
 			(project "maratus-core"
@@ -4530,10 +4530,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "e5c6cc94-bd81-4d8f-bc84-75933679d1f6")
+			(uuid "9895cd51-1ba6-479b-8ac1-87fa56ecc4c5")
 		)
 		(pin "2"
-			(uuid "43f10610-9623-4004-b1c8-299e1892cff5")
+			(uuid "d4bd51a1-6743-4c41-b49f-8f3f9078a8f8")
 		)
 		(instances
 			(project "maratus-core"
@@ -4610,7 +4610,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f428dc62-3b51-4280-9432-49270004f706")
+			(uuid "826a5c66-beb9-4de9-abaf-0ba6b3dcd2ee")
 		)
 		(instances
 			(project "maratus-core"
@@ -4687,7 +4687,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "48fb3adc-eb7e-4e62-9f92-a45b1cf3b620")
+			(uuid "24f4851d-3a66-431b-991e-56c87ebd119d")
 		)
 		(instances
 			(project "maratus-core"
@@ -4774,10 +4774,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "836dc32e-53ab-4851-9b7c-04a563cfb881")
+			(uuid "89971c6b-1ec1-42b8-893c-556ad7234881")
 		)
 		(pin "2"
-			(uuid "1a685c20-fd7a-41fc-9d32-dbf6c77f7cc3")
+			(uuid "9e991ea1-94a3-4b34-9c64-f3c994b613e5")
 		)
 		(instances
 			(project "maratus-core"
@@ -4854,7 +4854,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "fe861ab7-7893-4ccb-b6f2-3deb8b4301d1")
+			(uuid "786794c3-9e3d-4584-9266-8ff09c872457")
 		)
 		(instances
 			(project "maratus-core"
@@ -4941,10 +4941,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "b6e5b128-c5cc-49f6-976b-431d61432f72")
+			(uuid "1b7f1569-6056-44dd-9bf2-62179b6013cf")
 		)
 		(pin "2"
-			(uuid "e7956789-70bb-4450-b9a0-81b601c9e240")
+			(uuid "c902ed3e-62d7-4ac1-bcbc-f938214eabad")
 		)
 		(instances
 			(project "maratus-core"
@@ -5031,13 +5031,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "24a3b018-5eb2-446d-b754-1ec0ebf33705")
+			(uuid "07761e41-7f65-4228-b544-9bd4ade1a5da")
 		)
 		(pin "2"
-			(uuid "e4b9944a-226c-45c7-8c85-46ac76c810ee")
+			(uuid "66ae15e0-79b4-4052-a402-e546be833a8a")
 		)
 		(pin "3"
-			(uuid "e6330f4d-f962-45be-8a88-5936a6b34b09")
+			(uuid "77ac0ce6-6a48-4437-bb76-ebd94a9127c4")
 		)
 		(instances
 			(project "maratus-core"
@@ -5069,7 +5069,7 @@
 				)
 			)
 		)
-		(property "Value" "Promax NF6268-20PA"
+		(property "Value" "Promax NF9642-20PA"
 			(at 44.45 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5079,7 +5079,7 @@
 				)
 			)
 		)
-		(property "Footprint" "maratus:Promax_NF6268-20PA"
+		(property "Footprint" "maratus:Promax_NF9642-20PA"
 			(at 43.18 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -5112,7 +5112,7 @@
 				)
 			)
 		)
-		(property "Source" "design-spec 7 pad table; promax_NF6268-20PA.pdf p.1 (2.0 A per contact at 12 V). a10, b10: spare, GND"
+		(property "Source" "design-spec 7 pad table; promax_NF9642-20PA.pdf p.1 (2.0 A per contact at 12 V). a10, b10: spare, GND"
 			(at 43.18 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -5123,65 +5123,65 @@
 				)
 			)
 		)
-		(pin "b4"
-			(uuid "392c2a0b-f258-47b3-a88b-8aedb74a9db8")
-		)
-		(pin "b5"
-			(uuid "4d28565a-6dbf-4014-992b-77864fd67604")
-		)
-		(pin "b6"
-			(uuid "c67eaf30-64ce-4636-aee6-1e8f5aee3dc7")
-		)
-		(pin "b7"
-			(uuid "5d79f21b-a4ca-42ee-bcf4-d46ae6bb4c11")
-		)
-		(pin "a1"
-			(uuid "426d39ac-4d97-43eb-ab15-d39f4e1bdabd")
-		)
-		(pin "a2"
-			(uuid "925a4f99-b87b-4090-bca7-a20d339d11c6")
-		)
-		(pin "a3"
-			(uuid "26534ed7-b5d8-4003-95e5-562900155af8")
-		)
-		(pin "b8"
-			(uuid "09a91b91-e0f8-4d89-8599-c454efffec51")
-		)
-		(pin "b9"
-			(uuid "6ce12603-dc28-4026-847d-117e85b71d2e")
-		)
-		(pin "b10"
-			(uuid "ed3a4c0f-9bfc-4738-acfe-37920cee910f")
-		)
 		(pin "a4"
-			(uuid "9714d5c6-1e0d-4543-af72-198cc3b05ef1")
+			(uuid "ddc64225-7eba-46f3-a1be-825ba84a34f7")
 		)
 		(pin "a5"
-			(uuid "601bcb91-a7b7-48a7-8142-37f14f18386b")
-		)
-		(pin "a6"
-			(uuid "be94bb95-2e6d-43a0-bdb8-ba985e0b9fc2")
-		)
-		(pin "a10"
-			(uuid "102da924-2e43-4902-8c50-c68781b1a743")
-		)
-		(pin "b1"
-			(uuid "55de34fe-df93-417f-9a18-bddf85154103")
-		)
-		(pin "b2"
-			(uuid "ef820d64-8f70-4018-8b00-aacd3342c39d")
-		)
-		(pin "b3"
-			(uuid "977bc092-0bea-49b9-bf3c-15c6b0fbdbb7")
-		)
-		(pin "a7"
-			(uuid "0b5685dd-4bde-45e8-abe1-8f222068156a")
-		)
-		(pin "a8"
-			(uuid "7938c6b6-c232-48fc-b3a9-1ef23ea298bb")
+			(uuid "049cfe07-b169-4f85-b376-172be6bcab10")
 		)
 		(pin "a9"
-			(uuid "1b921abe-3c5e-45f0-bc8f-4806d3a06ec5")
+			(uuid "92f36669-a721-4641-aa53-d56670c9f457")
+		)
+		(pin "a10"
+			(uuid "a65d2e93-11e7-4215-8f57-7107179458fe")
+		)
+		(pin "b1"
+			(uuid "798a796c-f563-40ef-bd5d-98b9af154994")
+		)
+		(pin "a1"
+			(uuid "7b9c6314-e69e-4f8d-9436-e2d6dc9eb4ac")
+		)
+		(pin "a2"
+			(uuid "595b81ca-7c4b-491b-a99d-b0cfd5b30c42")
+		)
+		(pin "a3"
+			(uuid "52537d66-01d7-4914-967d-5f12baba70a2")
+		)
+		(pin "b2"
+			(uuid "6d78296a-9103-4725-8de8-8227e06544ce")
+		)
+		(pin "b3"
+			(uuid "7379e04d-8834-479f-b66e-fbd5d3cc3e01")
+		)
+		(pin "b4"
+			(uuid "0cd24941-2c73-4083-9e1c-4e07f757992a")
+		)
+		(pin "a6"
+			(uuid "c7ea33e2-48c5-464e-810e-dcbce0ba7497")
+		)
+		(pin "a7"
+			(uuid "1ebdbd6b-f94d-4bbb-af5c-30200aa494ea")
+		)
+		(pin "a8"
+			(uuid "7b00fa83-384d-4264-b841-bd2ef71967aa")
+		)
+		(pin "b8"
+			(uuid "9eb679ac-964d-4616-8220-25fdf9ce89c3")
+		)
+		(pin "b9"
+			(uuid "641c5d28-c36c-4199-9816-b3aa79e588bd")
+		)
+		(pin "b10"
+			(uuid "fc000414-2195-4046-81be-ffde8ca79157")
+		)
+		(pin "b5"
+			(uuid "4634395e-cd6c-456d-9515-726062859813")
+		)
+		(pin "b6"
+			(uuid "e3036d1c-bba4-4ec3-9d3f-b98b1d991cb9")
+		)
+		(pin "b7"
+			(uuid "d6bee02f-08b1-426d-8e95-ef788223b235")
 		)
 		(instances
 			(project "maratus-core"
@@ -5258,7 +5258,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a6e22cd7-b18b-4465-9dd2-6e5e3ca63997")
+			(uuid "0a9634d2-ad41-41a9-b1e8-a599810230e7")
 		)
 		(instances
 			(project "maratus-core"

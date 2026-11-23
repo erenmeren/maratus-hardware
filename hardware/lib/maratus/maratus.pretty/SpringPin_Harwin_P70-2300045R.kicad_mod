@@ -7,7 +7,7 @@
 	(property "Reference" "REF**"
 		(at 0 -1.8 0)
 		(layer "F.Fab")
-		(uuid "108a902a-66fc-4fa2-a87c-9f2f43e4da41")
+		(uuid "8d09a354-2c4e-4360-87f5-726541434419")
 		(effects
 			(font
 				(size 0.6 0.6)
@@ -18,7 +18,7 @@
 	(property "Value" "SpringPin_Harwin_P70-2300045R"
 		(at 0 1.8 0)
 		(layer "F.Fab")
-		(uuid "b6fab539-e0b3-4a9f-a905-a992b3ce62d1")
+		(uuid "09cbd538-26fe-4a48-b62d-669725304b26")
 		(effects
 			(font
 				(size 0.6 0.6)
@@ -30,7 +30,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "8a1916a5-68c5-4376-a197-5e1c7379552f")
+		(uuid "55c3a058-6792-4350-965e-ac6dbb8d2c2f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -41,7 +41,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "74b5a3ea-aadd-40d9-b8c9-39314b3ae953")
+		(uuid "0857d4c5-fb8e-4024-bb17-39885933a737")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -59,7 +59,7 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "15b6ecd4-8ace-4f90-a483-cd461d6df6ad")
+		(uuid "de8e2853-e32f-496a-9b74-668e6d91344f")
 	)
 	(fp_circle
 		(center 0 0)
@@ -70,7 +70,7 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "4aedecc9-946e-40cd-b22b-1eacad911745")
+		(uuid "8d3e8b38-eff8-4d99-9fea-499665f3973c")
 	)
 	(pad "1" thru_hole circle
 		(at 0 0)
@@ -78,7 +78,7 @@
 		(drill 0.85)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "5e21c52e-64c7-451f-8746-13d83b6a60df")
+		(uuid "e1246c3f-bb01-453b-a895-e2b86a2b798e")
 	)
 	(embedded_fonts no)
 )
