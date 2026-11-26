@@ -6,3 +6,4 @@ out/*
 ~*
 fp-info-cache
 __pycache__/
+docs/
