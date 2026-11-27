@@ -6,5 +6,8 @@ out/*
 ~*
 fp-info-cache
 __pycache__/
-docs/
+docs/*
+!docs/layout-brief.md
+!docs/reference/
+docs/reference/promax_*
 /CLAUDE.md
